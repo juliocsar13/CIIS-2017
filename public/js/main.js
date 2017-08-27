@@ -1,3 +1,5 @@
+
+
 $(function(){
 
 
@@ -208,6 +210,16 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('type', type);
     formData.append('city', city);
     formData.append('image', image);
+    var data = {
+      'email': email,
+      'name': firstName,
+      'lastname': lastName,
+      'dni': dni,
+      'type': type,
+      'city': city,
+      'image': image
+
+    };
 
 
     if(email && firstName && lastName && dni && type && city && image_val){
@@ -222,9 +234,10 @@ $(".delete-participant").click(deleteParticipant)
       $.ajax({
         url: '/preregistro',
         type: "POST",
-        data: formData,
+        data: JSON.stringify(data),
         processData: false,  // tell jQuery not to process the data
-        contentType: false   // tell jQuery not to set contentType
+        contentType:"application/json; charset=utf-8",
+        dataType:"json" // tell jQuery not to set contentType
 
       }).success(function(){
           return subscribeMailChimpEmail(email)
@@ -235,6 +248,7 @@ $(".delete-participant").click(deleteParticipant)
           toastr.success("Gracias por preinscribirte =)");
         })
         .error(function(){
+
           toastr.error("Hubo un error");
         })
         .always(function(){
