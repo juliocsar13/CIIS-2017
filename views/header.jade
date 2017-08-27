@@ -1,0 +1,48 @@
+header
+  nav.navigation
+    #logo
+      img.nav-logo(src='img/logo.png', alt='')
+      h2.items.nav-items
+        span.header-title-number  XVII
+        span.header-title-text  CIIS
+      span.separator.nav-items
+      p.items.header-subtitle.nav-items
+        | CONGRESO 
+        br
+        |         INTERNACIONAL 
+        br
+        |         DE INFORMATICA 
+        br
+        |         Y SISTEMAS 
+        br
+    // <div id="logo">Your Logo here</div>
+    label.toggle(for='drop') Menu
+    input#drop(type='checkbox')
+    ul.menu
+      li
+        a(data-scroll='', href='#index') Inicio
+      li
+        a(data-scroll='', href='#schedule') Cronograma
+      li
+        a(data-scroll='', href='#pricing-table') Precios
+      li
+        a#contactBtn(href='#animatedModal') Contacto
+      li.hidden-sm.hidden-md.hidden-xs
+        span.separator
+      li.hidden-sm.hidden-md.hidden-xs
+        a.icon-facebook-with-circle(href='https://www.facebook.com/ciistacna/?fref=ts', target='_blank')
+      li.hidden-sm.hidden-md.hidden-xs
+        a.icon-twitter-with-circle(href='https://twitter.com/ciistacna', target='_blank')
+  //
+    <nav>
+    <ul class="menu" >
+    <li class="menu-items"><a data-scroll href="#index">Inicio</a></li>
+    <li class="menu-items"><a data-scroll href="#schedule">Cronograma</a></li>
+    <li class="menu-items"><a data-scroll href="#">Temario</a></li>
+    <li class="menu-items"><a data-scroll href="#pricing-table">Precios</a></li>
+    <li class="menu-items"><a id="contactBtn" href="#animatedModal">Contacto</a></li>
+    </ul>
+    <span class="separator"></span>
+    <a href="https://www.facebook.com/ciistacna/?fref=ts" target="_blank" class="icon-facebook-with-circle"></a>
+    <a href="https://twitter.com/ciistacna" target="_blank" class="icon-twitter-with-circle"></a>
+    </nav>
