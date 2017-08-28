@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
+var config  = require('./config/config.js');
 
 var app = express();
 
@@ -15,9 +16,9 @@ rootciistacna
 
 //var db = "mongodb://localhost:27017"
 
-var db = "mongodb://rootciistacna:root@ds161493.mlab.com:61493/heroku_c3wk6trz"
+//var db = "mongodb://rootciistacna:root@ds161493.mlab.com:61493/heroku_c3wk6trz"
 
-mongoose.connect(db,function (err) {
+mongoose.connect(config.db,function (err) {
   console.log(err);
 });
 
