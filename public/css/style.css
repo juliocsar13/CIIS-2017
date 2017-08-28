@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800';
 #contactForm,
 #preRegisterForm {
   text-align: center;
@@ -96,6 +97,7 @@ a:visited {
 }
 a:hover {
   color: #00aad4;
+  border-top: solid 10px #00aad4;
 }
 
 a.white_link:hover {
@@ -128,7 +130,7 @@ header {
 }
 
 .shrink{
-    height: 70px;
+    height: 105px;
     background-color: #1E2630;
 }
 
@@ -147,7 +149,7 @@ header .icon-facebook-with-circle:hover {
 header .icon-twitter-with-circle,
 header .icon-facebook-with-circle {
   font-size: 27px;
-  margin: auto 3px;
+  /*margin: auto 3px;*/
 }
 header section {
   display: flex;
@@ -193,12 +195,17 @@ header section p {
   font-weight: bolder;
 }
 .nav-logo {
-  width: 100px;
+  /*width: 100px;
   height: 100px;
   border-radius: 50%;
   margin: auto 1px;
   filter: drop-shadow(0px 0px 5px white);
+  transition: all 0.4s ease;*/
+  /*width: 32%;  */
+  margin-left: -13%;
+  margin-top: 21px;  
   transition: all 0.4s ease;
+
 }
 
 
@@ -261,11 +268,14 @@ header section p {
 }
 #index h1 {
   font-size: 1.7em;
-  color: #b3d44e;
-  margin-top: 180px;
+  /*color: #b3d44e;*/
+  /*margin-top: 180px;*/
 }
 #index h1 span {
-  display: block;
+    display: block;
+    font-size: 1.6em;
+    /* font-weight: 100; */
+    /* color: #00aad4; */
 }
 #index h1 span.highlighted {
   font-size: 1.6em;
@@ -286,6 +296,8 @@ header section p {
 #index button {
   display: inline-block;
   margin-top: 0.2em;
+  margin-left: -19%;
+  width: 10px;
 }
 #index input {
   display: inline-block;
@@ -303,6 +315,7 @@ header section p {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 5%;
 }
 #countdown .container_countdown_unit {
   padding: 3em;
@@ -395,8 +408,9 @@ header section p {
   padding: 0.5em 2.2em;
 }
 .btn-outline:hover {
-  background: #00aad4;
-  border-color: #00aad4;
+  background: white;
+  color: #00aad4;
+  /*border-color: #00aad4;*/
 }
 .btn-outline[disabled] {
   background: transparent;
@@ -929,6 +943,8 @@ nav a {
   font-size:17px;
   text-decoration:none;
   margin: 0 20px;
+  padding-top: 55px;
+  margin-top: -57px;
 }
 
 
@@ -936,7 +952,7 @@ nav ul li ul li:hover { background: #000000; }
 
 /* Background color change on Hover */
 nav a:hover {
-  background-color: #000000;
+  /*background-color: #000000;*/
 }
 
 /* Hide Dropdowns by Default
@@ -997,7 +1013,7 @@ padding: 30px 50px;
 }
 
 .items-collapsed{
-      margin-top: 25px;
+      margin-top: 48px;
 }
 
 @media all and (max-width : 768px) {
