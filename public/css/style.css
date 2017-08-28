@@ -276,11 +276,25 @@ header section p {
     font-size: 1.6em;
     /* font-weight: 100; */
     /* color: #00aad4; */
+    margin-left: 74px;
+}
+p.subtitle {
+    font-size: 14px;
+    width: 307px;
+    /* text-align: center; */
+    margin-left: 30.3%;
+}
+p.subtitle2 {
+    font-size: 14px;
+    width: 307px;
+    /* text-align: center; */
+    margin-left: 32.9%;
 }
 #index h1 span.highlighted {
   font-size: 1.6em;
   font-weight: 100;
   color: #00aad4;
+  margin-left: 45px;
 }
 @media (max-width: 480px) {
   #index h1 span.highlighted {
