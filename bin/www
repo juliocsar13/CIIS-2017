@@ -7,12 +7,18 @@
 var app = require('../app');
 var debug = require('debug')('ciis:server');
 var http = require('http');
-
+var config  = require('../config/config.js')
 /**
  * Get port from environment and store in Express.
  */
 
+<<<<<<< HEAD
 var port = normalizePort(process.env.PORT || '3000');
+=======
+//var port = normalizePort(process.env.PORT || '8000');
+var port = normalizePort(config.port);
+
+>>>>>>> 6c83334209b71ff2a8196941688963400c22076b
 app.set('port', port);
 
 /**
@@ -28,6 +34,7 @@ var server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
+console.log("PUERTO :::",port)
 
 /**
  * Normalize a port into a number, string, or false.
