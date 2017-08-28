@@ -10,7 +10,12 @@ var users = require('./routes/users');
 
 
 var app = express();
-var db = "mongodb://localhost:27017"
+
+rootciistacna
+
+//var db = "mongodb://localhost:27017"
+
+var db = "mongodb://rootciistacna:root@ds161493.mlab.com:61493/heroku_c3wk6trz"
 
 mongoose.connect(db,function (err) {
   console.log(err);

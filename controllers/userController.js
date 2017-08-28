@@ -1,6 +1,6 @@
 var User = require('../collections/user');
 var jwt = require('jsonwebtoken');
-var config = require('../config');
+//var config = require('../config');
 
 module.exports.register = function (req,res) {
     console.log('registrando');
