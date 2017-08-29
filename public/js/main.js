@@ -221,9 +221,9 @@ $(".delete-participant").click(deleteParticipant)
 
     };
 
-    //if(email && firstName && lastName && dni && type && city && image_val){
+    if(email && firstName && lastName && dni && type && city && image_val){
 
-    if(email && firstName && lastName && dni && type && city){
+    //if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
