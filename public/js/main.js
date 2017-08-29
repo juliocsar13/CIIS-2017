@@ -221,8 +221,9 @@ $(".delete-participant").click(deleteParticipant)
 
     };
 
+    //if(email && firstName && lastName && dni && type && city && image_val){
 
-    if(email && firstName && lastName && dni && type && city && image_val){
+    if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -296,7 +297,7 @@ $(".delete-participant").click(deleteParticipant)
     return (n < 10) ? '0'+n : ''+n;
   }
 
-  var finalDate = new Date('11/7/2017 09:00')
+  var finalDate = new Date('11/13/2017 09:00')
 
   $('#countdown').countdown(finalDate,function(event){
     var seconds = formatTens(event.offset.seconds);

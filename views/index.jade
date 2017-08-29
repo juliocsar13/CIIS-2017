@@ -63,9 +63,10 @@ block content
         label
           | Tu ciudad
           input#preRegisterCity.capitalize(type='text', style='color:black;', required='')
-        label
+        //-label
           | Foto Voucher (Nro Cta: 540-35555839-0-12 BCP a nombre de : YENY LAQUITA )
           input#preRegisterVoucher(type='file', accept='image/*', required='')
+
       button#submitPreRegister.btn-outline-inverse.green(disabled='') Enviar
   #preRegisterConcurseModal
     .close-preRegisterConcurseModal
