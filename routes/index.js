@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var userController = require('../controllers/userController');
+var mailController = require('../controllers/mail');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -8,6 +9,8 @@ router.get('/', function(req, res, next) {
 router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
+
+router.post('/contacto', mailController.contact);
 
 router.route('/usuarios')
         .get(userController.getUsers);

@@ -1,12 +1,10 @@
 var User = require('../collections/user');
 var jwt = require('jsonwebtoken');
-var verification = require('./verification');
-var crypto = require("crypto");
+var mail = require('./mail');
 
 
 
 module.exports.register = function (req,res) {
-    var token = crypto.randomBytes(20).toString('hex');
     console.log('registrando');
     var params = req.body;
     console.log(req.body);
@@ -18,14 +16,14 @@ module.exports.register = function (req,res) {
     user.type = params.type;
     user.city = params.city;
     user.email = params.email;
-    user.emailToken = token;
+    user.cellphone = params.cellphone;
 
     user.save(function (err,user) {
         if(err){
           console.log(err);
           return res.sendStatus(503)
         }
-        verification.sendEmail(user);
+        mail.sendEmail(user);
         console.log(user);
         return res.sendStatus(200);
     });

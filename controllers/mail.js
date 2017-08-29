@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 module.exports.sendEmail = function(user){
 
   var mailOptions = {
-    from: 'esistacna@gmail.com', // sender address
+    from: '"CIIS" <esistacna@gmail.com>', // sender address
     to: user.email, // list of receivers
     subject: 'CIIS TACNA - Confirmar Preregistro ✔', // Subject line
     text: 'Hola '+user.name+user.lastname+' confirme su preregistro', // plain text body
@@ -31,6 +31,28 @@ module.exports.sendEmail = function(user){
     console.log('Message sent: ' + info.response);
   });
 
+}
 
+module.exports.contact = function(req,res){
+
+  var email = req.body.email;
+  var name = req.body.name;
+  var subject = req.body.subject;
+  var mailOptions = {
+    from: name + ' ' + email, // sender address
+    to: 'esistacna@gmail.com', // list of receivers
+    subject: 'Consultas: ' + email, // Subject line
+    text: subject // plaintext body
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+       console.log(error);
+        return res.sendStatus(503);
+
+    }
+    console.log('Message sent: ' + info.response);
+    res.send();
+  });
 
 }

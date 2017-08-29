@@ -6,6 +6,7 @@ var userSchema = new Schema({
     name: String,
     lastname: String,
     city: String,
+    cellphone: String,
     dni: {type:String, unique:true},
     type: String,
     createdAt:{ type: Date, default: Date.now}
