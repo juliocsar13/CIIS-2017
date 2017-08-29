@@ -2,9 +2,6 @@ extends layout
 
 block content
   section#index.section.section-page
-    h1
-      span.highlighted Tecnología e Innovación 
-      span  para la Gestión del Conocimiento
     article#countdown
       .container_countdown_unit
         span#days.countdown_unit
@@ -21,6 +18,11 @@ block content
       .container_countdown_unit
         span#seconds.countdown_unit
         span.countdown_unit_label  segundos
+    h1
+      span.highlighted CONGRESO INTERNACIONAL 
+      span  DE INFORMATICA Y SISTEMAS    
+      p.subtitle Un evento al cual no debes faltar,
+      p.subtitle2 el mejor evento tecnologico del sur del Peru
     .subscription
    
       //-input#email(type='email', placeholder='Tu email')
@@ -29,6 +31,7 @@ block content
    
       button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
       br
+    //
       button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
         | Preinscríbete
         | al concurso de programación
@@ -124,7 +127,7 @@ block content
           textarea#contactSubject(style='color:black;')
       button#submitContact.btn-outline-inverse(disabled='') Enviar
   
-  section#speakers
+  //section#speakers
     h2(style='font-size:40px;') Ponentes
     diw.row
       article.col-sm-6.col-md-4.mb1
@@ -240,7 +243,7 @@ block content
             br
             span Tecnologías IBM en procesos de desarrollo de software
           p.mb0
-  section#schedule.section.section-page
+  //section#schedule.section.section-page
     h1(style='color:#00aad4;font-size: 2.5em;font-weight:bolder ;padding-bottom: 1em;padding-top:.2em;')
       | Cronograma de
       | Ponencias
@@ -460,7 +463,7 @@ block content
       a.baseProg(download='', href='/doc/bases-CProg.docx')
         | >> Bases del concurso de programación <<
   // Pricing Table Section
-  section#pricing-table.section-page
+  //section#pricing-table.section-page
     .container
       h2(style='font-size:40px;') Inversión
       .table-responsive
@@ -568,15 +571,15 @@ block content
       textarea(name='text', placeholder='Escribenos tu duda ')
  
   section#auspiciadores
-    h2(style='font-size:40px;color:#00aad4;') Auspiciadores
-    img(src='/img/osiptel.png', alt='')
-    img(src='/img/postgrado.gif', alt='')
-    img(src='/img/flores.jpg', alt='')
-    img(src='/img/cip.png', alt='')
-    img(src='/img/apeis.png', alt='')
-    img(src='/img/fontes.jpg', alt='')
-    img(src='/img/minsur.png', alt='')
-    img(src='/img/piscoscuneo.jpg', alt='')
+    //h2(style='font-size:40px;color:#00aad4;') Auspiciadores
+    //img(src='/img/osiptel.png', alt='')
+    //img(src='/img/postgrado.gif', alt='')
+    //img(src='/img/flores.jpg', alt='')
+    //img(src='/img/cip.png', alt='')
+    //img(src='/img/apeis.png', alt='')
+    //img(src='/img/fontes.jpg', alt='')
+    //img(src='/img/minsur.png', alt='')
+    //img(src='/img/piscoscuneo.jpg', alt='')
     h2(style='font-size:40px;color:#00aad4;padding-top: 50px;') Organizadores
     img(src='/img/agile/logoesis.png', alt='')
     img(src='/img/agile/logounjbg.png', alt='')
