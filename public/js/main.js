@@ -198,8 +198,7 @@ $(".delete-participant").click(deleteParticipant)
     var dni = $('#preRegisterDNI').val();
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
-    var image = $('#preRegisterVoucher')[0].files[0]
-    var image_val = $('#preRegisterVoucher').val();
+    var cellphone = $('#preRegisterCellphone').val();
 
     var formData = new FormData();
 
@@ -209,7 +208,7 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
-    formData.append('image', image);
+
     var data = {
       'email': email,
       'name': firstName,
@@ -217,12 +216,16 @@ $(".delete-participant").click(deleteParticipant)
       'dni': dni,
       'type': type,
       'city': city,
-      'image': image
+      'cellphone': cellphone
 
     };
 
+    //if(email && firstName && lastName && dni && type && city && image_val){
 
-    if(email && firstName && lastName && dni && type && city && image_val){
+    //if(email && firstName && lastName && dni && type && city){
+
+
+    if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -296,7 +299,7 @@ $(".delete-participant").click(deleteParticipant)
     return (n < 10) ? '0'+n : ''+n;
   }
 
-  var finalDate = new Date('11/7/2017 09:00')
+  var finalDate = new Date('11/13/2017 09:00')
 
   $('#countdown').countdown(finalDate,function(event){
     var seconds = formatTens(event.offset.seconds);
