@@ -212,7 +212,14 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
+<<<<<<< HEAD
+    formData.append('image', image);
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+    }
+=======
 
+>>>>>>> 0462e5e5d6d0cbe582bd738c3a876f9a3394d96f
     var data = {
       'email': email,
       'name': firstName,
@@ -223,7 +230,7 @@ $(".delete-participant").click(deleteParticipant)
       'cellphone': cellphone
 
     };
-
+    console.log(data.image);
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
@@ -255,7 +262,7 @@ $(".delete-participant").click(deleteParticipant)
         //dataType:"json" // tell jQuery not to set contentType
 
       }).success(function(){
-          return subscribeMailChimpEmail(email)
+          
         })
         .success(function(){
           console.log('success')
