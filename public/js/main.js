@@ -199,8 +199,12 @@ $(".delete-participant").click(deleteParticipant)
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
-
-    var formData = new FormData();
+    
+    var image = $('#preRegisterVoucher')[0].files[0]
+    var image_val = $('#preRegisterVoucher').val();
+    
+    var form = document.getElementById('preRegisterForm')
+    var formData = new FormData(form);
 
     formData.append('email', email);
     formData.append('firstName', firstName);
@@ -234,16 +238,21 @@ $(".delete-participant").click(deleteParticipant)
       self.disabled= true;
 
 
-      console.log("formData",formData)
-      console.log("formData stringify","");
+      console.log("formData",data)
+      console.log("formData stringify",formData.values());
+
+      
       $.ajax({
         url: '/preregistro',
         type: "POST",
-        data: JSON.stringify(data),
-        //data:JSON.stringify(formData),
+        //data: JSON.stringify(data),
+        data:formData,
+        
         processData: false,  // tell jQuery not to process the data
-        contentType:"application/json; charset=utf-8",
-        dataType:"json" // tell jQuery not to set contentType
+        contentType: false   // tell jQuery not to set contentType
+          // tell jQuery not to process the data
+        //contentType:"application/json; charset=utf-8",
+        //dataType:"json" // tell jQuery not to set contentType
 
       }).success(function(){
           return subscribeMailChimpEmail(email)
