@@ -208,14 +208,9 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
-<<<<<<< HEAD
-    formData.append('image', image);
-    for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-    }
-=======
 
->>>>>>> 0462e5e5d6d0cbe582bd738c3a876f9a3394d96f
+    formData.append('image', image);
+    
     var data = {
       'email': email,
       'name': firstName,
