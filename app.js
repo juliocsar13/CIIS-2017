@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -12,13 +13,20 @@ var config  = require('./config/config.js');
 
 var app = express();
 
+var options = {
+  useMongoClient: true,
+  socketTimeoutMS: 0,
+  keepAlive: true,
+  reconnectTries: 30
+};
+
 //rootciistacna
 
 //var db = "mongodb://localhost:27017"
 
 //var db = "mongodb://rootciistacna:root@ds161493.mlab.com:61493/heroku_c3wk6trz"
 
-mongoose.connect(config.db,function (err) {
+mongoose.connect(config.db,options, function (err) {
   //console.log("error aqui",err);
 });
 

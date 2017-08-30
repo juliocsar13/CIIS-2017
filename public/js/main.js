@@ -199,6 +199,8 @@ $(".delete-participant").click(deleteParticipant)
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
+    var image = $('#preRegisterVoucher')[0].files[0]
+    var image_val = $('#preRegisterVoucher').val();
 
     var formData = new FormData();
 
@@ -208,7 +210,7 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
-
+    formData.append('image', image);
     var data = {
       'email': email,
       'name': firstName,
@@ -216,7 +218,8 @@ $(".delete-participant").click(deleteParticipant)
       'dni': dni,
       'type': type,
       'city': city,
-      'cellphone': cellphone
+      'cellphone': cellphone,
+      'image': image
 
     };
 
@@ -225,7 +228,7 @@ $(".delete-participant").click(deleteParticipant)
     //if(email && firstName && lastName && dni && type && city){
 
 
-    if(email && firstName && lastName && dni && type && city){
+    if(email && firstName && lastName && dni && type && city && image_val){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
