@@ -63,10 +63,12 @@ block content
         label
           | Tu ciudad
           input#preRegisterCity.capitalize(type='text', style='color:black;', required='')
-        label
+        //-label
           | Foto Voucher (Nro Cta: 540-38259813-0-99 BCP a nombre de : VELASQUEZ CRUZ YOBANA )
           input#preRegisterVoucher(type='file', accept='image/*', required='')
-
+        label
+          | Tu número de celular
+          input#preRegisterCellphone(type='text', style='color:black;', required='')
       button#submitPreRegister.btn-outline-inverse.green(disabled='') Enviar
   #preRegisterConcurseModal
     .close-preRegisterConcurseModal
