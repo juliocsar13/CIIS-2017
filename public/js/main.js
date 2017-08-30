@@ -202,9 +202,12 @@ $(".delete-participant").click(deleteParticipant)
     
     var image = $('#preRegisterVoucher')[0].files[0]
     var image_val = $('#preRegisterVoucher').val();
-    
-    var form = document.getElementById('preRegisterForm')
-    var formData = new FormData(form);
+    //var photo = document.getElementById("preRegisterVoucher");
+    //var image = photo.files[0];
+
+    //var form = document.getElementById('preRegisterForm')
+    //var form = $('preRegisterForm')[0];
+    var formData = new FormData(document.querySelector("preRegisterForm"));
 
     formData.append('email', email);
     formData.append('firstName', firstName);
@@ -212,25 +215,36 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
-<<<<<<< HEAD
+    formData.append('cellphone', cellphone);
+
     formData.append('image', image);
-    for (var key of formData.entries()) {
-      console.log(key[0] + ', ' + key[1]);
-    }
-=======
+    //for (var key of formData.entries()) {
 
->>>>>>> 0462e5e5d6d0cbe582bd738c3a876f9a3394d96f
+      //console.log("TODOS LOS DATOS"+ key[0] + ', ' + key[1]);
+    
+    //}
+
+    /*console.log(formData.get("email"));
+    console.log(formData.get("firstName"));
+    console.log(formData.get("lastName"));
+    console.log(formData.get("dni"));
+    console.log(formData.get("type"));
+    console.log(formData.get("image"));
+    console.log(formData.get("city"));
+
+
+*/
     var data = {
-      'email': email,
-      'name': firstName,
-      'lastname': lastName,
-      'dni': dni,
-      'type': type,
-      'city': city,
-      'cellphone': cellphone
-
+      'email': formData.get("email"),
+      'name': formData.get("firstName"),
+      'lastname': formData.get("lastName"),
+      'dni': formData.get("dni"),
+      'type': formData.get("type"),
+      'city': formData.get("city"),
+      'cellphone': formData.get("cellphone"),
+      'image':formData.get("image")
     };
-    console.log(data.image);
+    console.log("DATA",data);
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
@@ -245,24 +259,26 @@ $(".delete-participant").click(deleteParticipant)
       self.disabled= true;
 
 
-      console.log("formData",data)
-      console.log("formData stringify",formData.values());
+      //console.log("formData",data)
+      //console.log("formData stringify",formData.values());
 
       
       $.ajax({
         url: '/preregistro',
         type: "POST",
-        //data: JSON.stringify(data),
-        data:formData,
+        data: JSON.stringify(data),
+        //data:formData,
         
-        processData: false,  // tell jQuery not to process the data
-        contentType: false   // tell jQuery not to set contentType
+        //processData: false,  // tell jQuery not to process the data
+        ///contentType: false   // tell jQuery not to set contentType
           // tell jQuery not to process the data
-        //contentType:"application/json; charset=utf-8",
-        //dataType:"json" // tell jQuery not to set contentType
+        contentType:"application/json; charset=utf-8",
+        dataType:"json" // tell jQuery not to set contentType
 
-      }).success(function(){
-          
+      //}).success(function(){
+        //console.log("EMAIL DE ENVIO",email)
+          //return subscribeMailChimpEmail(email)
+
         })
         .success(function(){
           console.log('success')
