@@ -34,11 +34,15 @@ module.exports.createView = function (req,res) {
     res.render('layout');
 }
 module.exports.getUsers = function (req,res) {
-    User.find({})
-    .exec(function (err,user) {
-      if(err) return res.sendStatus(503);
+    User.find({},function(error,users){
+
+        res.json(users)
+    })
+
+    /*.exec(function (err,user) {
+      if(err) return reserror.sendStatus(503);
       return res.json(user);
-    });
+    });*/
 }
 module.exports.deleteUsers = function (req,res) {
     User.remove({})
