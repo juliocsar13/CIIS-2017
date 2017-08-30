@@ -234,10 +234,13 @@ $(".delete-participant").click(deleteParticipant)
       self.disabled= true;
 
 
+      console.log("formData",formData)
+      console.log("formData stringify",JSON.stringify(formData));
       $.ajax({
         url: '/preregistro',
         type: "POST",
-        data: JSON.stringify(data),
+        //data: JSON.stringify(data),
+        data:JSON.stringify(formData),
         processData: false,  // tell jQuery not to process the data
         contentType:"application/json; charset=utf-8",
         dataType:"json" // tell jQuery not to set contentType

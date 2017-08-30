@@ -16,7 +16,7 @@ router.route('/preregistro')
 
 router.post('/contacto', mailController.contact);
 
-router.route('/usuariosall')
+router.route('/usuarios')
         .get(userController.getUsers);
 router.route('/Dusuarios')
         .get(userController.deleteUsers);
