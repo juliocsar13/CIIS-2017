@@ -130,7 +130,7 @@ header {
 }
 
 .shrink{
-    height: 105px;
+    height: 83px;
     background-color: #1E2630;
 }
 
@@ -195,16 +195,16 @@ header section p {
   font-weight: bolder;
 }
 .nav-logo {
-  /*width: 100px;
+  width: 100px;
   height: 100px;
   border-radius: 50%;
   margin: auto 1px;
-  filter: drop-shadow(0px 0px 5px white);
-  transition: all 0.4s ease;*/
-  /*width: 32%;  */
-  margin-left: -13%;
-  margin-top: 21px;  
+  /*filter: drop-shadow(0px 0px 5px white);*/
   transition: all 0.4s ease;
+  /*width: 32%;  */
+  /*margin-left: -13%;
+  margin-top: 21px;  
+  transition: all 0.4s ease;*/
 
 }
 
@@ -213,8 +213,8 @@ header section p {
 .shrink-logo {
   transform: scale(0.6);
   position: relative;
-  top: -45px;
-  padding: 10px;
+  top: -36px;
+  /*padding: 10px;*/
 }
 
 .section-page{
@@ -252,7 +252,6 @@ header section p {
 
 }
 
-
 .menu{
   margin-top:80px;
   margin-right: 20px;
@@ -269,37 +268,64 @@ header section p {
 #index h1 {
   font-size: 1.7em;
   /*color: #b3d44e;*/
-  /*margin-top: 180px;*/
+  margin-top: -16px;
 }
 #index h1 span {
+  font-family: 'Open Sans';
     display: block;
     font-size: 1.6em;
-    /* font-weight: 100; */
+    font-weight: 700; 
     /* color: #00aad4; */
-    margin-left: 74px;
+    /*margin-left: 74px;*/
 }
-p.subtitle {
+#index h1 span.subtitle {
     font-size: 14px;
-    width: 307px;
+   /* width: 307px;*/
     /* text-align: center; */
-    margin-left: 30.3%;
+    /*margin-left: 28.9%;*/
+    font-weight: 200;
 }
-p.subtitle2 {
+#index h1 span.subtitle2 {
     font-size: 14px;
-    width: 307px;
+    /*width: 307px;*/
     /* text-align: center; */
-    margin-left: 32.9%;
+    /*margin-left: 31.4%;*/
+    font-weight: 200;
 }
 #index h1 span.highlighted {
-  font-size: 1.6em;
-  font-weight: 100;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 1.6em;  
   color: #00aad4;
-  margin-left: 45px;
+  /*margin-left: 58px;*/
 }
+
 @media (max-width: 480px) {
   #index h1 span.highlighted {
     font-size: 1.35em;
     padding-bottom: 0.2em;
+    margin-left: 0;
+  }
+  #index h1 span {
+   margin-left: 0; 
+   font-size: 1.35em;
+  }
+  .subtitle{
+   font-size: 1em; 
+  }
+  #index h1 span.subtitle {
+    font-size: 14px; 
+    margin-left: 28.9%;
+    font-weight: 200;
+    /* display: block; */
+    margin: auto;
+    margin-top: 7px;
+  }
+  #index h1 span.subtitle2 {
+    font-size: 14px;    
+    margin-left: 31.4%;
+    font-weight: 200;
+    margin: auto;
   }
 }
 #index input,
@@ -310,7 +336,7 @@ p.subtitle2 {
 #index button {
   display: inline-block;
   margin-top: 0.2em;
-  margin-left: -19%;
+  /*margin-left: -21.3%;*/
   width: 10px;
 }
 #index input {
@@ -329,10 +355,12 @@ p.subtitle2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: 5%;
+  margin-top: 39%;
+  /*margin-top: 5%;*/
+ /* margin-left: -85px;*/
 }
 #countdown .container_countdown_unit {
-  padding: 3em;
+  padding: 2em;
 }
 @media only screen and (max-width: 480px) {
   #countdown .container_countdown_unit {
@@ -358,6 +386,7 @@ p.subtitle2 {
     font-size: 2.4em;
   }
 }
+
 #countdown .separator {
   border: 1px solid rgba(255,255,255,0.5);
   margin: 4em 0;
@@ -450,6 +479,7 @@ p.subtitle2 {
     width: 90% !important;
     display: block;
     max-width: 100%;
+    margin: auto;
   }
   header section .nav-logo {
     width: 50px !important;
@@ -501,26 +531,40 @@ p.subtitle2 {
     width: 35px !important;
   }
   #index h1 {
-    margin-top: 80px !important;
+    margin-top: 14px !important;
   }
   #index .subscription {
     padding: 0 1.5em;
+    margin-top: 24px;
   }
   #index .subscription input {
     width: 100%;
     display: block;
     max-width: 100%;
+    margin-top: 9px;  
   }
   #index .subscription button {
     width: 100%;
     display: block;
+    margin-left: 0;
+    margin: auto;
   }
   #index .subscription input,
   #index .subscription button {
     box-sizing: border-box;
   }
+  #countdown {
+    text-align: center; 
+    display: flex;    
+    justify-content: center;
+    margin-top: 56%;
+    margin-left: 0; 
+  }
+
+
 }
 @media (max-width: 561px) {
+
   #contactForm h3,
   #preRegisterForm h3 {
     font-size: 2em;
@@ -550,7 +594,13 @@ p.subtitle2 {
     line-height: 15px;
   }
 }
+@media (min-width: 568px) {
+  #countdown {
+    margin-top: 18%;
+  }
+}
 @media (max-width: 768px) {
+  
   body {
     font-size: 14px;
   }
@@ -1027,11 +1077,16 @@ padding: 30px 50px;
 }
 
 .items-collapsed{
-      margin-top: 48px;
+      margin-top: 25px;
 }
 
-@media all and (max-width : 768px) {
-
+@media all and (max-width : 768px) {  
+  a:hover {    
+     border-top: 0; 
+  }
+  nav a{
+    padding-top: 0;
+  }
   #logo {
     display: block;
     padding: 0;
@@ -1229,7 +1284,36 @@ padding: 30px 50px;
   width: 100%;
 
 }
-
+@media all and (min-width : 1250px) {
+  #countdown{
+   margin-left: -85px;
+  }
+  #index h1 span.highlighted {  
+  margin-left: 58px;
+  }
+  #index h1 span {  
+    margin-left: 74px;
+  }
+  #index h1 span.subtitle {    
+    width: 307px;
+     text-align: center; 
+    margin-left: 28.9%;
+    
+  }
+  #index h1 span.subtitle2 {
+    
+    width: 307px;
+     text-align: center; 
+    margin-left: 31.4%;
+    
+  }
+  #index button {  
+  margin-left: -21.3%;  
+  }
+  #countdown {
+    margin-top: 5%;
+  }
+}
 @media all and (max-width : 1300px) {
   nav a{
     margin: 0 5px;
@@ -1240,12 +1324,13 @@ padding: 30px 50px;
 
 }
 
-@media all and (max-width : 995px) {
+@media all and (min-width : 995px) {
   nav a{
     margin: 0 0px;
   }
   #logo{
     padding: 30px 10px;
+    margin-left: 25px;
   }
 
   .header-subtitle {
@@ -1268,13 +1353,18 @@ padding: 30px 50px;
     height: 85px;
   }
 }
+li.hidden-sm.hidden-md.hidden-xss {
+    margin-top: 8px;
+}
 
-@media all and (max-width : 810px) {
+
+@media all and (min-width : 750px) {
   nav a{
-    margin: 0 0px;
+    margin: 0 8px;
+    margin-top: -53px;
   }
   #logo{
-    padding: 30px 5px;
+    padding: 35px 5px;
   }
 
   .header-subtitle {
@@ -1296,6 +1386,7 @@ padding: 30px 50px;
   .nav-logo {
     width: 85px;
     height: 85px;
+    margin-left: 20px;
 
   }
 
@@ -1355,4 +1446,9 @@ td span{
 
 .baseProg:hover{
   color:#097590
+}
+@media all and (max-width : 768px) {    
+  li.hidden-sm.hidden-md.hidden-xss {
+    margin-top: -58%;
+  }
 }
