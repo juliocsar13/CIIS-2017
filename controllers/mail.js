@@ -16,9 +16,9 @@ module.exports.sendEmail = function(user){
   var mailOptions = {
     from: '"CIIS" <esistacna@gmail.com>', // sender address
     to: user.email, // list of receivers
-    subject: 'CIIS TACNA - Confirmar Preregistro ✔', // Subject line
-    text: 'Hola '+user.name+user.lastname+' confirme su preregistro', // plain text body
-    html: '<p>Hola '+ user.name +' '+user.lastname+' <br>Registro exitoso!'
+    subject: 'CIIS - TACNA ✔', // Subject line
+    text: '<div>Hola '+user.name+user.lastname+' confirme su preregistro</div>', // plain text body
+    html: '<div style="color=#00aad4">XVIII Congreso Internacional de Informática y Sistemas<p>Hola '+ user.name +' '+user.lastname+' <br>Registro exitoso!</div>'
 
   };
 
