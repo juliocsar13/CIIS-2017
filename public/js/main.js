@@ -199,8 +199,6 @@ $(".delete-participant").click(deleteParticipant)
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
-    var image = $('#preRegisterVoucher')[0].files[0]
-    var image_val = $('#preRegisterVoucher').val();
 
     var formData = new FormData();
 
@@ -210,7 +208,7 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
-    formData.append('image', image);
+
     var data = {
       'email': email,
       'name': firstName,
@@ -218,8 +216,7 @@ $(".delete-participant").click(deleteParticipant)
       'dni': dni,
       'type': type,
       'city': city,
-      'cellphone': cellphone,
-      'image': image
+      'cellphone': cellphone
 
     };
 
@@ -228,7 +225,7 @@ $(".delete-participant").click(deleteParticipant)
     //if(email && firstName && lastName && dni && type && city){
 
 
-    if(email && firstName && lastName && dni && type && city && image_val){
+    if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -238,12 +235,12 @@ $(".delete-participant").click(deleteParticipant)
 
 
       console.log("formData",formData)
-      console.log("formData stringify",JSON.stringify(formData));
+      console.log("formData stringify","");
       $.ajax({
         url: '/preregistro',
         type: "POST",
-        //data: JSON.stringify(data),
-        data:JSON.stringify(formData),
+        data: JSON.stringify(data),
+        //data:JSON.stringify(formData),
         processData: false,  // tell jQuery not to process the data
         contentType:"application/json; charset=utf-8",
         dataType:"json" // tell jQuery not to set contentType
