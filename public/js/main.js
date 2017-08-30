@@ -198,8 +198,7 @@ $(".delete-participant").click(deleteParticipant)
     var dni = $('#preRegisterDNI').val();
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
-    var image = $('#preRegisterVoucher')[0].files[0]
-    var image_val = $('#preRegisterVoucher').val();
+    var cellphone = $('#preRegisterCellphone').val();
 
     var formData = new FormData();
 
@@ -209,7 +208,14 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
+<<<<<<< HEAD
     formData.append('image', image);
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+    }
+=======
+
+>>>>>>> 0462e5e5d6d0cbe582bd738c3a876f9a3394d96f
     var data = {
       'email': email,
       'name': firstName,
@@ -217,12 +223,16 @@ $(".delete-participant").click(deleteParticipant)
       'dni': dni,
       'type': type,
       'city': city,
-      'image': image
+      'cellphone': cellphone
 
     };
+    console.log(data.image);
+    //if(email && firstName && lastName && dni && type && city && image_val){
+
+    //if(email && firstName && lastName && dni && type && city){
 
 
-    if(email && firstName && lastName && dni && type && city && image_val){
+    if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -231,16 +241,19 @@ $(".delete-participant").click(deleteParticipant)
       self.disabled= true;
 
 
+      console.log("formData",formData)
+      console.log("formData stringify","");
       $.ajax({
         url: '/preregistro',
         type: "POST",
         data: JSON.stringify(data),
+        //data:JSON.stringify(formData),
         processData: false,  // tell jQuery not to process the data
         contentType:"application/json; charset=utf-8",
         dataType:"json" // tell jQuery not to set contentType
 
       }).success(function(){
-          return subscribeMailChimpEmail(email)
+          
         })
         .success(function(){
           console.log('success')
@@ -296,7 +309,7 @@ $(".delete-participant").click(deleteParticipant)
     return (n < 10) ? '0'+n : ''+n;
   }
 
-  var finalDate = new Date('11/7/2017 09:00')
+  var finalDate = new Date('11/13/2017 09:00')
 
   $('#countdown').countdown(finalDate,function(event){
     var seconds = formatTens(event.offset.seconds);
