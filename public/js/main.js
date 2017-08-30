@@ -211,6 +211,9 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('type', type);
     formData.append('city', city);
     formData.append('image', image);
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+    }
     var data = {
       'email': email,
       'name': firstName,
@@ -222,7 +225,7 @@ $(".delete-participant").click(deleteParticipant)
       'image': image
 
     };
-
+    console.log(data.image);
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
@@ -246,7 +249,7 @@ $(".delete-participant").click(deleteParticipant)
         dataType:"json" // tell jQuery not to set contentType
 
       }).success(function(){
-          return subscribeMailChimpEmail(email)
+          
         })
         .success(function(){
           console.log('success')
