@@ -215,14 +215,11 @@ $(".delete-participant").click(deleteParticipant)
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
+
     formData.append('cellphone', cellphone);
 
     formData.append('image', image);
-    //for (var key of formData.entries()) {
 
-      //console.log("TODOS LOS DATOS"+ key[0] + ', ' + key[1]);
-    
-    //}
 
     /*console.log(formData.get("email"));
     console.log(formData.get("firstName"));
@@ -231,7 +228,6 @@ $(".delete-participant").click(deleteParticipant)
     console.log(formData.get("type"));
     console.log(formData.get("image"));
     console.log(formData.get("city"));
-
 
 */
     var data = {
