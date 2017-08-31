@@ -1,6 +1,6 @@
 #service-date {
     text-align: center;
-    height: 430px;
+    height: 490px;
 }
 #service-date img {
     width: 50px;
@@ -8,8 +8,13 @@
 }
 #service-date .date-cont {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
+    margin-top: 24px;
+    /* width: 34px; */
+    margin: auto;
+    /* width: 1500px; */
+}
 }
 .date-cont .date-info{
     background: #fff;
@@ -42,6 +47,7 @@
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     text-transform: uppercase;
     font-weight: 700;
+    padding: 130px;
     }    
 p.theme {
     font-size: 12px;
