@@ -35,7 +35,7 @@ block content
 
       button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
       br
-    //
+    //-
       button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
         | Preinscríbete
         | al concurso de programación
@@ -70,7 +70,7 @@ block content
         label
           | Tu número de celular
           input#preRegisterCellphone(type='text', name='cellphone', style='color:black;', required='')
-        label
+      //-  label
           | Foto Voucher (Nro Cta: XXX-XXXXXXX-X-XX BCP a nombre de : YOVANA VELASQUEZ )
           input#preRegisterVoucher(type='file', name='image',accept='image/*', required='')
       button#submitPreRegister.btn-outline-inverse.green(disabled='') Enviar
