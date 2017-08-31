@@ -237,7 +237,7 @@ $(function(){
           url: '/preregistro',
           type: "POST",
           data:formData,
-
+          contentType:"multipart/form-data"
           cache: false,
           dataType: 'json',
           //cache:false,
