@@ -5,7 +5,6 @@ var userController = require('../controllers/userController');
 var postMasterController = require('../controllers/postMasterController');
 
 var mailController = require('../controllers/mail');
-var uploadMiddleware = require('../controllers/uploader').multer;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -14,6 +13,7 @@ router.get('/', function(req, res, next) {
 router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
+
 
 router.post('/contacto', mailController.contact);
 
