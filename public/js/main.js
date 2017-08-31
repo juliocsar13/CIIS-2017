@@ -110,7 +110,7 @@ $(function(){
     ' #preRegisterType,' +
     ' #preRegisterVoucher').on('input', function(e){
       
-      console.log('inputs',$(this));
+      //console.log('inputs',$(this));
       if($(this).val().length-1 >= 0){
         flag_preRegisterData = true;
         if (flag_preRegisterEmail) $('#submitPreRegister').prop('disabled', false);
@@ -166,22 +166,10 @@ $(function(){
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
     
-    var image = $('#preRegisterVoucher')[0].files[0]
-    var image_val = $('#preRegisterVoucher').val();
-    var files = $('#preRegisterVoucher').get(0).files[0];
-
-    //console.log("files",files)
-    //console.log("files 1",files.name)
-    //console.log("files 2",files.size)
-    //console.log("files 3",files.type)
-
-
-    //var photo = document.getElementById("preRegisterVoucher");
-    //var image = photo.files[0];
-
-    //var form = document.getElementById('preRegisterForm')
-    //var form = $('preRegisterForm')[0];
-    var formData = new FormData();
+    //var image = $('#preRegisterVoucher')[0].files[0]
+    //var image_val = $('#preRegisterVoucher').val();
+    //var files = $('#preRegisterVoucher').get(0).files[0];
+   var formData = new FormData();
 
    
     formData.append('email', email);
@@ -193,7 +181,7 @@ $(function(){
 
     formData.append('cellphone', cellphone);
 
-    formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
+    //formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
 
     
 
@@ -204,20 +192,15 @@ $(function(){
       'dni': formData.get("dni"),
       'type': formData.get("type"),
       'city': formData.get("city"),
-      'cellphone': formData.get("cellphone"),
-      image:{
-            'name':files.name,
-            'size':files.size,
-            'type':files.type 
-      },
-      images:formData.get('image')
+      'cellphone': formData.get("cellphone")
+      //image:{
+      //      'name':files.name,
+       //     'size':files.size,
+       //     'type':files.type 
+      //},
+      //images:formData.get('image')
     };
 
-    for (var value of formData.values()) {
-      console.log("formdata",value+formData.get('image')); 
-    }
-    //console.log("formdata",formData.values())
-    //console.log("DATA",data);
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
@@ -231,32 +214,19 @@ $(function(){
     self.appendChild(myImage);
     self.disabled= true;
 
-      
-        var config = {
-          headers: {'Content-Type': 'application/json'}
-        };
 
-        //axios.get('https://api.github.com/users/codeheaven-io', config);
-        axios.post('/preregistro', formData, config);
-        
-                      /* 
         $.ajax({
           url: '/preregistro',
           type: "POST",
-          data:JSON.stringify(formData),
-          contentType:"multipart/form-data",
-          dataType: 'json',
-          //processData: false,  // tell jQuery not to process the data
-          //contentType: false,   // tell jQuery not to set contentType
-            // tell jQuery not to process the data
-          //contentType:"application/json; charset=utf-8",
+          data:JSON.stringify(data),
+          contentType:"application/json; charset=utf-8",
       
         //}).success(function(){
           //console.log("EMAIL DE ENVIO",email)
             //return subscribeMailChimpEmail(email)
 
           success:(function(){
-            console.log('success')
+            //-console.log('success')
             $('.closebt').click();
             toastr.success("Gracias por preinscribirte =)");
           }),
@@ -271,7 +241,7 @@ $(function(){
             self.removeChild(myImage);
             self.disabled= false;
           })
-          });*/
+        });
 
       }
       else{
