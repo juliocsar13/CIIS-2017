@@ -4,11 +4,11 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='initial-scale=1, maximum-scale=1')
-    title XVIII Congreso Internacional de Informática y Sistemas
+    title XVIII POSTMASTER
    
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bower_components/normalize-css/normalize.css')
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/style2.css')
     //-link(rel='stylesheet', href='/css/styles.css')
     //-link(rel='stylesheet', href='/css/responsive-nav.css')
     link(rel='stylesheet', href='/css/mediaelementplayer/mediaelementplayer.min.css')
@@ -31,12 +31,12 @@ html
     header
       nav.navigation   
         #logo
-          img.nav-logo(src='img/logo.png', alt='')
+          img.nav-logo(src='img/dibujo.png', alt='')
           h2.items.nav-items
-            span.header-title-number  XVIII
-            span.header-title-text  CIIS
-          span.separator.nav-items
-          p.items.header-subtitle.nav-items
+            span.header-title-number  XVII
+            span.header-title-text  POSTMASTER
+          //span.separator.nav-items
+          //p.items.header-subtitle.nav-items
             | CONGRESO 
             br
             |         INTERNACIONAL 
@@ -52,7 +52,7 @@ html
           li
             a(data-scroll='', href='#index') Inicio
           li
-            a(data-scroll='', href='/postmaster') Postmaster  
+            a(data-scroll='', href='/') CIIS  
           li
             a(data-scroll='', href='#schedule') Cronograma
           li
@@ -66,41 +66,41 @@ html
           li.hidden-sm.hidden-md.hidden-xs
             a.icon-twitter-with-circle(href='https://twitter.com/ciistacna', target='_blank')
     #fullpage
-        section#index.section.section-page
-        article#countdown
-          .container_countdown_unit
-            span#days.countdown_unit
-            span.countdown_unit_label  Dias
-          span.separator
-          .container_countdown_unit
-            span#hours.countdown_unit
-            span.countdown_unit_label  Horas
-          span.separator
-          .container_countdown_unit
-            span#minutes.countdown_unit
-            span.countdown_unit_label  Minutos
-          span.separator
-          .container_countdown_unit
-            span#seconds.countdown_unit
-            span.countdown_unit_label  segundos
-        h1
-          span.highlighted CONGRESO INTERNACIONAL 
-          span  DE INFORMATICA Y SISTEMAS    
-          span.subtitle Un evento al cual no debes faltar,
-          span.subtitle2 el mejor evento tecnologico del sur del Peru
-        .subscription
-       
-          //-input#email(type='email', placeholder='Tu email')
-      
-          //-button#subscribe.btn-outline.lg(type='button')  Registrate
-       
-          button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
-          br
-        //
-          button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
-            | Preinscríbete
-            | al concurso de programación
-      footer
+    section#index.section.section-page
+      article#countdown
+        .container_countdown_unit
+          span#days.countdown_unit
+          span.countdown_unit_label  Dias
+        span.separator
+        .container_countdown_unit
+          span#hours.countdown_unit
+          span.countdown_unit_label  Horas
+        span.separator
+        .container_countdown_unit
+          span#minutes.countdown_unit
+          span.countdown_unit_label  Minutos
+        span.separator
+        .container_countdown_unit
+          span#seconds.countdown_unit
+          span.countdown_unit_label  segundos
+      h1
+        span.highlighted POST MASTER 
+        span  REENCUENTRO DE EGRESADOS ESIS
+        //span.subtitle Un evento al cual no debes faltar,
+        //span.subtitle2 el mejor evento tecnologico del sur del Peru
+      .subscription
+     
+        //-input#email(type='email', placeholder='Tu email')
+    
+        //-button#subscribe.btn-outline.lg(type='button')  Registrate
+     
+        button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
+        br
+      //
+        button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
+          | Preinscríbete
+          | al concurso de programación
+    footer
 
 
 
