@@ -5,6 +5,7 @@ var userController = require('../controllers/userController');
 var postMasterController = require('../controllers/postMasterController');
 
 var mailController = require('../controllers/mail');
+var uploadMiddleware = require('../controllers/uploader').multer;
 
 const uploadMiddleware = require('../controllers/uploader').multer;
 

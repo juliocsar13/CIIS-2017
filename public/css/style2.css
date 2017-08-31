@@ -231,7 +231,7 @@ header section p {
 }
 
 #index {
-  background-image: url("/img/fondo_index.png");
+  background-image: url("/img/fondo_index2.png");
   background-size: cover;
 }
 
@@ -273,10 +273,10 @@ header section p {
 #index h1 span {
   font-family: 'Open Sans';
     display: block;
-    font-size: 1.6em;
+    font-size: 1.2em;
     font-weight: 700; 
     /* color: #00aad4; */
-    /*margin-left: 74px;*/
+    margin-left: 0;
 }
 #index h1 span.subtitle {
     font-size: 14px;
@@ -295,7 +295,7 @@ header section p {
 #index h1 span.highlighted {
   font-family: 'Open Sans';
   font-weight: 700;
-  font-size: 1.6em;  
+  font-size: 1.2em;  
   color: #00aad4;
   /*margin-left: 58px;*/
 }
@@ -596,7 +596,7 @@ header section p {
 }
 @media (min-width: 568px) {
   #countdown {
-    margin-top: 18%;
+    margin-top: 9%;
   }
 }
 @media (max-width: 768px) {
@@ -1286,13 +1286,13 @@ padding: 30px 50px;
 }
 @media all and (min-width : 1250px) {
   #countdown{
-   margin-left: -85px;
+ /*  margin-left: -85px;*/
   }
   #index h1 span.highlighted {  
-  margin-left: 58px;
+  margin-left: 0;
   }
   #index h1 span {  
-    margin-left: 74px;
+    margin-left: 0;
   }
   #index h1 span.subtitle {    
     width: 307px;
@@ -1308,10 +1308,10 @@ padding: 30px 50px;
     
   }
   #index button {  
-  margin-left: -21.3%;  
+/*  margin-left: 0;  */
   }
   #countdown {
-    margin-top: 5%;
+    
   }
 }
 @media all and (max-width : 1300px) {
@@ -1380,14 +1380,15 @@ li.hidden-sm.hidden-md.hidden-xss {
   }
 
   .header-title-text {
-    font-size: 1.8em;
+    font-size: 1.4em;
 
   }
   .nav-logo {
     width: 85px;
     height: 85px;
     margin-left: 20px;
-    
+    filter: saturate(250%);
+}
 
   }
 

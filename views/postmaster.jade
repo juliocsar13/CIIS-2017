@@ -4,11 +4,11 @@ html
     meta(charset='utf-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='initial-scale=1, maximum-scale=1')
-    title XVIII Congreso Internacional de Informática y Sistemas
+    title XVIII POSTMASTER
    
     link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
     link(rel='stylesheet', href='/bower_components/normalize-css/normalize.css')
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/style2.css')
     //-link(rel='stylesheet', href='/css/styles.css')
     //-link(rel='stylesheet', href='/css/responsive-nav.css')
     link(rel='stylesheet', href='/css/mediaelementplayer/mediaelementplayer.min.css')
@@ -22,15 +22,83 @@ html
     link(href='/icomoon/style.css', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700', rel='stylesheet', type='text/css')
-    //-link(href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css', rel='stylesheet', type='text/css')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css', rel='stylesheet', type='text/css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.7/remodal-default-theme.css')
     
     //-link(rel='stylesheet', href='/bower_components/fullpage.js/dist/jquery.fullpage.min.css', media='screen', title='no title')
     //-link(rel='stylesheet', href='/bower_components/remodal/dist/remodal.css')
 
-    include header
-    #fullpage
-    block content
+    header
+      nav.navigation   
+        #logo
+          img.nav-logo(src='img/dibujo.png', alt='')
+          h2.items.nav-items
+            span.header-title-number  XVII
+            span.header-title-text  POSTMASTER
+          //span.separator.nav-items
+          //p.items.header-subtitle.nav-items
+            | CONGRESO 
+            br
+            |         INTERNACIONAL 
+            br
+            |         DE INFORMATICA 
+            br
+            |         Y SISTEMAS 
+            br
+        // <div id="logo">Your Logo here</div>
+        label.toggle(for='drop') Menu
+        input#drop(type='checkbox')
+        ul.menu
+          li
+            a(data-scroll='', href='#index') Inicio
+          li
+            a(data-scroll='', href='/') CIIS  
+          li
+            a(data-scroll='', href='#schedule') Cronograma
+          li
+            a(data-scroll='', href='#pricing-table') Precios
+          li
+            a#contactBtn(href='#animatedModal') Contacto
+          li.hidden-sm.hidden-md.hidden-xss
+            span.separator
+          li.hidden-sm.hidden-md.hidden-xs
+            a.icon-facebook-with-circle(href='https://www.facebook.com/ciistacna/?fref=ts', target='_blank')
+          li.hidden-sm.hidden-md.hidden-xs
+            a.icon-twitter-with-circle(href='https://twitter.com/ciistacna', target='_blank')
+      #fullpage
+      section#index.section.section-page
+        article#countdown
+          .container_countdown_unit
+            span#days.countdown_unit
+            span.countdown_unit_label  Dias
+          span.separator
+          .container_countdown_unit
+            span#hours.countdown_unit
+            span.countdown_unit_label  Horas
+          span.separator
+          .container_countdown_unit
+            span#minutes.countdown_unit
+            span.countdown_unit_label  Minutos
+          span.separator
+          .container_countdown_unit
+            span#seconds.countdown_unit
+            span.countdown_unit_label  segundos
+        h1
+          span.highlighted POST MASTER 
+          span  REENCUENTRO DE EGRESADOS ESIS
+          //span.subtitle Un evento al cual no debes faltar,
+          //span.subtitle2 el mejor evento tecnologico del sur del Peru
+        .subscription
+        //-input#email(type='email', placeholder='Tu email')
+        //-button#subscribe.btn-outline.lg(type='button')  Registrate
+        button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
+      
+        //-
+          button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
+            | Preinscríbete
+            | al concurso de programación
+      footer
+
 
 
 
@@ -45,6 +113,7 @@ html
 
   //-script(src='/bower_components/animatedModal/animatedModal.min.js')
   script(src='/js/main.js', type='text/javascript', charset='utf-8')
+  script(src='/js/postmaster.js', type='text/javascript', charset='utf-8')
 
   script(src='/js/bootstrapValidator.min.js', type='text/javascript', charset='utf-8')
 

@@ -41,34 +41,34 @@ block content
     .close-preRegisterModal
       img.closebt(src='img/closebt.svg', alt='')
     .modal-content
-      form#preRegisterForm(method="post",name="preRegisterForm", enctype="multipart/form-data")
+      form#preRegisterForm
         h3  Preinscripción
         label
           | Tu Email
-          input#preRegisterEmail(style='color:black;',name='email', type='email', required='')
+          input#preRegisterEmail(style='color:black;', type='email', required='')
         label
           | Tus Nombres
-          input#preRegisterFirstName.capitalize(style='color:black;',name='name', type='text', required='')
+          input#preRegisterFirstName.capitalize(style='color:black;', type='email', required='')
         label
           | Tus Apellidos
-          input#preRegisterLastName.capitalize(style='color:black;', name='lastname',type='text', required='')
+          input#preRegisterLastName.capitalize(style='color:black;', type='email', required='')
         label
           | Tu DNI
-          input#preRegisterDNI(style='color:black;', name='dni', type='text', required='')
+          input#preRegisterDNI(style='color:black;', type='email', required='')
         label Tipo de inscripción 
-        select#preRegisterType.form-control(name='type')
+        select#preRegisterType.form-control(name='tipo')
           option(value='PROFESIONAL') Profesional y público en general
           option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
           option(value='ESTUDIANTE') Estudiante
         label
           | Tu ciudad
-          input#preRegisterCity.capitalize(type='text',name='city', style='color:black;', required='')
+          input#preRegisterCity.capitalize(type='text', style='color:black;', required='')
+        //-label
+          | Foto Voucher (Nro Cta: 540-38259813-0-99 BCP a nombre de : VELASQUEZ CRUZ YOBANA )
+          input#preRegisterVoucher(type='file', accept='image/*', required='')
         label
           | Tu número de celular
-          input#preRegisterCellphone(type='text', name='cellphone', style='color:black;', required='')
-        label
-          | Foto Voucher (Nro Cta: XXX-XXXXXXX-X-XX BCP a nombre de : YOVANA VELASQUEZ )
-          input#preRegisterVoucher(type='file', name='image',accept='image/*', required='')
+          input#preRegisterCellphone(type='text', style='color:black;', required='')
       button#submitPreRegister.btn-outline-inverse.green(disabled='') Enviar
   #preRegisterConcurseModal
     .close-preRegisterConcurseModal
