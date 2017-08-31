@@ -171,6 +171,11 @@ $(function(){
     var files = $('#preRegisterVoucher').get(0).files[0];
 
     console.log("files",files)
+    console.log("files 1",files.name)
+    console.log("files 2",files.size)
+    console.log("files 3",files.type)
+
+
     //var photo = document.getElementById("preRegisterVoucher");
     //var image = photo.files[0];
 
@@ -199,7 +204,11 @@ $(function(){
       'type': formData.get("type"),
       'city': formData.get("city"),
       'cellphone': formData.get("cellphone"),
-      'image':formData.get("image")
+      image:{
+            'name':files.name,
+            'size':files.size,
+            'type':files.type 
+      }
     };
     console.log("DATA",data);
     //if(email && firstName && lastName && dni && type && city && image_val){
