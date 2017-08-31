@@ -1,0 +1,63 @@
+#service-date {
+    text-align: center;
+    height: 430px;
+}
+#service-date img {
+    width: 50px;
+    margin: auto;
+}
+#service-date .date-cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.date-cont .date-info{
+    background: #fff;
+    width: 350px;
+    height: 280px;
+    margin: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 14px;
+}
+.date-info .date-circle {
+    background: #00aad4;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    margin: auto;
+}
+.title2{
+        margin: 15px 0;
+        text-transform: none;
+        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+.title{
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    }    
+p.theme {
+    font-size: 12px;
+    font-weight: 100;
+    text-transform: initial;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+@media (max-width: 750px) {
+    #service-date {
+        height: 1020px;
+    }
+    section p .theme{
+     display: 0;
+    }
+    h1.title {
+    font-size: 20px;
+    }
+    
+}
