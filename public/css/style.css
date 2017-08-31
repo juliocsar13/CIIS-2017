@@ -612,7 +612,7 @@ small.highlighted3 {
   nav .separator {
     margin: 20px 9px !important;
   }
-  section p,
+  /*section p,*/
   section .separator {
     display: none !important;
     color: #00aad4 !important;
@@ -848,8 +848,17 @@ opacity: 1;
   color: #ffffff;
   border: 1px solid #ffffff;
 }
+#section-date{
+  padding: 60px 0px;
+  height: 100vh;
+  box-sizing: border-box;
+  outline: none;
+}
+
 #pricing-table {
-  padding-top: 50px;
+  padding: 100px 0;
+  height: 100vh;
+  box-sizing: border-box;
 }
 #pricing-table .pricing {
   marign: 0;
@@ -1117,6 +1126,10 @@ padding: 30px 50px;
 
 .items-collapsed{
       margin-top: 35px;
+}
+
+.navigation.shrink ul.menu{
+  margin-top: 20px;
 }
 
 ul.menu li a{
@@ -1471,7 +1484,7 @@ li.hidden-sm.hidden-md.hidden-xss {
 }
 
 
-#auspiciadores h2{
+.subtitle-section,#auspiciadores h2{
   font-weight: bolder;
   padding-bottom: 0.8em;
   font-size:40px;color:#00aad4;
