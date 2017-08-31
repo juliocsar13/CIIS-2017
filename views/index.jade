@@ -13,22 +13,26 @@ block content
       span.separator
       .container_countdown_unit
         span#minutes.countdown_unit
-        span.countdown_unit_label  Minutos
+        span.countdown_unit_label  Minutos  
       span.separator
       .container_countdown_unit
         span#seconds.countdown_unit
         span.countdown_unit_label  segundos
-    h1
-      span.highlighted CONGRESO INTERNACIONAL 
-      span  DE INFORMATICA Y SISTEMAS    
+    h1      
+      span.highlighted
+        | CONGRESO
+        small.highlighted2  INTERNACIONAL
+      span
+        | DE
+        small.highlighted3  INFORMATICA Y SISTEMAS        
       span.subtitle Un evento al cual no debes faltar,
-      span.subtitle2 el mejor evento tecnologico del sur del Peru
+      span.subtitle2 el mejor evento tecnológico del sur del Perú
     .subscription
-   
+
       //-input#email(type='email', placeholder='Tu email')
-  
+
       //-button#subscribe.btn-outline.lg(type='button')  Registrate
-   
+
       button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
       br
     //
@@ -36,7 +40,7 @@ block content
         | Preinscríbete
         | al concurso de programación
   footer
-    
+
   #preRegisterModal
     .close-preRegisterModal
       img.closebt(src='img/closebt.svg', alt='')
@@ -55,7 +59,7 @@ block content
         label
           | Tu DNI
           input#preRegisterDNI(style='color:black;', name='dni', type='text', required='')
-        label Tipo de inscripción 
+        label Tipo de inscripción
         select#preRegisterType.form-control(name='type')
           option(value='PROFESIONAL') Profesional y público en general
           option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
@@ -126,10 +130,10 @@ block content
           | Tu Nombre
           input#contactName(style='color:black;', type='text')
         label
-          | Tu consulta 
+          | Tu consulta
           textarea#contactSubject(style='color:black;')
       button#submitContact.btn-outline-inverse(disabled='') Enviar
-  
+
   //section#speakers
     h2(style='font-size:40px;') Ponentes
     diw.row
@@ -291,7 +295,7 @@ block content
             | Ing. Alfredo Paz
             span.bold Universidad Nacional de San Agustin Arequipa
           td.cs335.blue(rowspan='2')
-            | MTech. MCA. Ankit Kumar 
+            | MTech. MCA. Ankit Kumar
             br
             span.bold  INICTEL
             span
@@ -323,7 +327,7 @@ block content
             span Cuba
           td.blue(rowspan='2')
             | Dra. Ana cuadros
-            span.bold Universidad Católica San Pablo de Arequipa 
+            span.bold Universidad Católica San Pablo de Arequipa
             span "Mapeamiento visual interactivo de grandes conjuntos de datos"
           td.navy(colspan='', rowspan='2', headers='')
             | Dr. Luis Marco Caceres Alvarez
@@ -417,9 +421,9 @@ block content
             | Concurso de Programación
           td.blue(rowspan='2')
           td.navy(colspan='', rowspan='2', headers='')
-            | Taller 
+            | Taller
             br
-            |                     MSc. Edwin Antonio Hinojosa Ramos 
+            |                     MSc. Edwin Antonio Hinojosa Ramos
             br
             |                     "IMPRESORA 3D"
           td.blue(rowspan='2')
@@ -436,15 +440,15 @@ block content
           td.cs240.green(rowspan='4')
           td.green(rowspan='4')
           td.cs240.orange(rowspan='4')
-            | Taller 
+            | Taller
             br
-            |                     MSc. Ludmer Edward Arcaya Arhuata 
+            |                     MSc. Ludmer Edward Arcaya Arhuata
             br
             |                     "DATA MINING CON ARBOLES DE DECISION"
           td.cs240.blue(rowspan='4')
-            | Taller 
+            | Taller
             br
-            |                     Lic. Dennis Larry Quispe Chavez 
+            |                     Lic. Dennis Larry Quispe Chavez
             br
             |                     "Bussiness Inteligence - Orientado DataWareouse"
         tr
@@ -543,7 +547,7 @@ block content
     article
       picture
         source(src='med-res.jpg')
-  
+
   //-section#subscription
     h2 Suscríbete y enterate de las actualizaciones!
     input#email(type='email', placeholder='Tu email')
@@ -572,7 +576,7 @@ block content
       input(type='email', name='email', placeholder='Tu email')
       input(type='text', name='subject', placeholder='Asunto')
       textarea(name='text', placeholder='Escribenos tu duda ')
- 
+
   section#auspiciadores
     //h2(style='font-size:40px;color:#00aad4;') Auspiciadores
     //img(src='/img/osiptel.png', alt='')
@@ -583,7 +587,7 @@ block content
     //img(src='/img/fontes.jpg', alt='')
     //img(src='/img/minsur.png', alt='')
     //img(src='/img/piscoscuneo.jpg', alt='')
-    h2(style='font-size:40px;color:#00aad4;padding-top: 50px;') Organizadores
+    h2 Organizadores
     img(src='/img/agile/logoesis.png', alt='')
     img(src='/img/agile/logounjbg.png', alt='')
   section#map
