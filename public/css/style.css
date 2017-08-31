@@ -252,7 +252,7 @@ header section p {
 }
 
 #pricing-table{
-  background-image: url("/img/bg.jpg");
+  background-color: #263C49;
   background-size: cover;
   -webkit-filter: contrast(110%);
   filter: contrast(110%);
@@ -1087,10 +1087,20 @@ nav ul ul ul li {
 li > a:only-child:after { content: ''; }
 
 .separator {
-    border: 2px solid #ffffff;
+    border: 2px solid #04e0ab;
     margin: 30px 15px;
     margin-top: 50px;
 }
+
+.separator2{
+  border: 2px solid #04e0ab;
+  display: flex;
+  height: 33px;
+  margin: 0px 15px;
+  margin-top: 12px;
+}
+
+
 
 /* Media Queries
 --------------------------------------------- */
@@ -1107,6 +1117,10 @@ padding: 30px 50px;
 
 .items-collapsed{
       margin-top: 35px;
+}
+
+ul.menu li a{
+  padding: 23px 0px;
 }
 
 @media all and (max-width : 768px) {
@@ -1155,6 +1169,10 @@ padding: 30px 50px;
     font-size:17px;
     text-decoration:none;
     border:none;
+  }
+
+  .navigation label.toggle {
+    padding:20px 20px;
   }
 
   .toggle:hover {
@@ -1313,7 +1331,7 @@ padding: 30px 50px;
   border: 2px solid #fff;
   font-size: 1.2em;
   background-color: transparent;
-  background: #92c250;
+  background: #00aad4;
 }
 
 #price{
@@ -1355,6 +1373,7 @@ padding: 30px 50px;
     margin: 0px;
     padding: 0px 0px;
   }
+
   #logo{
     padding: 30px 40px;
   }
