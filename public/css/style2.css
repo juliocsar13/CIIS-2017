@@ -1308,7 +1308,7 @@ padding: 30px 50px;
     
   }
   #index button {  
-  margin-left: 0;  
+/*  margin-left: 0;  */
   }
   #countdown {
     
@@ -1387,6 +1387,8 @@ li.hidden-sm.hidden-md.hidden-xss {
     width: 85px;
     height: 85px;
     margin-left: 20px;
+    filter: saturate(250%);
+}
 
   }
 
