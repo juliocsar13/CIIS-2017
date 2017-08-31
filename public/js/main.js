@@ -192,7 +192,7 @@ $(function(){
 
     formData.append('cellphone', cellphone);
 
-    formData.append('image', files);
+    formData.append('image', image);
 
     
 
@@ -230,21 +230,20 @@ $(function(){
         $.ajax({
           url: '/preregistro',
           type: "POST",
-          data: JSON.stringify(data),
-          //data:formData,
+          data:formData,
           
-          //processData: false,  // tell jQuery not to process the data
-          ///contentType: false   // tell jQuery not to set contentType
+          processData: false,  // tell jQuery not to process the data
+          contentType: false   // tell jQuery not to set contentType
             // tell jQuery not to process the data
-          contentType:"application/json; charset=utf-8",
-          dataType:"json" // tell jQuery not to set contentType
+          //contentType:"application/json; charset=utf-8",
+          //dataType:"json" // tell jQuery not to set contentType
+          //data: JSON.stringify(data),
 
         //}).success(function(){
           //console.log("EMAIL DE ENVIO",email)
             //return subscribeMailChimpEmail(email)
 
-          })
-          .success(function(){
+          }).success(function(){
             console.log('success')
             $('.closebt').click();
             toastr.success("Gracias por preinscribirte =)");
