@@ -201,13 +201,29 @@ $(".delete-participant").click(deleteParticipant)
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
 
+<<<<<<< HEAD
+=======
+    //console.log("files",files)
+    //console.log("files 1",files.name)
+    //console.log("files 2",files.size)
+    //console.log("files 3",files.type)
+
+
+    //var photo = document.getElementById("preRegisterVoucher");
+    //var image = photo.files[0];
+
+    //var form = document.getElementById('preRegisterForm')
+    //var form = $('preRegisterForm')[0];
+>>>>>>> 1b20edcc8a87f2e289bc56d22282626969804437
     var formData = new FormData();
 
+   
     formData.append('email', email);
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
     formData.append('dni', dni);
     formData.append('type', type);
+<<<<<<< HEAD
     formData.append('city', city);;
     for (var key of formData.entries()) {
       console.log(key[0] + ', ' + key[1]);
@@ -222,11 +238,43 @@ $(".delete-participant").click(deleteParticipant)
       'cellphone': cellphone
 
     };
+=======
+    formData.append('city', city);
+
+    formData.append('cellphone', cellphone);
+
+    formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
+
+    
+
+    var data = {
+      'email': formData.get("email"),
+      'name': formData.get("firstName"),
+      'lastname': formData.get("lastName"),
+      'dni': formData.get("dni"),
+      'type': formData.get("type"),
+      'city': formData.get("city"),
+      'cellphone': formData.get("cellphone"),
+      image:{
+            'name':files.name,
+            'size':files.size,
+            'type':files.type 
+      },
+      images:formData.get('image')
+    };
+
+    for (var value of formData.values()) {
+      console.log("formdata",value+formData.get('image')); 
+    }
+    //console.log("formdata",formData.values())
+    //console.log("DATA",data);
+>>>>>>> 1b20edcc8a87f2e289bc56d22282626969804437
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
 
 
+<<<<<<< HEAD
     if(email && firstName && lastName && dni && type && city){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
@@ -272,6 +320,64 @@ $(".delete-participant").click(deleteParticipant)
   })
 
 
+=======
+  if(email && firstName && lastName && dni && type && city){
+    var myImage = document.createElement("img");
+    myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
+    myImage.className = 'spiningAjax';
+    var self = e.currentTarget;
+    self.appendChild(myImage);
+    self.disabled= true;
+
+      
+        var config = {
+          headers: {'Content-Type': 'application/json'}
+        };
+
+        //axios.get('https://api.github.com/users/codeheaven-io', config);
+        axios.post('/preregistro', formData, config);
+        
+                      /* 
+        $.ajax({
+          url: '/preregistro',
+          type: "POST",
+          data:JSON.stringify(formData),
+          contentType:"multipart/form-data",
+          dataType: 'json',
+          //processData: false,  // tell jQuery not to process the data
+          //contentType: false,   // tell jQuery not to set contentType
+            // tell jQuery not to process the data
+          //contentType:"application/json; charset=utf-8",
+      
+        //}).success(function(){
+          //console.log("EMAIL DE ENVIO",email)
+            //return subscribeMailChimpEmail(email)
+
+          success:(function(){
+            console.log('success')
+            $('.closebt').click();
+            toastr.success("Gracias por preinscribirte =)");
+          }),
+          error:(function(){
+
+            toastr.error("Hubo un error");
+          }),
+          always:(function(){
+            $('#contactEmail').val('');
+            $('#contactName').val('');
+            $('#contactSubject').val('');
+            self.removeChild(myImage);
+            self.disabled= false;
+          })
+          });*/
+
+      }
+      else{
+        toastr.error("Llene todos los campos");
+      }
+    })
+    
+>>>>>>> 1b20edcc8a87f2e289bc56d22282626969804437
   function subscribeMailChimp(e){
     var email = $('#email');
     if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1) $('#subscribe').prop('disabled', false);
@@ -459,7 +565,10 @@ $(".delete-participant").click(deleteParticipant)
       animation: google.maps.Animation.DROP
     });
   };
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1b20edcc8a87f2e289bc56d22282626969804437
 })
 
 

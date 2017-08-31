@@ -6,7 +6,7 @@ var multer = require ('multer');
 
 
 module.exports.register = function (req,res) {
-    console.log('registrando');
+    //console.log('registrando',req.files);
     var data = req.body;
     console.log(req.body);
     var user = new User();
