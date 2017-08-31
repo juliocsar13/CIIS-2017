@@ -2,13 +2,16 @@ var User = require('../collections/user');
 var jwt = require('jsonwebtoken');
 var uploaderController = require('./uploader');
 var mail = require('./mail');
+const formidable = require("express-formidable");
 
 
 
 module.exports.register = function (req,res) {
-    console.log('registrando',req.files);
+    //console.log('registrando',req.files);
     var data = req.body;
     console.log(req.body);
+    console.log(req.params);
+    console.log(req.query);
 
     const uploaderOptions = {
       service: 'dropbox', file: req.file

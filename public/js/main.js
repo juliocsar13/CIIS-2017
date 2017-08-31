@@ -231,25 +231,26 @@ $(function(){
     self.appendChild(myImage);
     self.disabled= true;
 
-    
-       
+      
+        var config = {
+          headers: {'Content-Type': 'application/json'}
+        };
+
+        //axios.get('https://api.github.com/users/codeheaven-io', config);
+        axios.post('/preregistro', formData, config);
+        
+                      /* 
         $.ajax({
           url: '/preregistro',
           type: "POST",
-          data:formData,
-          contentType:"multipart/form-data"
-          cache: false,
+          data:JSON.stringify(formData),
+          contentType:"multipart/form-data",
           dataType: 'json',
-          //cache:false,
-          processData: false,  // tell jQuery not to process the data
-          contentType: false,   // tell jQuery not to set contentType
+          //processData: false,  // tell jQuery not to process the data
+          //contentType: false,   // tell jQuery not to set contentType
             // tell jQuery not to process the data
           //contentType:"application/json; charset=utf-8",
-          //
-
-           // tell jQuery not to set contentType
-          //data: JSON.stringify(data),
-
+      
         //}).success(function(){
           //console.log("EMAIL DE ENVIO",email)
             //return subscribeMailChimpEmail(email)
@@ -270,7 +271,7 @@ $(function(){
             self.removeChild(myImage);
             self.disabled= false;
           })
-          });
+          });*/
 
       }
       else{

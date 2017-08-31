@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var index = require('./routes/index');
 var users = require('./routes/users');
+const formidable = require("express-formidable");
 
 var config  = require('./config/config.js');
 
@@ -39,6 +40,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+///app.use(formidable());
 
 
 
