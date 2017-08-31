@@ -270,6 +270,18 @@ header section p {
   /*color: #b3d44e;*/
   margin-top: -16px;
 }
+small.highlighted2 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 0.99em;
+    color: #ffffff;
+}
+small.highlighted3 {
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 0.99em;
+    color: #00aad4;
+}
 #index h1 span {
   font-family: 'Open Sans';
     display: block;
@@ -971,6 +983,7 @@ z-index: 15;
   font-size:20px;
   line-height: 60px;
   height: inherit;
+  cursor: pointer;
 }
 
 /* Since we'll have the "ul li" "float:left"
@@ -1058,7 +1071,7 @@ nav ul ul ul li {
 li > a:only-child:after { content: ''; }
 
 .separator {
-    border: 2px solid #b3d44e;
+    border: 2px solid #ffffff;
     margin: 30px 15px;
     margin-top: 50px;
 }
@@ -1242,7 +1255,7 @@ padding: 30px 50px;
 }
 
 .header-title-number {
-    color: #b3d44e;
+    color: #FFFFFF;
     font-size: 1.3em;
     padding: 0;
     margin-bottom: -20px;
