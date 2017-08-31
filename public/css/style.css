@@ -1071,7 +1071,8 @@ nav ul ul ul li {
 li > a:only-child:after { content: ''; }
 
 .separator {
-    border: 2px solid #ffffff;
+    border: 2px solid #04e0ab;
+
     margin: 30px 15px;
     margin-top: 50px;
 }
@@ -1139,6 +1140,10 @@ padding: 30px 50px;
     font-size:17px;
     text-decoration:none;
     border:none;
+  }
+
+  .navigation label.toggle {
+    padding:20px 20px;
   }
 
   .toggle:hover {
@@ -1339,6 +1344,11 @@ padding: 30px 50px;
     margin: 0px;
     padding: 0px 0px;
   }
+
+  ul.menu li a{
+    padding: 23px 0px;
+  }
+
   #logo{
     padding: 30px 40px;
   }
