@@ -2,7 +2,7 @@ var User = require('../collections/user');
 var jwt = require('jsonwebtoken');
 var uploaderController = require('./uploader');
 var mail = require('./mail');
-
+var multer = require ('multer');
 
 
 module.exports.register = function (req,res) {

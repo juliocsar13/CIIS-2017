@@ -6,13 +6,15 @@ var postMasterController = require('../controllers/postMasterController');
 
 var mailController = require('../controllers/mail');
 
+const uploadMiddleware = require('../controllers/uploader').multer;
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.route('/preregistro')
-        .get(userController.createView)
-        .post(userController.register);
+router.route('/preregistro').get(userController.createView);
+
+router.post('/preregistro',uploadMiddleware.single('image'), userController.preregister)
 
 router.post('/contacto', mailController.contact);
 
