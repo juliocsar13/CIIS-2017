@@ -1072,6 +1072,7 @@ li > a:only-child:after { content: ''; }
 
 .separator {
     border: 2px solid #04e0ab;
+
     margin: 30px 15px;
     margin-top: 50px;
 }
