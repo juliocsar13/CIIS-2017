@@ -170,10 +170,10 @@ $(function(){
     var image_val = $('#preRegisterVoucher').val();
     var files = $('#preRegisterVoucher').get(0).files[0];
 
-    console.log("files",files)
-    console.log("files 1",files.name)
-    console.log("files 2",files.size)
-    console.log("files 3",files.type)
+    //console.log("files",files)
+    //console.log("files 1",files.name)
+    //console.log("files 2",files.size)
+    //console.log("files 3",files.type)
 
 
     //var photo = document.getElementById("preRegisterVoucher");
@@ -181,8 +181,9 @@ $(function(){
 
     //var form = document.getElementById('preRegisterForm')
     //var form = $('preRegisterForm')[0];
-    var formData = new FormData(document.querySelector("preRegisterForm"));
+    var formData = new FormData();
 
+   
     formData.append('email', email);
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
@@ -192,7 +193,7 @@ $(function(){
 
     formData.append('cellphone', cellphone);
 
-    formData.append('image', image);
+    formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
 
     
 
@@ -208,9 +209,15 @@ $(function(){
             'name':files.name,
             'size':files.size,
             'type':files.type 
-      }
+      },
+      images:formData.get('image')
     };
-    console.log("DATA",data);
+
+    for (var value of formData.values()) {
+      console.log("formdata",value+formData.get('image')); 
+    }
+    //console.log("formdata",formData.values())
+    //console.log("DATA",data);
     //if(email && firstName && lastName && dni && type && city && image_val){
 
     //if(email && firstName && lastName && dni && type && city){
@@ -225,48 +232,52 @@ $(function(){
     self.disabled= true;
 
     
-
-        
+       
         $.ajax({
           url: '/preregistro',
           type: "POST",
           data:formData,
-          
+
+          cache: false,
+          dataType: 'json',
+          //cache:false,
           processData: false,  // tell jQuery not to process the data
-          contentType: false   // tell jQuery not to set contentType
+          contentType: false,   // tell jQuery not to set contentType
             // tell jQuery not to process the data
           //contentType:"application/json; charset=utf-8",
-          //dataType:"json" // tell jQuery not to set contentType
+          //
+
+           // tell jQuery not to set contentType
           //data: JSON.stringify(data),
 
         //}).success(function(){
           //console.log("EMAIL DE ENVIO",email)
             //return subscribeMailChimpEmail(email)
 
-          }).success(function(){
+          success:(function(){
             console.log('success')
             $('.closebt').click();
             toastr.success("Gracias por preinscribirte =)");
-          })
-          .error(function(){
+          }),
+          error:(function(){
 
             toastr.error("Hubo un error");
-          })
-          .always(function(){
+          }),
+          always:(function(){
             $('#contactEmail').val('');
             $('#contactName').val('');
             $('#contactSubject').val('');
             self.removeChild(myImage);
             self.disabled= false;
           })
+          });
 
       }
       else{
         toastr.error("Llene todos los campos");
       }
-
+    })
     
-  })
   function subscribeMailChimp(e){
     var email = $('#email');
     if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1) $('#subscribe').prop('disabled', false);
@@ -302,13 +313,135 @@ $(function(){
   })
   //INIT MAPS
   google.maps.event.addDomListener(window, 'load', init);
-  var coordenadas=new google.maps.LatLng(-18.025+352, -70.249157);
+  var coordenadas=new google.maps.LatLng(-18.025352, -70.249157);
+
+
   function init() {
+
     var myOptions = {
         scrollwheel: false,
         zoom: 15,
         center: coordenadas,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        // styles:
+        //       [
+        //           {
+        //               "featureType": "landscape",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "lightness": 65
+        //                               },
+        //                               {
+        //                                   "visibility": "on"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "poi",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "lightness": 51
+        //                               },
+        //                               {
+        //                                   "visibility": "simplified"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "road.highway",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "visibility": "simplified"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "road.arterial",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "lightness": 30
+        //                               },
+        //                               {
+        //                                   "visibility": "on"
+        //                               }
+        //                            ]
+        //           },
+        //           {
+        //               "featureType": "road.local",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "lightness": 40
+        //                               },
+        //                               {
+        //                                   "visibility": "on"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "transit",
+        //               "stylers": [
+        //                               {
+        //                                   "saturation": -100
+        //                               },
+        //                               {
+        //                                   "visibility": "simplified"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "administrative.province",
+        //               "stylers": [
+        //                               {
+        //                                   "visibility": "off"
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "water",
+        //               "elementType": "labels",
+        //               "stylers": [
+        //                               {
+        //                                   "visibility": "on"
+        //                               },
+        //                               {
+        //                                   "lightness": -25
+        //                               },
+        //                               {
+        //                                   "saturation": -100
+        //                               }
+        //                           ]
+        //           },
+        //           {
+        //               "featureType": "water",
+        //               "elementType": "geometry",
+        //               "stylers": [
+        //                               {
+        //                                   "hue": "#ffff00"
+        //                               },
+        //                               {
+        //                                   "lightness": -25
+        //                               },
+        //                               {
+        //                                   "saturation": -97
+        //                               }
+        //                           ]
+        //           }
+        //       ]
     };
 
     var map = new google.maps.Map(document.getElementById('map'), myOptions);
@@ -320,7 +453,7 @@ $(function(){
       title:"CIIS",
       animation: google.maps.Animation.DROP
     });
-}
+  };
 })
 
 

@@ -6,7 +6,7 @@ var mail = require('./mail');
 
 
 module.exports.register = function (req,res) {
-    console.log('registrando');
+    console.log('registrando',req.files);
     var data = req.body;
     console.log(req.body);
 
