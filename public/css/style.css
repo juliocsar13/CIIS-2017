@@ -203,7 +203,7 @@ header section p {
   transition: all 0.4s ease;
   /*width: 32%;  */
   /*margin-left: -13%;
-  margin-top: 21px;  
+  margin-top: 21px;
   transition: all 0.4s ease;*/
 
 }
@@ -274,7 +274,7 @@ header section p {
   font-family: 'Open Sans';
     display: block;
     font-size: 1.6em;
-    font-weight: 700; 
+    font-weight: 700;
     /* color: #00aad4; */
     /*margin-left: 74px;*/
 }
@@ -295,7 +295,7 @@ header section p {
 #index h1 span.highlighted {
   font-family: 'Open Sans';
   font-weight: 700;
-  font-size: 1.6em;  
+  font-size: 1.6em;
   color: #00aad4;
   /*margin-left: 58px;*/
 }
@@ -307,14 +307,14 @@ header section p {
     margin-left: 0;
   }
   #index h1 span {
-   margin-left: 0; 
+   margin-left: 0;
    font-size: 1.35em;
   }
   .subtitle{
-   font-size: 1em; 
+   font-size: 1em;
   }
   #index h1 span.subtitle {
-    font-size: 14px; 
+    font-size: 14px;
     margin-left: 28.9%;
     font-weight: 200;
     /* display: block; */
@@ -322,7 +322,7 @@ header section p {
     margin-top: 7px;
   }
   #index h1 span.subtitle2 {
-    font-size: 14px;    
+    font-size: 14px;
     margin-left: 31.4%;
     font-weight: 200;
     margin: auto;
@@ -541,7 +541,7 @@ header section p {
     width: 100%;
     display: block;
     max-width: 100%;
-    margin-top: 9px;  
+    margin-top: 9px;
   }
   #index .subscription button {
     width: 100%;
@@ -554,11 +554,11 @@ header section p {
     box-sizing: border-box;
   }
   #countdown {
-    text-align: center; 
-    display: flex;    
+    text-align: center;
+    display: flex;
     justify-content: center;
     margin-top: 56%;
-    margin-left: 0; 
+    margin-left: 0;
   }
 
 
@@ -579,7 +579,7 @@ header section p {
     margin-top: 0px;
   }
   nav ul {
-    padding-left: 5% !important;
+    /*padding-left: 5% !important;*/
   }
   nav .separator {
     margin: 20px 9px !important;
@@ -600,7 +600,7 @@ header section p {
   }
 }
 @media (max-width: 768px) {
-  
+
   body {
     font-size: 14px;
   }
@@ -1080,9 +1080,9 @@ padding: 30px 50px;
       margin-top: 25px;
 }
 
-@media all and (max-width : 768px) {  
-  a:hover {    
-     border-top: 0; 
+@media all and (max-width : 768px) {
+  a:hover {
+     border-top: 0;
   }
   nav a{
     padding-top: 0;
@@ -1097,7 +1097,9 @@ padding: 30px 50px;
 
   .menu{
     margin-top:0px;
-    background: black;
+    /*background: black;*/
+    background: rgba(0,0,0,0.8);
+    right: 5px;
   }
 
   .items{
@@ -1117,7 +1119,8 @@ padding: 30px 50px;
   /* Stylinf the toggle lable */
   .toggle {
     display: block;
-    background-color: #254441;
+    /*background-color: #254441;*/
+    background-color: rgba(0, 137, 144, 1);
     padding:14px 20px;
     color:#FFF;
     font-size:17px;
@@ -1126,12 +1129,16 @@ padding: 30px 50px;
   }
 
   .toggle:hover {
-    background-color: #000000;
+    
+    background-color: rgba(0, 137, 144, 0.85);
   }
 
   /* Display Dropdown when clicked on Parent Lable */
   [id^=drop]:checked + ul {
     display: block;
+    position: absolute;
+    width: 100vw;
+    margin-top: -5px;
   }
 
   /* Change menu item's width to 100% */
@@ -1205,7 +1212,7 @@ padding: 30px 50px;
   .shrink-logo {
     transform: scale(0.6);
     position: relative;
-    top: -15px;
+    /*top: -15px;*/
     padding: 10px;
   }
 
@@ -1288,27 +1295,27 @@ padding: 30px 50px;
   #countdown{
    margin-left: -85px;
   }
-  #index h1 span.highlighted {  
+  #index h1 span.highlighted {
   margin-left: 58px;
   }
-  #index h1 span {  
+  #index h1 span {
     margin-left: 74px;
   }
-  #index h1 span.subtitle {    
+  #index h1 span.subtitle {
     width: 307px;
-     text-align: center; 
+     text-align: center;
     margin-left: 28.9%;
-    
+
   }
   #index h1 span.subtitle2 {
-    
+
     width: 307px;
-     text-align: center; 
+     text-align: center;
     margin-left: 31.4%;
-    
+
   }
-  #index button {  
-  margin-left: -21.3%;  
+  #index button {
+  margin-left: -21.3%;
   }
   #countdown {
     margin-top: 5%;
@@ -1316,7 +1323,8 @@ padding: 30px 50px;
 }
 @media all and (max-width : 1300px) {
   nav a{
-    margin: 0 5px;
+    margin: 0px;
+    padding: 25px 0px;
   }
   #logo{
     padding: 30px 40px;
@@ -1387,7 +1395,7 @@ li.hidden-sm.hidden-md.hidden-xss {
     width: 85px;
     height: 85px;
     margin-left: 20px;
-    
+
 
   }
 
@@ -1417,6 +1425,8 @@ li.hidden-sm.hidden-md.hidden-xss {
 #auspiciadores h2{
   font-weight: bolder;
   padding-bottom: 0.8em;
+  font-size:40px;color:#00aad4;
+  padding-top: 50px;
 }
 
 
@@ -1448,8 +1458,19 @@ td span{
 .baseProg:hover{
   color:#097590
 }
-@media all and (max-width : 768px) {    
+@media all and (max-width : 768px) {
+  #auspiciadores h2{
+      font-size: 30px;
+      padding-top: 0 !important;
+  }
+
+  #auspiciadores  img{
+    width: 170px;
+    padding:1em;
+  }
+
   li.hidden-sm.hidden-md.hidden-xss {
     margin-top: -58%;
   }
+
 }
