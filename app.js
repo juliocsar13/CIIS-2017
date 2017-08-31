@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 var index = require('./routes/index');
 var users = require('./routes/users');
-var upload = multer({ dest: 'uploads/' })
+
 
 var config  = require('./config/config.js');
 

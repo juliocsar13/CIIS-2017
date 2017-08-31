@@ -3,7 +3,8 @@
 
 const fs = require ('fs');
 const Dropbox = require ('dropbox');
-const multer = require ('multer');
+var multer = require ('multer');
+var upload = multer({ dest: 'uploads/' })
 
 const storage = multer.diskStorage ({
 
