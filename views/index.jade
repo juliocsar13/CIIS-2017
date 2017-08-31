@@ -24,9 +24,9 @@ block content
         small.highlighted2  INTERNACIONAL
       span
         | DE
-        small.highlighted3  INFORMATICA Y SISTEMAS        
-      span.subtitle Un evento al cual no debes faltar,
-      span.subtitle2 el mejor evento tecnológico del sur del Perú
+        small.highlighted3  INFORMÁTICA Y SISTEMAS        
+      span.subtitle Un évento al cual no debes faltar,
+      span.subtitle2 el mejor évento tecnológico del sur del Perú
     .subscription
 
       //-input#email(type='email', placeholder='Tu email')
@@ -134,7 +134,7 @@ block content
           textarea#contactSubject(style='color:black;')
       button#submitContact.btn-outline-inverse(disabled='') Enviar
 
-  //section#speakers
+  //-section#speakers
     h2(style='font-size:40px;') Ponentes
     diw.row
       article.col-sm-6.col-md-4.mb1
@@ -250,7 +250,50 @@ block content
             br
             span Tecnologías IBM en procesos de desarrollo de software
           p.mb0
-  //section#schedule.section.section-page
+  //-
+    section#schedule.section.section-page
+      h1(style='color:#00aad4;font-size: 2.5em;font-weight:bolder ;padding-bottom: 1em;padding-top:.2em;')
+        | Lineas de Investigacion
+      .col-md-12
+        h2
+        .col-md-3
+          .latest-post(style="background:white;height: 400px;")
+            img.img-responsive(src='images/datos.jpg', alt='')
+            h4
+              a(style="color:black") Analitica de datos
+            .post-details
+              span.date
+            p
+              | base de datos estructura cubos minería data mining etc pronóstico redes neuronales business intelligence
+
+        .col-md-3
+          .latest-post(style="background:white;height: 400px;")
+            img.img-responsive(src='images/conectividad.jpg', alt='')
+            h4
+              a(style="color:black") Conectividad
+            .post-details
+            p
+              | Redes - telematica, seguridad de redes, ethical hacking, wifi
+        .col-md-3
+          .latest-post(style="background:white;height: 400px;")
+            img.img-responsive(src='images/cumputacion.jpg', alt='' )
+            h4
+              a(style="color:black") C. de la computacion
+            .post-details
+              span.date
+            p
+              | reconocimiento de voz, visión computacional, planificadores, procesamiento de imágenes, investigacion de operaciones, sistemas
+        .col-md-3
+          .latest-post(style="background:white;height: 400px;")
+            img.img-responsive(src='images/software.png', alt='')
+            h4
+              a(style="color:black") Ingeniería de software
+            .post-details
+              span.date
+            p
+              | paradigmas de programación software.
+
+  //-section#schedule.section.section-page
     h1(style='color:#00aad4;font-size: 2.5em;font-weight:bolder ;padding-bottom: 1em;padding-top:.2em;')
       | Cronograma de
       | Ponencias
