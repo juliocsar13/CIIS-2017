@@ -307,11 +307,7 @@ $(".delete-participant").click(deleteParticipant)
   //INIT MEDIA PLAYER
   $('video,audio').mediaelementplayer();
 
-
-  //COUNTDOWN
-
   function formatTens(n) {
-    // format integers to have at least two digits
     return (n < 10) ? '0'+n : ''+n;
   }
 
