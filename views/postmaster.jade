@@ -552,16 +552,20 @@ html(lang='en')
       SCRIPTS
       ==============================
     //script(src='js/jquery.js')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
+
+    //-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script(src='js/bootstrap.min.js')
     script(src='js/jquery.parallax.js')
     script(src='js/owl.carousel.min.js')
-    script(src='js/smoothscroll.js')
     script(src='js/wow.min.js')
     script(src='js/custom.js')
     //-script(src='js/dscountdown.js')
     script(src='js/dscountdown.min.js')
+    script(src='js/smoothscroll.js')
+
     script(src='js/postmaster.js')
+
     script.
       function getTimeRemaining(endtime) {
       var t = Date.parse(endtime) - Date.parse(new Date());
