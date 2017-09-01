@@ -45,7 +45,7 @@ $("#preRegisterConcurseBtn").animatedModal({
 
 })
 
-
+/*
 $(".preRegisterConcurseForm").submit(function (e) {
   e.preventDefault();
   e.stopPropagation();
@@ -78,7 +78,8 @@ $(".preRegisterConcurseForm").submit(function (e) {
   })
   // console.log(participants);
 })
-
+*/
+/*
 function deleteParticipant(e) {
   e.preventDefault();
   $(this).parent().parent().parent().remove();
@@ -124,7 +125,7 @@ $(".delete-participant").click(deleteParticipant)
     else $('#submitContact').prop('disabled', true);
    })
 
-
+*/
    $('#preRegisterEmail').on('input',function(e){
     if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1){
       flag_preRegisterEmail = true;

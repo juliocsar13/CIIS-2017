@@ -4,25 +4,47 @@ $(function(){
 
 
 
-function formatTens(n) {
-    // format integers to have at least two digits
-    return (n < 10) ? '0'+n : ''+n;
-  }
+  $('#submitContact1').click(function(e){
+    var email = $('#contactEmail1').val();
+    var name = $('#contactName1').val();
+    var subject = $('#contactSubject1').val();
 
-  var finalDate = new Date('09/15/2017 09:00')
+    var contact_form = {
+      email : email,
+      name: name,
+      subject: subject
+    }
+    console.log("hola",contact_form)
 
-  $('#countdown').countdown(finalDate,function(event){
-    var seconds = formatTens(event.offset.seconds);
-    var minutes = formatTens(event.offset.minutes);
-    var hours = formatTens(event.offset.hours);
-    var days = formatTens(event.offset.totalDays);
+    if(email && name && subject){
+      var myImage = document.createElement("img");
+      myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
+      myImage.className = 'spiningAjax';
+      var self = e.currentTarget;
+      self.appendChild(myImage);
+      self.disabled= true;
 
-    $('#days').text(days);
-    $('#hours').text(hours);
-    $('#minutes').text(minutes);
-    $('#seconds').text(seconds);
 
+      $.post('/contacto',contact_form)
+        .success(function(){
+          $('.closebt').click();
+          toastr.success("Te responderemos lo mas pronto posible  =)");
+
+        })
+        .error(function(){
+          toastr.error("Hubo un error");
+        })
+        .always(function(){
+          $('#contactEmail').val('');
+          $('#contactName1').val('');
+          $('#contactSubject1').val('');
+          self.removeChild(myImage);
+          self.disabled= false;
+        })
+    }
   })
+
+
 
 })
 
