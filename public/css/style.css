@@ -269,7 +269,7 @@ header section p {
 }
 
 .menu{
-  margin-top:80px;
+      margin-top: 51px;
   margin-right: 20px;
 }
 
@@ -307,7 +307,7 @@ small.highlighted3 {
     /*margin-left: 74px;*/
 }
 #index h1 span.subtitle {
-    font-size: 14px;
+    font-size: 17px;
    /* width: 307px;*/
     /* text-align: center; */
     /*margin-left: 28.9%;*/
@@ -1129,14 +1129,14 @@ padding: 30px 50px;
 }
 
 .navigation.shrink ul.menu{
-  margin-top: 20px;
+      margin-top: 14px;
 }
 
 ul.menu li a{
   padding: 23px 0px;
 }
 
-@media all and (max-width : 768px) {
+@media all and (max-width : 1008px) {
   a:hover {
      border-top: 0;
   }
@@ -1363,8 +1363,9 @@ ul.menu li a{
   }
   #index h1 span.subtitle {
     width: 307px;
-     text-align: center;
-    margin-left: 28.9%;
+    text-align: center;
+    margin-left: 32.5%;
+    font-size: 16px;
 
   }
   #index h1 span.subtitle2 {
@@ -1462,7 +1463,7 @@ li.hidden-sm.hidden-md.hidden-xss {
 #schedule{
   padding: 30px;  
   background-color: #263C49;
-  height: 690px;
+  height: 777%;
 }
 
 
@@ -1476,14 +1477,14 @@ li.hidden-sm.hidden-md.hidden-xss {
 #auspiciadores{
   background: white;
   padding: 4em;
+  height: 500px;
 }
 
 
-.subtitle-section,#auspiciadores h2{
-  font-weight: bolder;
-  padding-bottom: 0.8em;
-  font-size:40px;color:#00aad4;
-  padding-top: 50px;
+.subtitle-section,#auspiciadores,#Organizadores h2{
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px black;
+    font-weight: bolder;
 }
 
 
@@ -1563,6 +1564,7 @@ img.img-responsive3, img.img-responsive4 {
     height: 351px;
     background-color: white;
     border-radius: 16px;
+    margin-bottom: 18px;
 }
 .text{
       font-size: 13px;
@@ -1599,4 +1601,20 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
     font-weight: 700;
     font-family: 'Open Sans';    
     color: black
-}*/
+}*/}
+.logo {
+    width: 160px;
+}
+#Organizadores .title-org {
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px black;
+    font-weight: bolder;
+    color:#00aad4;
+}
+.title-org {
+    margin-top: 70px;
+    margin-bottom: 60px;
+}
+  #Organizadores {
+    height: 400px;
+}

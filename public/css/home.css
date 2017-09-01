@@ -119,3 +119,10 @@ p.theme {
     }
 
 }
+
+@media (max-width: 480px) {
+
+}
+@media (min-width: 568px) {
+    
+}
