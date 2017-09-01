@@ -19,6 +19,9 @@ html(lang='en')
     link(rel='stylesheet', href='css/font-awesome.min.css')
     link(rel='stylesheet', href='css/owl.theme.css')
     link(rel='stylesheet', href='css/owl.carousel.css')
+    link(ref="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css", rel="stylesheet")
+    
+    
     // Main css
     link(rel='stylesheet', href='css/style1.css')
     // Google Font
@@ -420,12 +423,17 @@ html(lang='en')
               | La preinscripción en línea facilita y agiliza su proceso de su inscripción. Por favor, haga clic en 'Preinscripción' una vez llenado los campos requerídos.
           .wow.fadeInUp.col-md-5.col-sm-5(data-wow-delay='1s')
             form(action='#', method='post')
-              input#firstname.form-control(name='firstname', type='text', placeholder='Nombre Completo')
-              input#lastname.form-control(name='instituto', type='text', placeholder='Instituto del que Proviene')
-              input#phone.form-control(name='celular', type='telephone', placeholder='Celular')
-              input#email.form-control(name='email', type='email', placeholder='Email')
+              input#firstnamePostMaster.form-control(name='firstname', type='text', placeholder='Nombres', required='')
+              input#lastnamePostMaster.form-control(name='lastname', type='text', placeholder='Apellidos', required='')
+              input#institutoPostMaster.form-control(name='instituto', type='text', placeholder='Instituto del que Proviene',required='')
+              select#typePostMaster.form-control(name='tipo', required='')
+                option(value='PROFESIONAL') Profesional y público en general
+                option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
+                option(value='ESTUDIANTE') Estudiante
+              input#phonePostMaster.form-control(name='celular', type='telephone', placeholder='Celular', required='')
+              input#emailPostMaster.form-control(name='email', type='email', placeholder='Email', required='')
               .col-md-offset-6.col-md-6.col-sm-offset-1.col-sm-10
-                input#submit.form-control(name='submit', type='submit', value='Preinscripción')
+                input#submitPreinscripcionPostMaster.form-control(name='submit', type='submit', value='Preinscripción')
           .col-md-1
     //
       =========================
@@ -500,7 +508,7 @@ html(lang='en')
                 input#contactEmail1.form-control(name='email', type='email', placeholder='Email')
                 textarea#contactSubject1.form-control(name='message', rows='5', placeholder='Mensaje')
                 .col-md-6.col-sm-10
-                  button#submitContact1.form-control( value='Enviar', style='background:#f2545f;')
+                  input#submitContact1.form-control( type='submit',value='Enviar', style='background:#f2545f;')
     //
       =========================
       FOOTER SECTION
@@ -563,6 +571,7 @@ html(lang='en')
     script(src='js/dscountdown.js')
     script(src='js/dscountdown.min.js')
     script(src='js/postmaster.js')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js")
     script.
       function getTimeRemaining(endtime) {
       var t = Date.parse(endtime) - Date.parse(new Date());

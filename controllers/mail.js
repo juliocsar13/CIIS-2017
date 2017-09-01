@@ -14,9 +14,9 @@ var transporter = nodemailer.createTransport(smtpTransport({
 module.exports.sendEmail = function(user){
 
   var mailOptions = {
-    from: '"CIIS" <esistacna@gmail.com>', // sender address
+    from: '"'+user.eventType+'" <esistacna@gmail.com>', // sender address
     to: user.email, // list of receivers
-    subject: 'CIIS - TACNA ✔', // Subject line
+    subject:  user.eventType+'- TACNA ✔', // Subject line
     text: '<div>Hola '+user.name+user.lastname+' confirme su preregistro</div>', // plain text body
     html: '<div style="color=#00aad4">XVIII Congreso Internacional de Informática y Sistemas<p>Hola '+ user.name +' '+user.lastname+' <br>Registro exitoso!</div>'
 

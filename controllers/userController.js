@@ -9,6 +9,7 @@ module.exports.register = function (req,res) {
     //console.log('registrando',req.files);
     var data = req.body;
     console.log(req.body);
+
     var user = new User();
     user.dni = data.dni;
     user.name = data.name;
@@ -17,6 +18,7 @@ module.exports.register = function (req,res) {
     user.city = data.city;
     user.email = data.email;
     user.cellphone = data.cellphone;
+    user.eventType = data.eventType;
 
     user.save(function (err,user) {
         if(err){
@@ -59,6 +61,7 @@ module.exports.register = function (req,res) {
     //           }
     //         )
 }
+
 
 module.exports.createView = function (req,res) {
     res.render('layout');
