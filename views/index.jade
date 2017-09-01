@@ -5,7 +5,7 @@ block content
     article#countdown
       .container_countdown_unit
         span#days.countdown_unit
-        span.countdown_unit_label  Dias
+        span.countdown_unit_label  Días
       span.separator
       .container_countdown_unit
         span#hours.countdown_unit
@@ -13,20 +13,20 @@ block content
       span.separator
       .container_countdown_unit
         span#minutes.countdown_unit
-        span.countdown_unit_label  Minutos  
+        span.countdown_unit_label  Minutos
       span.separator
       .container_countdown_unit
         span#seconds.countdown_unit
-        span.countdown_unit_label  segundos
-    h1      
+        span.countdown_unit_label  Segundos
+    h1
       span.highlighted
         | CONGRESO
         small.highlighted2  INTERNACIONAL
       span
         | DE
-        small.highlighted3  INFORMÁTICA Y SISTEMAS        
-      span.subtitle Un évento al cual no debes faltar,
-      span.subtitle2 el mejor évento tecnológico del sur del Perú
+        small.highlighted3  INFORMÁTICA Y SISTEMAS
+      span.subtitle Emprendimiento e innovación tecnológica
+      //-span.subtitle2 el mejor evento tecnológico del sur del Perú
     .subscription
 
       //-input#email(type='email', placeholder='Tu email')
@@ -48,13 +48,13 @@ block content
       form#preRegisterForm(method="post",name="preRegisterForm", enctype="multipart/form-data")
         h3  Preinscripción
         label
-          | Tu Email
+          | Tu email
           input#preRegisterEmail(style='color:black;',name='email', type='email', required='')
         label
-          | Tus Nombres
+          | Tus nombres
           input#preRegisterFirstName.capitalize(style='color:black;',name='name', type='text', required='')
         label
-          | Tus Apellidos
+          | Tus apellidos
           input#preRegisterLastName.capitalize(style='color:black;', name='lastname',type='text', required='')
         label
           | Tu DNI
@@ -122,12 +122,12 @@ block content
       img.closebt(src='img/closebt.svg', alt='')
     .modal-content
       form#contactForm
-        h3  Cuentanos tus dudas!
+        h3  !Cuéntanos tus dudas!
         label
-          | Tu Email
+          | Tu email
           input#contactEmail(style='color:black;', type='email')
         label
-          | Tu Nombre
+          | Tu nombre
           input#contactName(style='color:black;', type='text')
         label
           | Tu consulta
@@ -250,48 +250,48 @@ block content
             br
             span Tecnologías IBM en procesos de desarrollo de software
           p.mb0
-  //-
+  section#linea-investigation
     section#schedule.section.section-page
-      h1(style='color:#00aad4;font-size: 2.5em;font-weight:bolder ;padding-bottom: 1em;padding-top:.2em;')
-        | Lineas de Investigacion
+      h1.subtitle-section
+        | Líneas de Investigación
       .col-md-12
         h2
         .col-md-3
-          .latest-post(style="background:white;height: 400px;")
+          .latest-post
             img.img-responsive(src='images/datos.jpg', alt='')
             h4
-              a(style="color:black") Analitica de datos
+              a.linea-title Analítica de datos
             .post-details
               span.date
-            p
-              | base de datos estructura cubos minería data mining etc pronóstico redes neuronales business intelligence
+            p.text
+              | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
 
         .col-md-3
-          .latest-post(style="background:white;height: 400px;")
-            img.img-responsive(src='images/conectividad.jpg', alt='')
+          .latest-post
+            img.img-responsive2(src='images/conectividad.jpg', alt='')
             h4
-              a(style="color:black") Conectividad
+              a.linea-title Conectividad
             .post-details
-            p
-              | Redes - telematica, seguridad de redes, ethical hacking, wifi
+            p.text
+              | Redes - telemática, seguridad de redes, hackeo ético, wifi.
         .col-md-3
-          .latest-post(style="background:white;height: 400px;")
-            img.img-responsive(src='images/cumputacion.jpg', alt='' )
+          .latest-post
+            img.img-responsive3(src='images/cumputacion.jpg', alt='' )
             h4
-              a(style="color:black") C. de la computacion
+              a.linea-title Ciencias de la computación
             .post-details
               span.date
-            p
-              | reconocimiento de voz, visión computacional, planificadores, procesamiento de imágenes, investigacion de operaciones, sistemas
+            p.text
+              | Reconocimiento de voz, visión computacional, planificadores, procesamiento de imágenes, investigación de operaciones y sistemas.
         .col-md-3
-          .latest-post(style="background:white;height: 400px;")
-            img.img-responsive(src='images/software.png', alt='')
+          .latest-post
+            img.img-responsive4(src='images/software.png', alt='')
             h4
-              a(style="color:black") Ingeniería de software
+              a.linea-title Ingeniería de software
             .post-details
               span.date
-            p
-              | paradigmas de programación software.
+            p.text
+              | Paradigmas de programación software.
 
   //-section#schedule.section.section-page
     h1(style='color:#00aad4;font-size: 2.5em;font-weight:bolder ;padding-bottom: 1em;padding-top:.2em;')
@@ -513,43 +513,41 @@ block content
       a.baseProg(download='', href='/doc/bases-CProg.docx')
         | >> Bases del concurso de programación <<
   // Pricing Table Section
-  //section#service-date
-      h1.title Lo que encontrarás
-        |         
+  section#service-date
+      h1(style='color:#00aad4;').subtitle-section Lo que encontrarás
+
         //p.theme
           | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero repudiandae debitis porro adipisci ipsum quasi!
-        |         
-        .date-cont
+
+      .date-cont
           .date-info
             .date-circle
               img(src='img/clipboard-icon.png', alt='')
-            |                
-            h4.title2 ACTIVIDADES ACAD&Eacute;MICAS
-            |  
-            |                
+
+            h4.title2 Actividades académicas
+
+
             p.theme
-              | Contaremos con distintos conferencistas Nacionales e Internacionales de distinguida calidad y experiencia que compartiran con nosotros
-          |             
+              | Contaremos con distintos conferencistas nacionales e internacionales de reconocida trayectoria y experiencia que compartirán con nosotros.
+
           .date-info
             .date-circle
               img(src='img/computer-screens-icons.png', alt='')
-            |                
-            h4.title2 CONCURSOS
-            |  
-            |                
+
+            h4.title2 Concursos
+
             p.theme
-              | Se desarrollar&aacute;n diversos concursos donde podr&aacute;s competir con diferentes estudiantes de disitintas Universidades de nuestro pa&iacute;s.
-          |             
+              | Se desarrollar&aacute;n diversos concursos donde podr&aacute;s competir con diferentes estudiantes de distintas universidades de nuestro pa&iacute;s.
+
           .date-info
             .date-circle
               img(src='img/armchair-silhouette.png', alt='')
-            |                
-            h4.title2 LUGAR
-            |  
-            |                
-            p.theme
-              | Tacna ciudad Heroica, cuenta con distintos atractivos tur&iacute;sticos que realzan la tranqulidad de nuestra ciudad en el Sur de nuestro Per&uacute;.
 
+            h4.title2 Lugar
+
+
+            p.theme
+              | "Ciudad Heroica" de Tacna, cuenta con distintos atractivos tur&iacute;sticos que realzan la tranquilidad de nuestra ciudad en el sur de nuestro Per&uacute;.
   section#pricing-table.section-page
     .container
       h2(style='font-size:40px;') Inversión
@@ -658,7 +656,7 @@ block content
       textarea(name='text', placeholder='Escribenos tu duda ')
 
   section#auspiciadores
-    //h2(style='font-size:40px;color:#00aad4;') Auspiciadores
+    h2(style='font-size:40px;color:#00aad4;') Auspiciadores
     //img(src='/img/osiptel.png', alt='')
     //img(src='/img/postgrado.gif', alt='')
     //img(src='/img/flores.jpg', alt='')
@@ -666,8 +664,9 @@ block content
     //img(src='/img/apeis.png', alt='')
     //img(src='/img/fontes.jpg', alt='')
     //img(src='/img/minsur.png', alt='')
-    //img(src='/img/piscoscuneo.jpg', alt='')
-    h2 Organizadores
-    img(src='/img/agile/logoesis.png', alt='')
-    img(src='/img/agile/logounjbg.png', alt='')
+    //img(src='/img/piscoscuneo.jpg', alt='')    
+  section#Organizadores
+    h2.title-org(style='font-size:40px;color:#00aad4;') Organizadores
+    img(src='/img/agile/logoesis.png', width="200" height="200")
+    img(src='/img/agile/logounjbg.png', width="200" height="200")
   section#map
