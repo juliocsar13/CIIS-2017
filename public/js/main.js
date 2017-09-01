@@ -157,12 +157,13 @@ $(".delete-participant").click(deleteParticipant)
     var subject = $('#contactSubject').val();
 
     var contact_form = {
-      email : email,
-      name: name,
-      subject: subject
+      'email' : email,
+      'name': name,
+      'subject': 'CIIS: '+subject
     }
-
+    console.log(contact_form);
     if(email && name && subject){
+
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -171,22 +172,26 @@ $(".delete-participant").click(deleteParticipant)
       self.disabled= true;
 
 
-      $.post('/contacto',contact_form)
-        .success(function(){
+      $.ajax({
+          url: '/contacto',
+          type: "POST",
+          data:JSON.stringify(contact_form),
+          contentType:"application/json; charset=utf-8",
+        success:(function(){
           $('.closebt').click();
           toastr.success("Te responderemos lo mas pronto posible  =)");
-
-        })
-        .error(function(){
+        }),
+        error:(function(){
           toastr.error("Hubo un error");
-        })
-        .always(function(){
+        }),
+        always:(function(){
           $('#contactEmail').val('');
           $('#contactName').val('');
           $('#contactSubject').val('');
           self.removeChild(myImage);
           self.disabled= false;
         })
+      })
     }
   })
 
@@ -200,8 +205,8 @@ $(".delete-participant").click(deleteParticipant)
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
+    var eventType = "CIIS";
 
-    
     //var image = $('#preRegisterVoucher')[0].files[0]
     //var image_val = $('#preRegisterVoucher').val();
     //var files = $('#preRegisterVoucher').get(0).files[0];
@@ -212,7 +217,7 @@ $(".delete-participant").click(deleteParticipant)
 
     //var form = document.getElementById('preRegisterForm')
     //var form = $('preRegisterForm')[0];
-   
+
     formData.append('email', email);
     formData.append('firstName', firstName);
     formData.append('lastName', lastName);
@@ -223,7 +228,7 @@ $(".delete-participant").click(deleteParticipant)
 
     //formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
 
-    
+
 
     var data = {
       'email': formData.get("email"),
@@ -232,11 +237,13 @@ $(".delete-participant").click(deleteParticipant)
       'dni': formData.get("dni"),
       'type': formData.get("type"),
       'city': formData.get("city"),
-      'cellphone': formData.get("cellphone")
+      'cellphone': formData.get("cellphone"),
+      'eventType':eventType
+
       //image:{
       //      'name':files.name,
        //     'size':files.size,
-       //     'type':files.type 
+       //     'type':files.type
       //},
       //images:formData.get('image')
     };
@@ -259,7 +266,7 @@ $(".delete-participant").click(deleteParticipant)
           type: "POST",
           data:JSON.stringify(data),
           contentType:"application/json; charset=utf-8",
-      
+
         //}).success(function(){
           //console.log("EMAIL DE ENVIO",email)
             //return subscribeMailChimpEmail(email)
@@ -267,6 +274,12 @@ $(".delete-participant").click(deleteParticipant)
           success:(function(){
             //-console.log('success')
             $('.closebt').click();
+            $('#preRegisterEmail').val('');
+            $('#preRegisterFirstName').val('');
+            $('#preRegisterLastName').val('');
+            $('#preRegisterDNI').val('');
+            $('#preRegisterCity').val('');
+            $('#preRegisterCellphone').val('');
             toastr.success("Gracias por preinscribirte =)");
           }),
           error:(function(){
@@ -274,9 +287,13 @@ $(".delete-participant").click(deleteParticipant)
             toastr.error("Hubo un error");
           }),
           always:(function(){
-            $('#contactEmail').val('');
-            $('#contactName').val('');
-            $('#contactSubject').val('');
+            $('#preRegisterEmail').val('');
+            $('#preRegisterFirstName').val('');
+            $('#preRegisterLastName').val('');
+            $('#preRegisterDNI').val('');
+            $('#preRegisterType').val('');
+            $('#preRegisterCity').val('');
+            $('#preRegisterCellphone').val('');
             self.removeChild(myImage);
             self.disabled= false;
           })
