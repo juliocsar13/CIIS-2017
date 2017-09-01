@@ -1,4 +1,3 @@
-doctype html
 html(lang='en')
   head
     //
@@ -500,7 +499,7 @@ html(lang='en')
                 input#contactEmail1.form-control(name='email', type='email', placeholder='Email')
                 textarea#contactSubject1.form-control(name='message', rows='5', placeholder='Mensaje')
                 .col-md-6.col-sm-10
-                  button#submitContact1.form-control( value='Enviar', style='background:#f2545f;')
+                  input#submitContact1.form-control( type='submit' value='Enviar', style='background:#f2545f;')
     //
       =========================
       FOOTER SECTION
@@ -560,7 +559,7 @@ html(lang='en')
     script(src='js/smoothscroll.js')
     script(src='js/wow.min.js')
     script(src='js/custom.js')
-    script(src='js/dscountdown.js')
+    //-script(src='js/dscountdown.js')
     script(src='js/dscountdown.min.js')
     script(src='js/postmaster.js')
     script.
