@@ -64,7 +64,7 @@ module.exports.register = function (req,res) {
 
 
 module.exports.createView = function (req,res) {
-    res.render('layout');
+    res.render('index');
 }
 module.exports.getUsers = function (req,res) {
     User.find({})

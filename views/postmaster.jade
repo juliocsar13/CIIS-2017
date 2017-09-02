@@ -7,11 +7,11 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=Edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
-    //-link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='css/bootstrap.min.css')
+    //-link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
 
-    //-link(rel='stylesheet', href='css/animate.css')
-    link(href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='css/animate.css')
+    //-link(href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css', rel='stylesheet', type='text/css')
 
     link(rel='stylesheet', href='css/font-awesome.min.css')
     link(rel='stylesheet', href='css/owl.theme.css')
@@ -28,7 +28,7 @@ html(lang='en')
       =========================
       PRE LOADER
       ==============================
-    .preloader
+    //-.preloader
       .sk-rotating-plane
     //
       =========================
@@ -51,7 +51,7 @@ html(lang='en')
           ul.nav.navbar-nav.navbar-right
             li
               a.smoothScroll(href='#intro') Inicio
-            li
+            //- li
               a.smoothScroll(href='#overview') Descripción
             li
               a.smoothScroll(href='#speakers') Ponentes
@@ -65,6 +65,8 @@ html(lang='en')
               a.smoothScroll(href='#sponsors') Patrocinadores
             li
               a.smoothScroll(href='#contact') Contacto
+            li
+              a.smoothScroll(href='/') CIIS
     //
       =========================
       INTRO SECTION
