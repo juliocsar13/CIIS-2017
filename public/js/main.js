@@ -45,49 +45,49 @@ $("#preRegisterConcurseBtn").animatedModal({
 
 })
 
-/*
-$(".preRegisterConcurseForm").submit(function (e) {
-  e.preventDefault();
-  e.stopPropagation();
-  var data = {};
-  var participants_name = []
-  var participants_lastname = []
-  var participants_dni = []
-  for (var i = 0; i < $(".participant").length; i++) {
-    participants_name.push($($(".participant")[i]).find("[name='name']").val())
-    participants_lastname.push($($(".participant")[i]).find("[name='lastname']").val())
-    participants_dni.push($($(".participant")[i]).find("[name='DNI']").val())
-  }
-  data.team = $("[name='team']").val()
-  data.participants_name = participants_name;
-  data.participants_lastname = participants_lastname;
-  data.participants_dni = participants_dni;
-
-  $.ajax({
-    url:'/concurso',
-    type:'POST',
-    data:data,
-    success:function (res) {
-      $('.closebt').click();
-      toastr.success('Se preinscribio al concurso =)');
-    },
-    error:function (err) {
-      toastr.error('Intentelo de nuevo');
-    }
-
-  })
-  // console.log(participants);
-})
-*/
-/*
-function deleteParticipant(e) {
-  e.preventDefault();
-  $(this).parent().parent().parent().remove();
-
-}
-$(".delete-participant").click(deleteParticipant)
-  //SCRIPTS AJAX
-  $('#subscribe').click(subscribeMailChimp);
+// 
+// $(".preRegisterConcurseForm").submit(function (e) {
+//   e.preventDefault();
+//   e.stopPropagation();
+//   var data = {};
+//   var participants_name = []
+//   var participants_lastname = []
+//   var participants_dni = []
+//   for (var i = 0; i < $(".participant").length; i++) {
+//     participants_name.push($($(".participant")[i]).find("[name='name']").val())
+//     participants_lastname.push($($(".participant")[i]).find("[name='lastname']").val())
+//     participants_dni.push($($(".participant")[i]).find("[name='DNI']").val())
+//   }
+//   data.team = $("[name='team']").val()
+//   data.participants_name = participants_name;
+//   data.participants_lastname = participants_lastname;
+//   data.participants_dni = participants_dni;
+//
+//   $.ajax({
+//     url:'/concurso',
+//     type:'POST',
+//     data:data,
+//     success:function (res) {
+//       $('.closebt').click();
+//       toastr.success('Se preinscribio al concurso =)');
+//     },
+//     error:function (err) {
+//       toastr.error('Intentelo de nuevo');
+//     }
+//
+//   })
+//   // console.log(participants);
+// })
+//
+//
+// function deleteParticipant(e) {
+//   e.preventDefault();
+//   $(this).parent().parent().parent().remove();
+//
+// }
+// $(".delete-participant").click(deleteParticipant)
+//   //SCRIPTS AJAX
+//   $('#subscribe').click(subscribeMailChimp);
 
 
 
@@ -104,6 +104,7 @@ $(".delete-participant").click(deleteParticipant)
 
   var flag_preRegisterEmail = false;
   var flag_preRegisterData = false;
+
 
 
   $('#contactEmail').on('input',function(e){
@@ -125,7 +126,7 @@ $(".delete-participant").click(deleteParticipant)
     else $('#submitContact').prop('disabled', true);
    })
 
-*/
+
    $('#preRegisterEmail').on('input',function(e){
     if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1){
       flag_preRegisterEmail = true;
@@ -170,7 +171,6 @@ $(".delete-participant").click(deleteParticipant)
       var self = e.currentTarget;
       self.appendChild(myImage);
       self.disabled= true;
-
 
       $.ajax({
           url: '/contacto',
