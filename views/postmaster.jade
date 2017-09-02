@@ -506,12 +506,12 @@ html(lang='en')
             .contact_detail
               .section-title
                 h2 Contáctanos
-              form()
-                input#contactEName1.form-control(name='name', type='text', placeholder='Nombre')
+              form#contactForm(action='#', method='post')
+                input#contactName1.form-control(name='name', type='text', placeholder='Nombre')
                 input#contactEmail1.form-control(name='email', type='email', placeholder='Email')
                 textarea#contactSubject1.form-control(name='message', rows='5', placeholder='Mensaje')
                 .col-md-6.col-sm-10
-                  input#submitContact1.form-control( type='submit',value='Enviar', style='background:#f2545f;')
+                  input#submitContact1.form-control(disabled='',type='submit',value='Enviar', style='background:#f2545f;')
     //
       =========================
       FOOTER SECTION

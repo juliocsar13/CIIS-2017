@@ -2,9 +2,37 @@
 
 $(function(){
 
+  var flag_contactEmail = false;
+  var flag_contactData = false;
+
+  var flag_preRegisterEmail = false;
+  var flag_preRegisterData = false;
+
+
+
+  $('#contactEmail1').on('input',function(e){
+    if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1){
+      flag_contactEmail = true;
+      if(flag_contactData) $('#submitContact1').prop('disabled', false);
+    }
+    else $('#submitContact1').prop('disabled', true);
+
+  })
+
+   $('#contactName1, #contactSubject1').on('input', function(e){
+
+    if($(this).val().length-1 >= 0){
+      flag_contactData = true;
+      if (flag_contactEmail) $('#submitContact1').prop('disabled', false);
+
+    }
+    else $('#submitContact1').prop('disabled', true);
+   })
+
 
 
   $('#submitContact1').click(function(e){
+
     var email = $('#contactEmail1').val();
     var name = $('#contactName1').val();
     var subject = $('#contactSubject1').val();
@@ -14,7 +42,6 @@ $(function(){
       'name': name,
       'subject': 'POSTMASTER: '+subject
     }
-    alert(contact_form);
 
     if(email && name && subject){
       var myImage = document.createElement("img");
@@ -24,23 +51,30 @@ $(function(){
       self.appendChild(myImage);
       self.disabled= true;
 
-
-      $.post('/contacto',contact_form)
-        .success(function(){
-          alert('succes');
+      $.ajax({
+          url: '/contacto',
+          type: "POST",
+          data:JSON.stringify(contact_form),
+          contentType:"application/json; charset=utf-8",
+        success:(function(){
+          $('#contactEmail1').val('');
+          $('#contactName1').val('');
+          $('#contactSubject1').val('');
+          self.removeChild(myImage);
+          self.disabled= false;
           toastr.success("Te responderemos lo mas pronto posible  =)");
-
-        })
-        .error(function(){
+        }),
+        error:(function(){
           toastr.error("Hubo un error");
-        })
-        .always(function(){
-          $('#contactEmail').val('');
+        }),
+        always:(function(){
+          $('#contactEmail1').val('');
           $('#contactName1').val('');
           $('#contactSubject1').val('');
           self.removeChild(myImage);
           self.disabled= false;
         })
+      })
     }
   })
 
