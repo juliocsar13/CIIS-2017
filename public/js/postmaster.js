@@ -8,6 +8,7 @@ $(function(){
   var flag_preRegisterEmail = false;
   var flag_preRegisterData = false;
 
+  
 
 
   $('#contactEmail1').on('input',function(e){
