@@ -10,6 +10,7 @@ var mailController = require('../controllers/mail');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
 router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
