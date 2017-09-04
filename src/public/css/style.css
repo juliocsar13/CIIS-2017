@@ -1627,3 +1627,15 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
   #Organizadores {
     height: 400px;
 }
+.col-md-6 p {
+    font-size: 15px;
+    font-weight: bolder;
+        width: 197px;
+        margin: auto;
+
+    /*text-shadow: 2px 2px 10px black;*/
+}
+.col-md-12 p {
+    font-size: 15px;
+      font-weight: bolder;
+}
