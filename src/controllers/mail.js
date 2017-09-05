@@ -28,10 +28,34 @@ module.exports.sendEmail = function(user){
         return console.log(error);
 
     }
+    sendInscription(user);
     console.log('Message sent: ' + info.response);
   });
 
 }
+
+  sendInscription = function(user){
+
+  var email = user.email;
+  var name = user.name;
+  var mailOptions = {
+    from: user.eventType+': ' + email, // sender address
+    to: 'esistacna@gmail.com', // list of receivers
+    subject: '['+user.eventType+'] Pre-inscripción: ' + email, // Subject line
+    text: user.name+' '+user.lastname+' ('+user.email+') se ha preinscrito a '+user.eventType+'.' // plaintext body
+  };
+
+  transporter.sendMail(mailOptions, function(error, info){
+    if(error){
+       console.log(error);
+        return console.log(error);
+
+    }
+    console.log('Message sent: ' + info.response);
+  });
+
+}
+
 
 module.exports.contact = function(req,res){
 
