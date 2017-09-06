@@ -6,6 +6,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -13,10 +14,20 @@ var users = require('./routes/users');
 
 var app = express();
 
-var  url_db = process.env.mongodb || "localhost:27017";
+var options = {
+   useMongoClient: true,
+   socketTimeoutMS: 0,
+   keepAlive: true,
+   reconnectTries: 30
+};
 
-mongoose.connect(url_db,function (err) {
-  console.log("aqui el error db",err);
+var  url_db = process.env.mongodb || "mongodb://localhost/ciistacna";
+
+mongoose.connect(url_db,options, function (err) {
+  if (err) {
+    console.log("aqui el error db",err);
+  }
+  console.log("DB connected");
 });
 
 // Loading config
@@ -83,6 +94,3 @@ app.use(function(err, req, res, next) {
 
 
 app.listen($config.serverPort);
-
-
-
