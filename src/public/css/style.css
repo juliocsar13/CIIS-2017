@@ -1,6 +1,24 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800';
 
+::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 0px;
+  background-color: #F5F5F5;
+}
 
+::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+  border-radius: 0px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #1E2630;
+}
 .latest-post{
     padding-bottom: 20px;
     color: #999;
@@ -217,6 +235,7 @@ header section p {
   margin: auto 1px;
   /*filter: drop-shadow(0px 0px 5px white);*/
   transition: all 0.4s ease;
+
   /*width: 32%;  */
   /*margin-left: -13%;
   margin-top: 21px;
@@ -1457,6 +1476,7 @@ li.hidden-sm.hidden-md.hidden-xss {
     width: 85px;
     height: 85px;
     margin-left: 20px;
+  
   }
 }
 
@@ -1625,7 +1645,7 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
     margin-bottom: 60px;
 }
   #Organizadores {
-    height: 400px;
+  height: 560px;
 }
 .col-md-6 p {
     font-size: 15px;
@@ -1637,5 +1657,26 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
 }
 .col-md-12 p {
     font-size: 15px;
-      font-weight: bolder;
+    font-weight: bolder;
+}
+.ciis-logo-link{
+    text-decoration: none;
+    display: flex;  
+}
+.ciis-logo-link:hover {
+    border-top: 0px;
+}
+.ir-arriba{
+  display: none;
+  padding: 20px;  
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;    
+
+}
+.ir-arriba img {
+    width: 48px;
 }
