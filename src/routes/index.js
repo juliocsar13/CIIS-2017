@@ -19,9 +19,11 @@ router.route('/postmaster/preregistro')
           .post(postMasterController.register);
 router.route('/postmaster/Dusuarios')
           .get(postMasterController.deleteUsers);
+router.route('/postmaster/list')
+          .get(postMasterController.checkReniec);
 router.route('/postmaster/usuarios')
           .get(postMasterController.getUsers);
-          
+
 router.post('/contacto', mailController.contact);
 
 router.route('/usuarios')
