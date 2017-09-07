@@ -68,6 +68,18 @@ html
   //-script(type='text/javascript', src='/bower_components/smooth-scroll.js/dist/js/smooth-scroll.min.js')
   script(src='https://unpkg.com/axios/dist/axios.min.js')
   script(src='https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js')
+  script.
+    var tableToExcel = (function() {
+    var uri = 'data:application/vnd.ms-excel;base64,'
+      , template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'
+      , base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) }
+      , format = function(s, c) { return s.replace(/{(\w+)}/g, function(m, p) { return c[p]; }) }
+    return function(table, name) {
+      if (!table.nodeType) table = document.getElementById(table)
+      var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
+      window.location.href = uri + base64(format(template, ctx))
+    }
+    })()
   script(type='text/javascript').
        var arrayDNI = $('.dniReniec');
        $.map(arrayDNI,function(value){
@@ -106,7 +118,8 @@ html
 
              return jSpot;
           }
-         
+  script.
+   
   script(type='text/javascript').
     smoothScroll.init();
     $(window).scroll(function() {
