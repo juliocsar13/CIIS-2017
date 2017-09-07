@@ -1,9 +1,14 @@
 
 
+
 $(function(){
 
 
+  //-window.onload = pre_modal;
 
+  function pre_modal(){
+    $('#pre_modal').modal('show');
+  }
   $('#subscribe').prop('disabled', true);
 
   toastr.options = {

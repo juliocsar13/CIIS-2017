@@ -41,6 +41,24 @@ block content
         | al concurso de programación
   footer
 
+  #pre_modal.modal.fade(role='dialog')
+    .modal-dialog.modal-lg
+      // Modal content
+      .modal-content
+        .modal-body(style="height:500px")
+          .col-md-6
+            .col-md-12
+              label(style="font-size: 30px;font-weight: bold;margin-top:20px;font-weight:normal") XIV POST MASTER 2017
+              span Reencuentro de Egresados
+            .col-md-12
+              img.img-responsive-modal(src="/images/logo.png" style="width:300px")
+          .col-md-6(style="background:#00aad4;height: 500px")
+            h1(style="margin-top:50px;color: white;font-size: 40px;font-weight: bold") El viernes 15 de septiembre 
+            label.label_ciistacna(style="color:white") 
+              | Este viernes 15 de septiembre se llevará a cabo el XIV POST MASTER 2017, el cual tiene como finalidad compartir las experiencias y remembranzas por parte de los egresados de nuestra escuela en su ambito profesional
+
+
+            
   #preRegisterModal
     .close-preRegisterModal
       img.closebt(src='img/closebt.svg', alt='')
@@ -180,7 +198,7 @@ block content
   section.tematicos#linea-investigacion
     h2
       span.tematicos_title_frio EJES 
-      span.tematicos_title_caliente TEMATICOS
+      span.tematicos_title_caliente TEMÁTICOS
     ul
       li
         div
@@ -192,46 +210,52 @@ block content
             | datos
             br
         span.tematicos_contenido
-          | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
+          | Se trabajan con tareas orientadas a la exploración de los datos, con la intención de encontrar patrones o conocimiento útil, que permita optimizar o rentabilizar un proceso de negocio.
       li
         div
           img(src='img/ico-dos.png', alt='icono de uno')
         h4
           span.tematicos_semititle
-            | Analítica de
+            | Conectividad
             br
-            | datos
+            |  
             br
         span.tematicos_contenido
-          | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
+          | Hace referencia a los medios, tecnologías y protocolos necesarios para el intercambio de la información en una red de computadoras.     
+
       li
         div
           img(src='img/ico-tres.png', alt='icono de uno')
         h4
           span.tematicos_semititle
-            | Analítica de
+            | Ciencia de la
             br
-            | datos
+            | computación
             br
         span.tematicos_contenido
-          | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
+          | Abarca el estudio de las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.     
+
       li
         div
           img(src='img/ico-cuatro.png', alt='icono de uno')
         h4
           span.tematicos_semititle
-            | Analítica de
+            | Ingeniería de 
             br
-            | datos
+            | software
             br
+
+
         span.tematicos_contenido
-          | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
+          | Representa el conjunto de métodos, herramientas y técnicas que se utilizan en el desarrollo del software.                      
+
+
         
   section.actividades
       article
         .catividades_titulo
           h2.color--pry Actividades
-          h2.color--seco Académicas
+          h2.color--seco académicas
         .atividades_contenido
           p
             | Contaremos con conferencistas nacionales e internacionales de distinguida calidad y experiencia que disertarán ponencias de alto nivel académico.
@@ -240,7 +264,7 @@ block content
       article
         .catividades_titulo
           h2.color--seco Concurso
-          h2.color--pry De programación
+          h2.color--pry de programación
         .atividades_contenido
           p
             | Se desarrollar&aacute;n diversos concursos donde podr&aacute;s competir con diferentes estudiantes de distintas universidades de nuestro pa&iacute;s.
@@ -248,7 +272,7 @@ block content
       article
         .catividades_titulo
           h2.color--seco Todo
-          h2.color--pry Sobre Tacna
+          h2.color--pry sobre Tacna
         .atividades_contenido
           p
             | La "Ciudad Heroica" de Tacna cuenta con distintos atractivos turísticos, un clima agradable, desiertos y valles fértiles que conviven para crear paisajes únicos. Todo esto que hace de nuestra ciudad un destino agradable en el sur de nuestro Perú.
@@ -256,9 +280,10 @@ block content
 
   
  
-  section#pricing-table.section-page
+  section.tematicos#pricing-table.section-page
     .container
-      h2(style='font-size:40px;') Inversión
+      h2
+        span.tematicos_title_caliente(style="") INVERSIÓN
       .table-responsive
         table#price.table.table-prices
           thead
@@ -292,8 +317,9 @@ block content
     h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
     h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
 
-  section#auspiciadores
-    h2(style='font-size:40px;color:#00aad4;') Auspiciadores
+  section.tematicos#auspiciadores
+    h2
+      span.tematicos_title_caliente AUSPICIADORES
 
     .container(style="margin-top:50px")
       .row
@@ -311,7 +337,7 @@ block content
     img(src='/img/logo-unjbg.png', width="200" height="200")
  
   section.direccion#Organizadores(style="margin-top:50px")
-    h2.title-org(style='font-size:40px;color:#00aad4;') Organizadores
+    h2.title-org(style='color:#00aad4;') ORGANIZA
 
     .direccion_logos
       .col-md-12
@@ -325,14 +351,15 @@ block content
     
       .col-md-6
           p
-            | Escuela profesional Ingeniería en Informática y Sistemas 
+            | Escuela Profesional de Ingeniería en Informática y Sistemas 
       .col-md-6
           p
             | Universidad Nacional Jorge Basadre Grohmann
       .col-md-12      
-        p Avenida Miraflores S/N, Miraflores, Tacna 23000
-        p Presidente : 988 899988  -  Vicepresidente :977 465783
-        p ciistacna@gmail.com
+        p Ciudad Universitaria: Sede los Granados - Avenida Miraflores S/N - Tacna
+        p Teléfono: (052) 583000 anexo 2005
+        p Celulares: 988 899988 - 977 465783
+        p E-mail: ciistacna@unjbg.edu.pe
     //-.direccion_iconos
       a(href='#')
         img(src='img/icon-facebook.png', alt='icono-facebook')

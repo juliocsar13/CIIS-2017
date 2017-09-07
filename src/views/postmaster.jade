@@ -1,29 +1,23 @@
+doctype html
 html(lang='es')
   head
     title XIV POST MASTER 2017
-    meta(property='fb:app_id', content='1115877665114558')
+    //-meta(property='fb:app_id', content='1115877665114558')
     meta(property='og:type', content='website')
     meta(property='og:url', content='http://www.ciistacna.com/postmaster')
     meta(property='og:title', content='PostMaster Tacna')
     meta(property='og:image', content='http://www.ciistacna.com/images/fbciis.png')
     meta(property='og:description', content='postmaster')
     meta(charset='UTF-8')
-    //-meta(http-equiv='X-UA-Compatible', content='IE=Edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
     link(rel='stylesheet', href='css/bootstrap.min.css')
-    //-link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
-
     link(rel='stylesheet', href='css/animate.css')
-    //-link(href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.css', rel='stylesheet', type='text/css')
-
     link(rel='stylesheet', href='css/font-awesome.min.css')
     link(rel='stylesheet', href='css/owl.theme.css')
     link(rel='stylesheet', href='css/owl.carousel.css')
-    link(ref="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css", rel="stylesheet")
-    
-    
+    link(ref='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css', rel='stylesheet')
     // Main css
-    link(rel='stylesheet', href='css/style1.css')
+    link(rel='stylesheet', href='style.css')
     // Google Font
     link(href='https://fonts.googleapis.com/css?family=Poppins:400,500,600', rel='stylesheet', type='text/css')
   body(data-spy='scroll', data-offset='50', data-target='.navbar-collapse')
@@ -31,8 +25,6 @@ html(lang='es')
       =========================
       PRE LOADER
       ==============================
-    //-.preloader
-      .sk-rotating-plane
     //
       =========================
       NAVIGATION LINKS
@@ -45,17 +37,15 @@ html(lang='es')
             span.icon.icon-bar
             span.icon.icon-bar
             span.icon.icon-bar
-          a.navbar-brand(href='#', style='font-size:23px;')
-            span(style='margin-left: 80px;')
-              span(style='color:#b3d44e;') XIV
+          a.navbar-brand(href='#', style='font-size:23px')
+            span(style='margin-left: 80px')
+              span(style='color:#b3d44e') XIV
               |  POST MASTER
             img(src='images/logo.png', alt='', style='width:60px; height:60px; margin-top:-50px; ')
         .collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
               a.smoothScroll(href='#intro') Inicio
-            //- li
-              a.smoothScroll(href='#overview') Descripción
             li
               a.smoothScroll(href='#speakers') Ponentes
             li
@@ -76,7 +66,7 @@ html(lang='es')
       ==============================
     section#intro.parallax-section
       div(style='background:rgba(0,0,0,.52); width:100vw; height:100vh')
-        .container(style='margin-top:17%;')
+        .container(style='margin-top:17%')
           .row
             .col-md-12.col-sm-12
               #clockdiv
@@ -95,7 +85,7 @@ html(lang='es')
               h1.wow.fadeInUp(data-wow-delay='1.0s') XIV POST MASTER 2017
               h3.wow.bounceIn(data-wow-delay='0.9s') Reencuentro de Egresados
               a.btn.btn-lg.btn-default.smoothScroll.wow.fadeInUp(href='#overview', data-wow-delay='2.3s') MÁS INFORMACIÓN
-              a.btn.btn-lg.btn-danger.smoothScroll.wow.fadeInUp(href='#register', data-wow-delay='2.3s', style='background:#00aad4;') PREINSCRÍBETE
+              a.btn.btn-lg.btn-danger.smoothScroll.wow.fadeInUp(href='#register', data-wow-delay='2.3s', style='background:#00aad4') PREINSCRÍBETE
     //
       =========================
       OVERVIEW SECTION
@@ -108,11 +98,12 @@ html(lang='es')
             img(src='images/003-conference.png', alt='')
             img(src='images/network.png', alt='')
             img(src='images/005-chat.png', alt='')
-          .wow.fadeInUp.col-md-6.col-sm-6(data-wow-delay='0.6s', style='background:rgba(255,255,255,.9);')
-            h3(style='color:#0d1d31;text-align:center') Reencuentro de Egresados de la E.A.P de Ingeniería de Informática y Sistemas
-            hr(style='border-top: 1px solid #DCDCDC;')
-            p(style='text-align:justify;color:#6d7a83;')
-              | Este viernes 15 de septiembre  se llevará a cabo el XIV POST MASTER 2017, la cual tiene como finalidad compartir las experiencias  y remembranzas por parte de los egresados de la misma escuela en su ambito profesional cultivandose así nuevos conocimientos y vínculos entrañables; este evento se llevará a cabo en el Auditorio Central de la Universidad Nacional Jorge Basadre Grohmann, lo cual quedan cordialmente invitados a participar de esta actividad.
+          .wow.fadeInUp.col-md-6.col-sm-6(data-wow-delay='0.6s', style='background:rgba(255,255,255,.9)')
+            h3(style='color:#0d1d31;text-align:center')
+              | Reencuentro de egresados de la Escuela Profesional de Ingeniería en Informática y Sistemas
+            hr(style='border-top: 1px solid #DCDCDC')
+            p(style='text-align:justify;color:#6d7a83')
+              | Este viernes 15 de septiembre  se llevará a cabo el XIV POST MASTER 2017, el cual tiene como finalidad compartir las experiencias  y remembranzas por parte de los egresados de nuestra escuela en su ambito profesional, cultivandose así nuevos conocimientos y vínculos entrañables. Este evento se llevará a cabo en el Auditorio Central de la Universidad Nacional Jorge Basadre Grohmann. Quedan cordialmente invitados a participar de esta actividad académica
           .wow.fadeInUp.col-md-5.col-sm-5(data-wow-delay='0.9s')
             img.img-responsive(src='images/mon.jpg', alt='Overview')
     //
@@ -123,134 +114,134 @@ html(lang='es')
       .container
         .row
           .wow.fadeInLeft.col-md-3.col-sm-3(data-wow-delay='0.3s')
-            i.fa.fa-calendar(style='color:#b3d44e;')
+            i.fa.fa-calendar(style='color:#b3d44e')
             h3 Fecha
             h4 15/09/17
           .wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.6s')
-            i.fa.fa-clock-o(style='color:#b3d44e;')
+            i.fa.fa-clock-o(style='color:#b3d44e')
             h3 Hora de Inicio
             h4 8:00 am
           .wow.fadeInRight.col-md-3.col-sm-3(data-wow-delay='0.6s')
-            i.fa.fa-map-marker(style='color:#b3d44e;')
+            i.fa.fa-map-marker(style='color:#b3d44e')
             h3 Lugar
             h4 Auditorio Central de UNJBG
           .wow.fadeInRight.col-md-3.col-sm-3(data-wow-delay='0.3s')
-            i.fa.fa-microphone(style='color:#b3d44e;')
+            i.fa.fa-microphone(style='color:#b3d44e')
             h3 5 Ponentes
             h4  Expertos
     //
       =========================
       SPEAKERS SECTION
       ==============================
-    section#speakers(style="background:url('images/rt.png');")
+    section#speakers(style="background:url('images/rt.png')")
       .container
         .row
           .col-md-12.col-sm-12.wow.bounceIn
             .section-title
-              h2(style='color:rgb(0, 170, 212);') Ponentes
-              h3(style='color:#0d1d31;') Conozca un poco más de nuestros Egresados
+              h2(style='color:rgb(0, 170, 212)') Ponentes
+              h3(style='color:#0d1d31') Conozca un poco más de nuestros Egresados
           #owl-speakers.owl-carousel
             .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.9s')
               .speakers-wrapper
-                img.img-responsive(src='images/zelada.jpg', alt='speakers', style='height:263px;border-radius:50%;')
+                img.img-responsive(src='images/zelada.jpg', alt='speakers', style='height:263px;border-radius:50%')
                 .speakers-thumb
                   h3 Carlos Cesar Zelada Melchor
-                  h6 Experto en Tecnologías de Información bajo la especialidad..
-              .col-md-12(style=' height:50px; padding:8px;')
+                  h6 Experto en Tecnologías de Información
+              .col-md-12(style=' height:50px; padding:8px')
                 a(href='https://www.youtube.com/channel/UCrq4nuQcKZHGDUYfqcmJ_Vw')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-youtube-play
                 a(href='https://www.facebook.com/carlos.zelada.melchor')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa.fa-facebook-f
                 a(href='https://plus.google.com/+CARLOSCESARZELADAMELCHOR')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-google-plus
                 a(href='https://www.linkedin.com/in/carlos-cesar-zelada-melchor-71153697/?ppe=1')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-linkedin
             .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.6s')
               .speakers-wrapper
-                img.img-responsive(src='images/viv.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%;')
+                img.img-responsive(src='images/f12.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%')
                 .speakers-thumb
                   h3 Eduardo Gonzales Puma
-                  h6 Ingeniero de Software bajo la especialidad de .....
-              .col-md-12(style='height:50px; padding:8px;')
+                  h6 Ingeniero de Software 
+              .col-md-12(style='height:50px; padding:8px')
                 a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-youtube-play
                 a(href='https://www.facebook.com/ghost.fire7')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa.fa-facebook-f
                 a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-google-plus
                 a(href='https://www.linkedin.com/in/eduardo-gonzales-puma-83170989/?ppe=1')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-linkedin
             .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.6s')
               .speakers-wrapper
-                img.img-responsive(src='images/ludmer.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%;')
+                img.img-responsive(src='images/ludmer.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%')
                 .speakers-thumb
                   h3 Ludmer Arcaya Arhuata
                   h6
                     | Ing. Mg. Data mining | Business Intelligence y Data science and Business Analytics
-              .col-md-12(style=' height:50px; padding:8px;')
+              .col-md-12(style=' height:50px; padding:8px')
                 a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-youtube-play
                 a(href='https://www.facebook.com/ludmer.edward')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa.fa-facebook-f
                 a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-google-plus
                 a(href='https://www.linkedin.com/in/ludmerarcaya/?ppe=1')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
-                    i.fa.fa-linkedin
-            .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.6s')
-              .speakers-wrapper
-                img.img-responsive(src='images/jk.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%;')
-                .speakers-thumb
-                  h3 Miriam Y. Chambilla Ordoñez
-                  h6 Gerente de Operaciones y Proyectos en Contimais SAC
-              .col-md-12(style=' height:50px; padding:8px;')
-                a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
-                    i.fa.fa-youtube-play
-                a(href='https://www.facebook.com/Yuaneth')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
-                    i.fa.fa.fa-facebook-f
-                a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
-                    i.fa.fa-google-plus
-                a(href='https://www.linkedin.com/in/miriam-chambilla-ordo%C3%B1ez-65271364/?ppe=1')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-linkedin
             .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.9s')
               .speakers-wrapper
-                img.img-responsive(src='images/perez2.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%;')
+                img.img-responsive(src='images/perez2.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%')
                 .speakers-thumb
                   h3 Ricardo R. Coronado Perez
                   h6 Investigador en el área de inteligencia artificial
-              .col-md-12(style=' height:50px; padding:8px;')
+              .col-md-12(style=' height:50px; padding:8px')
                 a(href='#')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-youtube-play
                 a(href='https://www.instagram.com/rikardocorp/')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-instagram
                 a(href='https://www.facebook.com/rikardo.corp')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa.fa-facebook-f
                 a(href='https://twitter.com/rikardocorp')
-                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff;')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
                     i.fa.fa-twitter
+            .item.wow.fadeInUp.col-md-3.col-sm-3(data-wow-delay='0.6s')
+              .speakers-wrapper
+                img.img-responsive(src='images/aa.jpg', alt='speakers', style='height:263px;opacity:0.7;border-radius:50%')
+                .speakers-thumb
+                  h3 Miriam Y. Chambilla Ordoñez
+                  h6 Gerente de Operaciones y Proyectos en Contimais SAC
+              .col-md-12(style=' height:50px; padding:8px')
+                a(href='#')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
+                    i.fa.fa-youtube-play
+                a(href='https://www.facebook.com/Yuaneth')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
+                    i.fa.fa.fa-facebook-f
+                a(href='#')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
+                    i.fa.fa-google-plus
+                a(href='https://www.linkedin.com/in/miriam-chambilla-ordo%C3%B1ez-65271364/?ppe=1')
+                  button.btn.btn(type='button', name='button', style='background:#8e8ca0; color:#fff')
+                    i.fa.fa-linkedin
     //
       =========================
       PROGRAM SECTION
       ==============================
-    section#program(style="background-image:url('images/icon-pattern-flip.png');")
+    section#program(style="background-image:url('images/icon-pattern-flip.png')")
       .container
         .page-header
           h2(id='') Cronograma de Actividades
@@ -269,9 +260,9 @@ html(lang='es')
                   .timeline-panel.credits
                     ul.timeline-panel-ul
                       li
-                        span.importo Inscripciones y Entrega de Materiales
+                        span.importo Inscripciones y entrega de materiales
                       li
-                        span.causale Comisión Organizadora
+                        span.causale Comisión organizadora
                       li
                         p
                           small.text-muted
@@ -283,7 +274,7 @@ html(lang='es')
                   .timeline-panel.debits
                     ul.timeline-panel-ul
                       li
-                        span.importo Convolutional Neural Networks Aplicado al Reconocimiento de Imágenes Médicas
+                        span.importo Convolutional Neural Networks aplicado al reconocimiento de imágenes médicas
                       li
                         span.causale Ricardo Rildo Coronado Perez
                       li
@@ -299,9 +290,9 @@ html(lang='es')
                   .timeline-panel.credits
                     ul.timeline-panel-ul
                       li
-                        span.importo Ceremonia de Apertura
+                        span.importo Ceremonia de apertura
                       li
-                        span.causale Comisión Organizadora
+                        span.causale Comisión organizadora
                       li
                         p
                           small.text-muted
@@ -313,9 +304,9 @@ html(lang='es')
                   .timeline-panel.debits
                     ul.timeline-panel-ul
                       li
-                        span.importo Registro de Asistencia
+                        span.importo Registro de asistencia
                       li
-                        span.causale Comisión Organizadora
+                        span.causale Comisión organizadora
                       li
                         p
                           small.text-muted
@@ -343,7 +334,7 @@ html(lang='es')
                   .timeline-panel.debits
                     ul.timeline-panel-ul
                       li
-                        span.importo Implementación SAP en Empresas de Distribución Eléctrica
+                        span.importo Implementación SAP en empresas de distribución eléctrica
                       li
                         span.causale Mirian Yuaneth Chambilla Ordoñez
                       li
@@ -359,7 +350,7 @@ html(lang='es')
                   .timeline-panel.credits
                     ul.timeline-panel-ul
                       li
-                        span.importo El Blockchain y sus Aplicaciones
+                        span.importo El Blockchain y sus aplicaciones
                       li
                         span.causale Eduardo Gonzales Puma
                       li
@@ -391,7 +382,7 @@ html(lang='es')
                       li
                         span.importo BREAK
                       li
-                        span.causale Comisión Organizadora
+                        span.causale Comisión organizadora
                       li
                         p
                           small.text-muted
@@ -405,13 +396,12 @@ html(lang='es')
                       li
                         span.importo Clausura
                       li
-                        span.causale Comisión Organizadora
+                        span.causale Comisión organizadora
                       li
                         p
                           small.text-muted
                             i.fa.fa-clock-o
                             |  6:30-7:00 PM
- 
     section#register.parallax-section
       .container
         .row
@@ -424,50 +414,48 @@ html(lang='es')
             form(action='#', method='post')
               input#firstnamePostMaster.form-control(name='firstname', type='text', placeholder='Nombres', required='')
               input#lastnamePostMaster.form-control(name='lastname', type='text', placeholder='Apellidos', required='')
-              input#institutoPostMaster.form-control(name='instituto', type='text', placeholder='Instituto del que Proviene',required='')
-              select#typePostMaster.form-control(name='tipo', required='')
+              input#institutoPostMaster.form-control(name='instituto', type='text', placeholder='Instituto del que Proviene', required='')
+              select#typePostMaster.form-control(name='tipo', required='', onmouseover="this.style.color='#f2545f';")
+                option(value='ESTUDIANTE') Estudiante
                 option(value='PROFESIONAL') Profesional y público en general
                 option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
-                option(value='ESTUDIANTE') Estudiante
               input#phonePostMaster.form-control(name='celular', type='telephone', placeholder='Celular', required='')
               input#emailPostMaster.form-control(name='email', type='email', placeholder='Email', required='')
               .col-md-offset-6.col-md-6.col-sm-offset-1.col-sm-10
                 input#submitPreinscripcionPostMaster.form-control(name='submit', type='submit', value='Preinscripción')
           .col-md-1
-
     section#venue
       .container
         .row
           .col-md-6
             .row
-              .col-md-6(style='padding:20px;')
-                div(style='background:rgba(38,36,49,0.9); padding:8px;')
-                  div(style='border-left:5px solid #66ccff;')
-                    h4(style='color:#fff;text-align:center;') Público General
-                    h2(style='color:#b3d44e;text-align:center;') S/. 20
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Certificado
+              .col-md-6(style='padding:20px')
+                div(style='background:rgba(38,36,49,0.9); padding:8px')
+                  div(style='border-left:5px solid #66ccff')
+                    h4(style='color:#fff;text-align:center') Público General
+                    h2(style='color:#b3d44e;text-align:center') S/. 20
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Certificado
                     br
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Materiales
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Materiales
                     br
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Break
-              .col-md-6(style='padding:20px;')
-                div(style='background:rgba(38,36,49,0.9); padding:8px;')
-                  div(style='border-left:5px solid #66ccff;')
-                    h4(style='color:#fff;text-align:center;') Estudiantes-ESIS
-                    h2(style='color:#b3d44e;text-align:center;') S/. 10
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Certificado
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Break
+              .col-md-6(style='padding:20px')
+                div(style='background:rgba(38,36,49,0.9); padding:8px')
+                  div(style='border-left:5px solid #66ccff')
+                    h4(style='color:#fff;text-align:center') Estudiantes-ESIS
+                    h2(style='color:#b3d44e;text-align:center') S/. 10
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Certificado
                     br
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Materiales
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Materiales
                     br
-                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%;')
-                      span(style="font-family: 'Poppins', sans-serif;")  Break
+                    i.fa.fa-check(style='color:#fff; font-size:15px;margin-left:5%')
+                      span(style="font-family: 'Poppins', sans-serif")  Break
           .col-md-6
-  
     section#sponsors.parallax-section
       .container
         .row
@@ -482,13 +470,12 @@ html(lang='es')
             img.img-responsive(src='images/sponsor-img3.jpg', alt='sponsors')
           .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='1s')
             img.img-responsive(src='images/sponsor-img4.jpg', alt='sponsors')
-
     section#contact.parallax-section
       .container
         .row
           .wow.fadeInUp.col-md-offset-1.col-md-5.col-sm-6(data-wow-delay='0.6s')
             .contact_des
-              img(src='images/creative.png', style='margin-left:-50px;margin-top:80px;')
+              img(src='images/creative.png', style='margin-left:-50px;margin-top:80px')
           .wow.fadeInUp.col-md-5.col-sm-6(data-wow-delay='0.9s')
             .contact_detail
               .section-title
@@ -498,8 +485,7 @@ html(lang='es')
                 input#contactEmail1.form-control(name='email', type='email', placeholder='Email')
                 textarea#contactSubject1.form-control(name='message', rows='5', placeholder='Mensaje')
                 .col-md-6.col-sm-10
-                  input#submitContact1.form-control(disabled='',type='submit',value='Enviar', style='background:#f2545f;')
-  
+                  input#submitContact1.form-control(disabled='', type='submit', value='Enviar', style='background:#f2545f')
     footer
       .container
         .row
@@ -548,9 +534,7 @@ html(lang='es')
       SCRIPTS
       ==============================
     script(src='js/jquery.min.js')
-    //-script(src='https://code.jquery.com/jquery-3.2.1.js')
-
-    //-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script(src='js/bootstrap.min.js')
     script(src='js/jquery.parallax.js')
     script(src='js/owl.carousel.min.js')
@@ -559,11 +543,8 @@ html(lang='es')
     script(src='js/dscountdown.js')
     script(src='js/dscountdown.min.js')
     script(src='js/smoothscroll.js')
-
     script(src='js/postmaster.js')
-
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js")
-
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js')
     script.
       function getTimeRemaining(endtime) {
       var t = Date.parse(endtime) - Date.parse(new Date());

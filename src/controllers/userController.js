@@ -3,6 +3,7 @@ var jwt = require('jsonwebtoken');
 var uploaderController = require('./uploader');
 var mail = require('./mail');
 var multer = require ('multer');
+var  fs = require('fs');
 
 
 module.exports.register = function (req,res) {
@@ -61,8 +62,58 @@ module.exports.register = function (req,res) {
     //           }
     //         )
 }
+/*
+module.exports.sslController1 = function(req,res){
+    res.sendFile('.well-known/acme-challenge/ElKZ3PuQ67S8s_8yZeowzibyI2dLI5oaaFGym949XGo', { root: path.join(__dirname, '../public') });
+
+    fs.readFile('/archivos/${archivo}', function(err, content) {
+    if(err) {  }
+    cb(content);
+    })
 
 
+
+
+    fs.readFile('archivo.txt', 'utf-8', (err, data) => {
+      if(err) {
+        console.log('error: ', err);
+      } else {
+        console.log(data);
+      }
+    });
+}
+
+module.exports.sslController2 = function(req,res){
+    res.sendFile('.well-known/acme-challenge/jtm3MenpuEpXRrrNWZiMfTOZqN-sJOn6qJ95lulThbA', { root: path.join(__dirname, '../public') });
+}
+
+*/
+module.exports.sslController1 = function(req,res){
+console.log("hola")
+console.log("archivo",req.params)
+fs.readFile('src/public/.well-known/acme-challenge/zf2uIh7KIBEFFrKnxQY1jBGH5xEYlY2E6BAz0dMKx6s', 'utf-8', (err, data) => {
+      if(err) {
+        console.log('error: ', err);
+      } else {
+        console.log(data);
+        res.send(data)
+      }
+    });
+
+}
+
+module.exports.sslController2 = function(req,res){
+console.log("archivo",req.params)
+
+    fs.readFile('src/public/.well-known/acme-challenge/ziWr--RAg3dYNucCUNNHMJt0nzN5KBueFLRBKI6_K84', 'utf-8', (err, data) => {
+      if(err) {
+        console.log('error: ', err);
+      } else {
+        console.log(data);
+        res.send(data)
+      }
+    });
+}
 module.exports.createView = function (req,res) {
     res.render('index');
 }

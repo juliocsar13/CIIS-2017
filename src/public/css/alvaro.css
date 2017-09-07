@@ -84,6 +84,7 @@
 .tematicos {
   font-family: 'Open Sans', sans-serif;
   height: 100vh;
+  margin-bottom: 20px;
   background: #f5f5f5;
   display: flex;
   justify-content: center;
@@ -94,7 +95,8 @@
     .tematicos {
       height: 100%; } }
   .tematicos h2 {
-    margin: 2em 0 0 0; }
+    margin: 2em 0 0 0;
+    margin-bottom: 20px; }
   .tematicos .tematicos_title_frio {
     color: #4d4d4d; }
   .tematicos .tematicos_title_caliente {
@@ -102,7 +104,7 @@
   .tematicos ul {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 5em 0 0 0;
     flex-wrap: wrap; }
     .tematicos ul li {

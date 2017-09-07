@@ -15,6 +15,13 @@ router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
 
+router.route('/.well-known/acme-challenge/:zf2uIh7KIBEFFrKnxQY1jBGH5xEYlY2E6BAz0dMKx6s')
+		.get(userController.sslController1)
+
+router.route('/.well-known/acme-challenge/:ziWr--RAg3dYNucCUNNHMJt0nzN5KBueFLRBKI6_K84')
+		.get(userController.sslController2)
+
+
 router.route('/postmaster/preregistro')
           .post(postMasterController.register);
 router.route('/postmaster/Dusuarios')
