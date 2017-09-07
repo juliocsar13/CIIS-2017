@@ -70,9 +70,12 @@ html
   script(src='https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js')
   script(type='text/javascript').
        var arrayDNI = $('.dniReniec');
+       $.map(arrayDNI,function(value){
+            //checkDNI(value.textContent);
+         })
 
          function checkDNI (dni){
-           var tecactusApi = new TecactusApi("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImNjNjdiYTdhZDBkNTczZjgzNzBjZjE1MWU0ZWM0OGIyYzk2OGRlMzVmZDk5ZDRkNTJkNGVmYjBkNzEzMDJkZjRhYzQxOWQxNzI1NjMxZjNmIn0.eyJhdWQiOiIxIiwianRpIjoiY2M2N2JhN2FkMGQ1NzNmODM3MGNmMTUxZTRlYzQ4YjJjOTY4ZGUzNWZkOTlkNGQ1MmQ0ZWZiMGQ3MTMwMmRmNGFjNDE5ZDE3MjU2MzFmM2YiLCJpYXQiOjE1MDQ3MTc0NDYsIm5iZiI6MTUwNDcxNzQ0NiwiZXhwIjoxNTM2MjUzNDQ2LCJzdWIiOiI2NzciLCJzY29wZXMiOlsidXNlLXJlbmllYyJdfQ.wtgBjWVzIscD-oToNZW0Dip7mcPI36lHvBBKMNsyVAR7kfy99KrXjtZ5qjqIkFOJODgMeOvSPdb0DEpWoawFz3ixi3iYvMBnM27opR8NTeg9X7BP6UeNQ8EQjgSm7xdNPGNrru6Ds-jtFzenBbDwr8tiq3UW6SkosvN7yYQ-x7tyOyIdirhVSgRVcty5rH6dZsz7hbiQtc3SHv0LeOGWiw368FqRPjkcBb7H57GRgi9MwB7Llj2PFJEaZV1LwJ0xTAMIGFf40NzAUjqtGgiwtzNRxKylTIzENkpVRgaTpltlx0bc1mqhrzkbb454SI8F_gstZNAkYkCxbi3KkeGQAhhDE7PaSn9y_Op9P2KbD_6dr8745csroiR__j0vaMzD0HLdvFtLKA-6MnrwQwHZnqXCtR-fJFVwoMkYutf5LgAlwdoTRmY5SosBBfMYaiyMhsnunR3gsd6vMsshtp-ut1GXiFvZbTGkTk49LbrywKHor3xxFY8konVUEXA6lv9viOrjCfNCPzYisEWqjHu9OvS9FDOkb9UKNOtzf3UfNaV40wcowbGgSxVvtE7y2UKkSTAb4dperV2NJkEnRNqbjNxWNCK0-AzDK7Vov8Pdcf_AKCaEOqxLPs6X7mZxLNa72ko11M5QZlfVrFzMr3MSFd555LohZQPLRlAsgxPElcw")
+           var tecactusApi = new TecactusApi("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImJiZjQyYmY5YzJiYmVhNjhlY2ExNjg0ZjcyNTU0ODY0NzhjMGFlMmQ2ZTkwOWUyYTAzZmRmMmViZDI1YWQzMDE5NGIyMTg2ZjFiMWRjNjM3In0.eyJhdWQiOiIxIiwianRpIjoiYmJmNDJiZjljMmJiZWE2OGVjYTE2ODRmNzI1NTQ4NjQ3OGMwYWUyZDZlOTA5ZTJhMDNmZGYyZWJkMjVhZDMwMTk0YjIxODZmMWIxZGM2MzciLCJpYXQiOjE1MDQ4MDI1NDUsIm5iZiI6MTUwNDgwMjU0NSwiZXhwIjoxNTM2MzM4NTQ1LCJzdWIiOiI2OTIiLCJzY29wZXMiOlsidXNlLXJlbmllYyJdfQ.3EELn6kT0fPyjwsPPxorsf9Mds7-FPSKkP91NsHrTgB0jvzLSPUEm7hoATv6-ObiHek80X60btnG0NxtZWkiWA0MyUYiBY4fUbP73CrSuk96Hnew6hAywGzfXFBoI0r5-5r-Dx0Nr53MrdP0wN5goGVS64Fy3h5UVxPQntYps0efVyaMu2XE6J9gysC6cpZ36Sqrf1mZNeBHTEftQWT1zBXvpO4vPGsmLZMxgkPnF4rj_kFz8NfU3a-Yna5mD1LsTLf8t2OxjH_jEfjB3ScF55XqwUwnecSW9K0r7DU7y06f7nrXz8beVfOLr1_SL_jjnmzzcq8BK6zMkcRddEGBeNCINM3tq0zHcvbNuGpovV5NGHxrsoCN0mWn1HPBp2S8VY1SJkpSTfJ0vBJyid_m5TZnkI-uwIWGMQ3ogip6eqG68azRAOATiBqUuYPqBnUj4R67bocWqBWRyumspgsAXLeHul34MM4rRFNW0fu4zNpCQWa7teURroFcWA7vRbB9ZAyIc87KxChhwfm5l1kB9WmmJQ-M7lfidisJeAjliPbscIPXWnCPVGKYMXGKajbio1xMlvaXv0-SUAi8UH9zG0rGrcVK8EC3HC2AJ9oMkaw5IHD91pG4by8izVuLeU_n1VgIO_U3hphe83XdzPKpe52HOTplgwPEpfTgz-gDJ2s")
            
            var dni = new String(dni);
            dni = dni.replace(/\s/g, '');
@@ -81,6 +84,12 @@ html
            .then(function (response) {
              console.log("consulta correcta!")
              console.log(response.data)
+             var data = response.data;
+             console.log(data.dni);
+             var dni = data.dni;
+             var file = findElementByText(dni);
+             file.eq(2)[0].innerHTML = data.nombres;
+             file.eq(3)[0].innerHTML = data.apellido_paterno+" "+data.apellido_materno;
              
              })
              .catch(function (response) {
@@ -90,6 +99,13 @@ html
                console.log(response.data)
                })
          }
+         function findElementByText(dni){
+             var jSpot=$("h4:contains("+dni+")")
+                   .filter(function(){ return $(this).children().length === 0;})
+                   .parent().closest('tr').find('td');  // because you asked the parent of that element
+
+             return jSpot;
+          }
          
   script(type='text/javascript').
     smoothScroll.init();
