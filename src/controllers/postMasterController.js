@@ -1,6 +1,7 @@
 
 var UserPostMaster = require('../collections/userpostmaster');
 var mail = require('./mail');
+
 module.exports.createView = function(req,res){
 
     res.render('postmaster');
@@ -18,6 +19,7 @@ module.exports.register = function (req,res) {
     user.lastname= data.lastname;
     user.type = data.type;
     user.email = data.email;
+    user.dni = data.dni;
     user.cellphone = data.cellphone;
     user.eventType = data.eventType;
 
@@ -41,10 +43,20 @@ module.exports.getUsers = function (req,res) {
     });
 }
 
+module.exports.checkReniec = function (req,res) {
+
+    UserPostMaster.find({})
+    .exec(function (err,user) {
+      if(err) return res.sendStatus(503);
+      res.render('test',{'user':user});
+    });
+}
+
 module.exports.deleteUsers = function (req,res) {
     UserPostMaster.remove({})
     .exec(function (err,user) {
       if(err) return res.sendStatus(503);
       return res.json(user);
+
     });
 }

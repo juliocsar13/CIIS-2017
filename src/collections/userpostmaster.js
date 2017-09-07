@@ -4,6 +4,8 @@ var Schema = mongoose.Schema;
 var userpostmasterSchema = new Schema({
     email: {type:String, unique:true},
     name: String,
+    lastname: String,
+    dni: {type:String, unique:true},
     institute: String,
     cellphone: String,
     type: String,

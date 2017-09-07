@@ -20,6 +20,7 @@
     "nodemailer": "^4.1.0",
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^1.11.0",
+    "reniec-sunat-js": "^1.0.0",
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {

@@ -8,7 +8,7 @@ $(function(){
   var flag_preRegisterEmail = false;
   var flag_preRegisterData = false;
 
-  
+
 
 
   $('#contactEmail1').on('input',function(e){
@@ -85,12 +85,14 @@ $(function(){
     var lastname = $('#lastnamePostMaster').val();
     var institute = $('#institutoPostMaster').val();
     var email = $('#emailPostMaster').val();
+    var dni = $('#dniPostMaster').val();
     var type = $('#typePostMaster').val();
     var cellphone = $('#phonePostMaster').val();
     var eventType = "POSTMASTER";
 
     var data= {
       'email' : email,
+      'dni' : dni,
       'name': name,
       'lastname': lastname,
       'institute': institute,

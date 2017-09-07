@@ -67,8 +67,30 @@ html
   script(type='text/javascript', src='  https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.4/js/smooth-scroll.min.js')
   //-script(type='text/javascript', src='/bower_components/smooth-scroll.js/dist/js/smooth-scroll.min.js')
   script(src='https://unpkg.com/axios/dist/axios.min.js')
+  script(src='https://tecactus-4b42.kxcdn.com/reniec-sunat-js.min.js')
+  script(type='text/javascript').
+       var arrayDNI = $('.dniReniec');
 
-
+         function checkDNI (dni){
+           var tecactusApi = new TecactusApi("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImNjNjdiYTdhZDBkNTczZjgzNzBjZjE1MWU0ZWM0OGIyYzk2OGRlMzVmZDk5ZDRkNTJkNGVmYjBkNzEzMDJkZjRhYzQxOWQxNzI1NjMxZjNmIn0.eyJhdWQiOiIxIiwianRpIjoiY2M2N2JhN2FkMGQ1NzNmODM3MGNmMTUxZTRlYzQ4YjJjOTY4ZGUzNWZkOTlkNGQ1MmQ0ZWZiMGQ3MTMwMmRmNGFjNDE5ZDE3MjU2MzFmM2YiLCJpYXQiOjE1MDQ3MTc0NDYsIm5iZiI6MTUwNDcxNzQ0NiwiZXhwIjoxNTM2MjUzNDQ2LCJzdWIiOiI2NzciLCJzY29wZXMiOlsidXNlLXJlbmllYyJdfQ.wtgBjWVzIscD-oToNZW0Dip7mcPI36lHvBBKMNsyVAR7kfy99KrXjtZ5qjqIkFOJODgMeOvSPdb0DEpWoawFz3ixi3iYvMBnM27opR8NTeg9X7BP6UeNQ8EQjgSm7xdNPGNrru6Ds-jtFzenBbDwr8tiq3UW6SkosvN7yYQ-x7tyOyIdirhVSgRVcty5rH6dZsz7hbiQtc3SHv0LeOGWiw368FqRPjkcBb7H57GRgi9MwB7Llj2PFJEaZV1LwJ0xTAMIGFf40NzAUjqtGgiwtzNRxKylTIzENkpVRgaTpltlx0bc1mqhrzkbb454SI8F_gstZNAkYkCxbi3KkeGQAhhDE7PaSn9y_Op9P2KbD_6dr8745csroiR__j0vaMzD0HLdvFtLKA-6MnrwQwHZnqXCtR-fJFVwoMkYutf5LgAlwdoTRmY5SosBBfMYaiyMhsnunR3gsd6vMsshtp-ut1GXiFvZbTGkTk49LbrywKHor3xxFY8konVUEXA6lv9viOrjCfNCPzYisEWqjHu9OvS9FDOkb9UKNOtzf3UfNaV40wcowbGgSxVvtE7y2UKkSTAb4dperV2NJkEnRNqbjNxWNCK0-AzDK7Vov8Pdcf_AKCaEOqxLPs6X7mZxLNa72ko11M5QZlfVrFzMr3MSFd555LohZQPLRlAsgxPElcw")
+           
+           var dni = new String(dni);
+           dni = dni.replace(/\s/g, '');
+           console.log(dni);
+           tecactusApi.Reniec.getDni(dni)
+           .then(function (response) {
+             console.log("consulta correcta!")
+             console.log(response.data)
+             
+             })
+             .catch(function (response) {
+               console.log("algo ocurrió")
+               console.log("código de error: " + response.code)
+               console.log("mensaje de respuesta: " + response.status)
+               console.log(response.data)
+               })
+         }
+         
   script(type='text/javascript').
     smoothScroll.init();
     $(window).scroll(function() {

@@ -1,0 +1,53 @@
+extends layout
+
+
+block content
+  footer
+  section#pricing-table.section-page
+    .container
+      h2(style='font-size:40px;') PRE-INSCRITOS POSTMASTER
+      .table-responsive
+        table#price.table.table-prices
+          thead
+            tr
+              td
+                | Nombres
+              td
+                | Apellidos
+              td
+                | Nombres [R]
+              td
+                | Apellidos [R]
+              td
+                | DNI
+              td
+                | Instituto
+              td
+                | email
+              td
+                | Celular
+              td
+                | Tipo 
+          if   user
+            tbody
+              each users in user
+                tr
+                  td
+                    h4  #{users.name}
+                  td
+                    h4  #{users.lastname}
+                  td
+                    h4#nameReniec
+                  td
+                    h4#lastnameReniec
+                  td
+                    h4.dniReniec  #{users.dni}
+                  td
+                    h4  #{users.institute}
+                  td
+                    h4  #{users.email}
+                  td
+                    h4  #{users.cellphone}
+                  td
+                    h4  #{users.type}
+                  ul
