@@ -1,0 +1,371 @@
+extends layout
+
+block content
+  section#index.section.section-page
+    article#countdown
+      .container_countdown_unit
+        span#days.countdown_unit
+        span.countdown_unit_label  Días
+      span.separator
+      .container_countdown_unit
+        span#hours.countdown_unit
+        span.countdown_unit_label  Horas
+      span.separator
+      .container_countdown_unit
+        span#minutes.countdown_unit
+        span.countdown_unit_label  Minutos
+      span.separator
+      .container_countdown_unit
+        span#seconds.countdown_unit
+        span.countdown_unit_label  Segundos
+    h1
+      span.highlighted
+        | CONGRESO
+        small.highlighted2  INTERNACIONAL
+      span
+        | DE
+        small.highlighted3  INFORMÁTICA Y SISTEMAS
+      span.subtitle Emprendimiento e innovación tecnológica
+      //-span.subtitle2 el mejor evento tecnológico del sur del Perú
+    .subscription
+
+      //-input#email(type='email', placeholder='Tu email')
+
+      //-button#subscribe.btn-outline.lg(type='button')  Registrate
+
+      button#preRegisterBtn.btn-outline.lg(href='#preRegisterModal')  Preinscríbete
+      br
+    //-
+      button#preRegisterConcurseBtn.btn-outline-chall.lg(href='#preRegisterConcurseModal')
+        | Preinscríbete
+        | al concurso de programación
+  footer
+
+  #pre_modal.modal.fade(role='dialog')
+    .modal-dialog.modal-lg
+      // Modal content
+      .modal-content
+        .modal-body(style="height:500px")
+          .col-md-6
+            .col-md-12
+              label(style="font-size: 30px;font-weight: bold;margin-top:20px;font-weight:normal") XIV POST MASTER 2017
+              span Reencuentro de Egresados
+            .col-md-12
+              img.img-responsive-modal(src="/images/logo.png" style="width:300px")
+          .col-md-6(style="background:#00aad4;height: 500px")
+            h1(style="margin-top:50px;color: white;font-size: 40px;font-weight: bold") El viernes 15 de septiembre 
+            label.label_ciistacna(style="color:white") 
+              | Este viernes 15 de septiembre se llevará a cabo el XIV POST MASTER 2017, el cual tiene como finalidad compartir las experiencias y remembranzas por parte de los egresados de nuestra escuela en su ambito profesional
+
+
+            
+  #preRegisterModal
+    .close-preRegisterModal
+      img.closebt(src='img/closebt.svg', alt='')
+    .modal-content
+      form#preRegisterForm(method="post",name="preRegisterForm", enctype="multipart/form-data")
+        h3  Preinscripción
+        label
+          | Tu email
+          input#preRegisterEmail(style='color:black;',name='email', type='email', required='')
+        label
+          | Tus nombres
+          input#preRegisterFirstName.capitalize(style='color:black;',name='name', type='text', required='')
+        label
+          | Tus apellidos
+          input#preRegisterLastName.capitalize(style='color:black;', name='lastname',type='text', required='')
+        label
+          | Tu DNI
+          input#preRegisterDNI(style='color:black;', name='dni', type='text', required='')
+        label Tipo de inscripción
+        select#preRegisterType.form-control(name='type')
+          option(value='PROFESIONAL') Profesional y público en general
+          //- option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
+          option(value='ESTUDIANTE') Estudiante
+        label
+          | Tu ciudad
+          input#preRegisterCity.capitalize(type='text',name='city', style='color:black;', required='')
+        label
+          | Tu número de celular
+          input#preRegisterCellphone(type='text', name='cellphone', style='color:black;', required='')
+      //-  label
+          | Foto Voucher (Nro Cta: XXX-XXXXXXX-X-XX BCP a nombre de : YOVANA VELASQUEZ )
+          input#preRegisterVoucher(type='file', name='image',accept='image/*', required='')
+      button#submitPreRegister.btn-outline-inverse.green(disabled='') Enviar
+  #preRegisterConcurseModal
+    .close-preRegisterConcurseModal
+      img.closebt(src='img/closebt.svg', alt='')
+    .modal-content
+      form#preRegisterForm.preRegisterConcurseForm
+        h3  Preinscripción al concurso de programación
+        label
+          | Nombre del equipo
+          input#preRegisterEmail(style='color:black;', name='team', type='text', required='')
+        label Participantes
+        .participant-temp.hide
+          div
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='DNI', placeholder='DNI', type='text')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='name', placeholder='Nombres', type='text')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='lastname', placeholder='Apellidos', type='text')
+            div(style='display:inline-block;width:10%;')
+              img.closebt.delete-participant(width='20', src='img/closebt.svg', alt='')
+        .participant
+          div
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='DNI', placeholder='DNI', type='text', required='')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='name', placeholder='Nombres', type='text', required='')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='lastname', placeholder='Apellidos', type='text', required='')
+            div(style='display:inline-block;width:10%;')
+        .participant
+          div
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='DNI', placeholder='DNI', type='text', required='')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='name', placeholder='Nombres', type='text', required='')
+            div(style='display:inline-block;width:25%;')
+              input#preRegisterLastName.capitalize(style='color:black;width:90%;', name='lastname', placeholder='Apellidos', type='text', required='')
+            div(style='display:inline-block;width:10%;')
+        button.btn-outline.add-participant(type='button', name='button') Añadir Participante
+        br
+        br
+        button#submitPreConcurseRegister.btn-outline-inverse.green(style='width:50%;', type='submit')
+          | Enviar
+  #animatedModal
+    .close-animatedModal
+      img.closebt(src='img/closebt.svg', alt='')
+    .modal-content
+      form#contactForm
+        h3  !Cuéntanos tus dudas!
+        label
+          | Tu email
+          input#contactEmail(style='color:black;', type='email')
+        label
+          | Tu nombre
+          input#contactName(style='color:black;', type='text')
+        label
+          | Tu consulta
+          textarea#contactSubject(style='color:black;')
+      button#submitContact.btn-outline-inverse(disabled='') Enviar
+
+  //-
+    section#linea-investigation
+    section#schedule.section.section-page
+      h1.subtitle-section
+        | Ejes Temáticos
+      .col-md-12
+        h2
+        .col-md-3
+          .latest-post
+            img.img-responsive(src='images/datos.jpg', alt='')
+            h4
+              a.linea-title Analítica de datos
+            .post-details
+              span.date
+            p.text
+              | Base de datos, estructura, cubos, minería de datos, etc. Pronósticos, redes neuronales, inteligencia de negocios.
+
+        .col-md-3
+          .latest-post
+            img.img-responsive2(src='images/conectividad.jpg', alt='')
+            h4
+              a.linea-title Conectividad
+            .post-details
+            p.text
+              | Redes - telemática, seguridad de redes, hackeo ético, wifi, arquitectura de computadoras, sistemas empotrados.
+        .col-md-3
+          .latest-post
+            img.img-responsive3(src='images/cumputacion.jpg', alt='' )
+            h4
+              a.linea-title Ciencias de la computación
+            .post-details
+              span.date
+            p.text
+              | Reconocimiento de voz, visión computacional, planificadores, procesamiento de imágenes, investigación de operaciones y sistemas.
+        .col-md-3
+          .latest-post
+            img.img-responsive4(src='images/software.png', alt='')
+            h4
+              a.linea-title Ingeniería de software
+            .post-details
+              span.date
+            p.text
+              | Paradigmas de programación software, desarrollo de software Ágil, desarrollo de software Global
+  section.tematicos#linea-investigacion
+    h2
+      span.tematicos_title_frio EJES 
+      span.tematicos_title_caliente TEMÁTICOS
+    ul
+      li
+        div
+          img(src='img/ico-uno.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle
+            | Analítica de
+            br
+            | datos
+            br
+        span.tematicos_contenido
+          | Se trabajan con tareas orientadas a la exploración de los datos, con la intención de encontrar patrones o conocimiento útil, que permita optimizar o rentabilizar un proceso de negocio.
+      li
+        div
+          img(src='img/ico-dos.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle
+            | Conectividad
+            br
+            |  
+            br
+        span.tematicos_contenido
+          | Hace referencia a los medios, tecnologías y protocolos necesarios para el intercambio de la información en una red de computadoras.     
+
+      li
+        div
+          img(src='img/ico-tres.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle
+            | Ciencia de la
+            br
+            | computación
+            br
+        span.tematicos_contenido
+          | Abarca el estudio de las bases teóricas de la información y la computación, así como su aplicación en sistemas computacionales.     
+
+      li
+        div
+          img(src='img/ico-cuatro.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle
+            | Ingeniería de 
+            br
+            | software
+            br
+
+
+        span.tematicos_contenido
+          | Representa el conjunto de métodos, herramientas y técnicas que se utilizan en el desarrollo del software.                      
+
+
+        
+  section.actividades
+      article
+        .catividades_titulo
+          h2.color--pry Actividades
+          h2.color--seco académicas
+        .atividades_contenido
+          p
+            | Contaremos con conferencistas nacionales e internacionales de distinguida calidad y experiencia que disertarán ponencias de alto nivel académico.
+
+        //.a(href='#') Ver mas
+      article
+        .catividades_titulo
+          h2.color--seco Concurso
+          h2.color--pry de programación
+        .atividades_contenido
+          p
+            | Se desarrollar&aacute;n diversos concursos donde podr&aacute;s competir con diferentes estudiantes de distintas universidades de nuestro pa&iacute;s.
+        //.a(href='#') Ver mas
+      article
+        .catividades_titulo
+          h2.color--seco Todo
+          h2.color--pry sobre Tacna
+        .atividades_contenido
+          p
+            | La "Ciudad Heroica" de Tacna cuenta con distintos atractivos turísticos, un clima agradable, desiertos y valles fértiles que conviven para crear paisajes únicos. Todo esto que hace de nuestra ciudad un destino agradable en el sur de nuestro Perú.
+        //.a(href='#') Ver mas
+
+  
+ 
+  section.tematicos#pricing-table.section-page
+    .container
+      h2
+        span.tematicos_title_caliente(style="") INVERSIÓN
+      .table-responsive
+        table#price.table.table-prices
+          thead
+            tr
+              td
+              td
+                | Hasta el 15 de Oct.
+              td
+                | Hasta el 13 de Nov.
+              td
+                | Talleres
+          tbody
+            tr
+              td
+                | ESTUDIANTES
+              td
+                | S/. 100.00
+              td
+                | S/. 120.00
+              td
+                | S/. 20.00
+            tr(style='background:transparent;')
+              td
+                | PROFESIONALES
+              td
+                | S/. 120.00
+              td
+                | S/. 140.00
+              td
+                | S/. 40.00
+    h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
+    h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
+
+  section.tematicos#auspiciadores
+    h2
+      span.tematicos_title_caliente AUSPICIADORES
+
+    .container(style="margin-top:50px")
+      .row
+        .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.3s')
+          img.img-responsive1(src='images/sponsor-img1.jpg', alt='sponsors')
+        .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.6s')
+          img.img-responsive1(src='images/sponsor-img2.jpg', alt='sponsors')
+        .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.9s')
+          img.img-responsive1(src='images/sponsor-img3.jpg', alt='sponsors')
+        .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='1s')
+          img.img-responsive1(src='images/sponsor-img4.jpg', alt='sponsors')  
+  //-section#Organizadores
+    h2.title-org(style='font-size:40px;color:#00aad4;') Organizadores
+    img(src='/img/logo-esis-alvaro.png', width="200" height="200")
+    img(src='/img/logo-unjbg.png', width="200" height="200")
+  span.ir-arriba
+    img(src='img/btn_arriba2.png')
+  section.direccion#Organizadores(style="margin-top:50px")
+    h2.title-org(style='color:#00aad4;') ORGANIZA
+
+    .direccion_logos
+      .col-md-12
+        .col-md-6
+          img(src='img/log-esis.png', alt='logo-esis')
+          label
+            
+        .col-md-6
+          img(src='img/logo-unjbg.png', alt='logo-unjbg')
+          
+    
+      .col-md-6
+          p
+            | Escuela Profesional de Ingeniería en Informática y Sistemas 
+      .col-md-6
+          p
+            | Universidad Nacional Jorge Basadre Grohmann
+      .col-md-12      
+        p Ciudad Universitaria: Sede los Granados - Avenida Miraflores S/N - Tacna
+        p Teléfono: (052) 583000 anexo 2005
+        p Celulares: 988 899988 - 977 465783
+        p E-mail: ciistacna@unjbg.edu.pe
+    //-.direccion_iconos
+      a(href='#')
+        img(src='img/icon-facebook.png', alt='icono-facebook')
+      a(href='#')
+        img(src='img/icon-twi.png', alt='icono-twiter')
+      a(href='#')
+        img(src='img/icon-youtube.png', alt='icono-youtube')
+  section#map(style="margin-top:150px")

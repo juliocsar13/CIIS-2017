@@ -4,7 +4,7 @@ var mail = require('./mail');
 
 module.exports.createView = function(req,res){
 
-    res.render('postmaster');
+    res.render('index');
 
 }
 

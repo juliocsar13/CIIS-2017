@@ -2,6 +2,24 @@
 
 $(function(){
 
+
+
+  var finalDate = new Date('11/13/2017 09:00')
+
+  $('#clockdiv').countdown(finalDate,function(event){
+    var seconds = formatTens(event.offset.seconds);
+    var minutes = formatTens(event.offset.minutes);
+    var hours = formatTens(event.offset.hours);
+    var days = formatTens(event.offset.totalDays);
+
+    $('.days').text(days);
+    $('.hours').text(hours);
+    $('.minutes').text(minutes);
+    $('.seconds').text(seconds);
+
+  })
+  
+
   var flag_contactEmail = false;
   var flag_contactData = false;
 

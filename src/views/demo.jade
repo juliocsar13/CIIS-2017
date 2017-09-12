@@ -1,10 +1,10 @@
 doctype html
 html(lang='es')
   head
-    title XIV POSTMASTER 2017
-    meta(property='fb:app_id', content='1115877665114558')
+    title XIV POST MASTER 2017
+    //-meta(property='fb:app_id', content='1115877665114558')
     meta(property='og:type', content='website')
-    meta(property='og:url', content='http://www.ciistacna.com')
+    meta(property='og:url', content='http://www.ciistacna.com/postmaster')
     meta(property='og:title', content='PostMaster Tacna')
     meta(property='og:image', content='http://www.ciistacna.com/images/fbciis.png')
     meta(property='og:description', content='postmaster')
@@ -30,16 +30,18 @@ html(lang='es')
       NAVIGATION LINKS
       ==============================
     .navbar.navbar-fixed-top.custom-navbar(role='navigation')
-      .container
-        // navbar header
-        .navbar-header
+      .containerder
+        .navbar-heade
+        // navbar hear
           button.navbar-toggle(data-toggle='collapse', data-target='.navbar-collapse')
             span.icon.icon-bar
             span.icon.icon-bar
             span.icon.icon-bar
           a.navbar-brand(href='#', style='font-size:23px')
-            span(style='margin-left: 80px') POSTMASTER
-            img(src='images/clogo.png', alt='', style='width:60px; height:60px; margin-top:-45px; ')
+            span(style='margin-left: 80px')
+              span(style='color:#b3d44e') XIV
+              |  POST MASTER
+            img(src='images/logo.png', alt='', style='width:60px; height:60px; margin-top:-50px; ')
         .collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
@@ -57,7 +59,7 @@ html(lang='es')
             li
               a.smoothScroll(href='#contact') Contacto
             li
-              a.smoothScroll(href='/ciis') CIIS
+              a.smoothScroll(href='/') CIIS
     //
       =========================
       INTRO SECTION
@@ -80,7 +82,7 @@ html(lang='es')
                 div
                   span.seconds
                   .smalltext Segundos
-              h1.wow.fadeInUp(data-wow-delay='1.0s') XIV POSTMASTER 2017
+              h1.wow.fadeInUp(data-wow-delay='1.0s') XIV POST MASTER 2017
               h3.wow.bounceIn(data-wow-delay='0.9s') Reencuentro de Egresados
               a.btn.btn-lg.btn-default.smoothScroll.wow.fadeInUp(href='#overview', data-wow-delay='2.3s') MÁS INFORMACIÓN
               a.btn.btn-lg.btn-danger.smoothScroll.wow.fadeInUp(href='#register', data-wow-delay='2.3s', style='background:#00aad4') PREINSCRÍBETE
@@ -419,6 +421,7 @@ html(lang='es')
                 option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
               input#phonePostMaster.form-control(name='celular', type='telephone', placeholder='Celular', required='')
               input#emailPostMaster.form-control(name='email', type='email', placeholder='Email', required='')
+              input#dniPostMaster.form-control(name='dni', type='text', placeholder='DNI', required='')
               .col-md-offset-6.col-md-6.col-sm-offset-1.col-sm-10
                 input#submitPreinscripcionPostMaster.form-control(name='submit', type='submit', value='Preinscripción')
           .col-md-1
@@ -460,18 +463,14 @@ html(lang='es')
           .wow.bounceIn.col-md-12.col-sm-12
             .section-title
               h2 Nuestros Patrocinadores
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(data-wow-delay='0.3s')
-            img.img-responsive(src='images/Ayca.png', alt='sponsors')
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(data-wow-delay='0.6s')
-            img.img-responsive(src='images/Santa Elena.png', alt='sponsors')
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(data-wow-delay='0.9s')
-            img.img-responsive(src='images/Spirit3.png', alt='sponsors')
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(style='padding-top:23px;', data-wow-delay='1s')
-            img.img-responsive(src='images/Gigantographic.jpg', alt='sponsors')
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(style='padding-top:60px;', data-wow-delay='0.9s')
-            img.img-responsive(src='images/Dora Santa María.JPG', alt='sponsors')
-          .wow.fadeInUp.col-md-2.col-sm-12.col-xs-12(style='padding-top:16px;', data-wow-delay='0.9s')
-            img.img-responsive(src='images/Publigraff.png', alt='sponsors')
+          .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.3s')
+            img.img-responsive(src='images/sponsor-img1.jpg', alt='sponsors')
+          .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.6s')
+            img.img-responsive(src='images/sponsor-img2.jpg', alt='sponsors')
+          .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='0.9s')
+            img.img-responsive(src='images/sponsor-img3.jpg', alt='sponsors')
+          .wow.fadeInUp.col-md-3.col-sm-6.col-xs-6(data-wow-delay='1s')
+            img.img-responsive(src='images/sponsor-img4.jpg', alt='sponsors')
     section#contact.parallax-section
       .container
         .row
