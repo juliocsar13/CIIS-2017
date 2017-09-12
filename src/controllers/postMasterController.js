@@ -28,6 +28,8 @@ module.exports.register = function (req,res) {
           console.log(err);
           return res.sendStatus(503)
         }
+        user.title = "XIV POSTMASTER de Informatica y Sistemas-TACNA";
+        user.date = "15 de Septiembre";
         mail.sendEmail(user);
         console.log(user);
         return res.json(200);

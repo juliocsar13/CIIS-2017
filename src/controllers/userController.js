@@ -26,6 +26,8 @@ module.exports.register = function (req,res) {
           console.log(err);
           return res.sendStatus(503)
         }
+        user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
+        user.date = "13 al 17 de Noviembre";
         mail.sendEmail(user);
         console.log(user);
         return res.json(200);
