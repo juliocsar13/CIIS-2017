@@ -169,3 +169,21 @@ a {
     height: 655px;
 }
 }
+section#linea-investigacion2 {
+    height: 295px;
+    background-color: #060505;
+}
+@media all and (max-width : 625px) {
+section#linea-investigacion2 {
+    height: 883px;
+    /* background: url(../img/bj.jpg); */
+    background-color: #060505;
+}
+}
+@media all and (min-width : 626px) {
+section#linea-investigacion2 {
+    height: 457px;
+    background-color: #060505;
+}
+}
+

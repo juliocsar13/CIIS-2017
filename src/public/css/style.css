@@ -1717,7 +1717,7 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
   position: fixed;
   bottom: 20px;
   right: 20px;   
-  z-index: 999; 
+  z-index: 14; 
 
 }
 .col-md-6 img:hover {
@@ -1844,6 +1844,7 @@ span.sueldo {
 #pricing-table {
     height: 456vh;
 }
+
 }
 @media all and (min-width : 990px) {
 #pricing-table {
@@ -1865,5 +1866,13 @@ span.sueldo {
 @media all and (min-width : 768px) {
 #auspiciadores {    
     height: 752px;
+}
+}
+
+@media all and (max-width : 625px) {
+section#linea-investigacion2 {
+    height: 883px;
+    /* background: url(../img/bj.jpg); */
+    background-color: #060505;
 }
 }

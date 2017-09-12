@@ -1,6 +1,22 @@
 extends layout
 
 block content
+  #finestra-modal3.finestra-modal3.js-mostrar3             
+    .inicio-modal
+        .imagen-modal
+            img.img-modal(src='/img/logo-modal.png')
+            | &#x9;  &#x9;&#x9;
+            h2.subtitle-modal POSTMASTER 2017
+            | &#x9;  &#x9;&#x9;
+            span Reencuentro de Egresados          
+          .informacion-modal
+            h2.subtitle-modal2 El viernes 15 de septiembre 
+            | &#x9;&#x9;  &#x9;
+            .contenido-modal
+              | Este viernes 15 de septiembre se llevar&aacute; a cabo el XIV POST MASTER 2017, el cual tiene como finalidad compartir las experiencias y remembranzas por parte de los egresados de nuestra escuela en su ambito profesional.
+             
+            a( href='/postmaster').boton_personalizado Ingresa !
+    #finestra-modal-tancar3.finestra-modal-tancar.boto3 &times;
   section#index.section.section-page
     article#countdown
       .container_countdown_unit
@@ -195,6 +211,47 @@ block content
               span.date
             p.text
               | Paradigmas de programación software, desarrollo de software Ágil, desarrollo de software Global
+  section.tematicos#linea-investigacion2    
+    ul
+      li
+        div
+          img(src='img/uno.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle(style="color:white;font-weight: 900;")
+            | Fecha
+            
+        span.tematicos_contenido(style="color:white")
+          | Del 13 al 17 de Noviembre
+      li
+        div
+          img(src='img/dos.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle(style="color:white;font-weight: 900;")
+            | Hora de Inicio
+
+        span.tematicos_contenido(style="color:white")
+          | 8:00 am   
+
+      li
+        div
+          img(src='img/tres.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle(style="color:white;font-weight: 900;")
+            | Lugar
+
+        span.tematicos_contenido(style="color:white")
+          | Auditorio Central de UNJBG     
+
+      li
+        div
+          img(src='img/cuatro.png', alt='icono de uno')
+        h4
+          span.tematicos_semititle(style="color:white;font-weight: 900;")
+            | 15 Expositores
+            
+        span.tematicos_contenido(style="color:white")
+          | Expertos
+
   section.tematicos#linea-investigacion
     h2
       span.tematicos_title_frio EJES 
