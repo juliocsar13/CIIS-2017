@@ -1,7 +1,19 @@
 
-
-
 $(function(){
+
+  var finestraModal3 = document.getElementById("finestra-modal3"),
+    finestraModalObrir3 = document.getElementById("finestra-modal-obrir3"),
+    finestraModalTancar3 = document.getElementById("finestra-modal-tancar3");
+
+    finestraModal3.classList.add("js-mostrar3");
+
+    var btnaspa3=$('#finestra-modal-tancar3');
+    btnaspa3.click(Aspa3);
+
+    function Aspa3(){
+      finestraModal3.classList.remove("js-mostrar3");            
+    }
+
     $('.ir-arriba').click(function(){
     $('body, html').animate({
       scrollTop: '0px'
@@ -506,3 +518,4 @@ $("#preRegisterConcurseBtn").animatedModal({
     });
   };
 })
+
