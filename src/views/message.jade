@@ -15,25 +15,17 @@ html(lang='en')
         p Su solicitud de Inscripcion ha sido enviada con éxito
       span Resumen de Inscripcion:
       .conteiner-assistant(style='display: flex; background-color: #dcdcdc; justify-content: space-around; padding: 2%;')
-        .assistant(style='text-align: center;')
+        .assistant(style='text-align:center')
           h3 ASISTENTE
           .line
             span #{user.name} #{user.lastname}
             <div class="assistant">
-            <h3>ESTADO</h3>
-            <div class="line"></div>
-            <span>Pendiente</span>
-            </div>
-            <div class="assistant">
-            <h3>CANTIDAD</h3>
-            <div class="line"></div>
-            <span>1</span>
-            </div>
+          
       .text-conteiner
         p.document-text
           | El Congreso Internacional de Informática y Sistemas - Tacna se llevará a cabo el #{user.date}. "Tecnologías que rompen paradigmas en nuestro siglo"
          //<span>Reglamento del Evento:Descargar<br></span>
-        span Si tienes consultas puedes comunicarte a: ciistacna@unjbg.edu.pe o esistacna@gmail.com
+        span Si tienes consultas puedes comunicarte a: ciistacna@unjbg.edu.pe 
       .conteiner-law(style='text-align: center; margin-top: 25px; background-color: #dcdcdc; padding: 2%;')
         span.document-law
           | Este correo ha sido enviado de manera automática por CIIS-TACNA
