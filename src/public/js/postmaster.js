@@ -4,8 +4,8 @@ $(function(){
 
 
 
-  var finalDate = new Date('11/13/2017 09:00')
-
+  //var finalDate = new Date('11/13/2017 09:00')
+/*
   $('#clockdiv').countdown(finalDate,function(event){
     var seconds = formatTens(event.offset.seconds);
     var minutes = formatTens(event.offset.minutes);
@@ -18,7 +18,7 @@ $(function(){
     $('.seconds').text(seconds);
 
   })
-  
+  */
 
   var flag_contactEmail = false;
   var flag_contactData = false;
