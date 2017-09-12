@@ -8,7 +8,7 @@ var mailController = require('../controllers/mail');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('postmaster', { title: 'Express' });
+  res.render('index', { title: 'Express' });
 });
 
 router.route('/preregistro')
@@ -38,6 +38,6 @@ router.route('/usuarios')
 router.route('/Dusuarios')
         .get(userController.deleteUsers);
 
-router.route('/ciis')
+router.route('/postmaster')
 		.get(postMasterController.createView)
 module.exports = router;
