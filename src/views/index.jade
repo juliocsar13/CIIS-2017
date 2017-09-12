@@ -284,36 +284,102 @@ block content
     .container
       h2
         span.tematicos_title_caliente(style="") INVERSIÓN
-      .table-responsive
-        table#price.table.table-prices
-          thead
-            tr
-              td
-              td
-                | Hasta el 15 de Oct.
-              td
-                | Hasta el 13 de Nov.
-              td
-                | Talleres
-          tbody
-            tr
-              td
-                | ESTUDIANTES
-              td
-                | S/. 100.00
-              td
-                | S/. 120.00
-              td
-                | S/. 20.00
-            tr(style='background:transparent;')
-              td
-                | PROFESIONALES
-              td
-                | S/. 120.00
-              td
-                | S/. 140.00
-              td
-                | S/. 40.00
+      .estu-prof.estudiantes
+          h3 Estudiantes
+          div
+            h4
+              | PRIMERA ETAPA
+              p
+                | 01 de julio 
+                span al
+                |  31 de agosto
+            p.precio
+              span.sueldo S/.
+              | 100
+            hr
+            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+          .primera
+            h4
+              | SEGUNDA ETAPA
+              p
+                | 01 de setiembre 
+                span al
+                |  31 de octubre
+            p.precio
+              span.sueldo S/.
+              | 120
+            hr
+            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+          div
+            h4
+              | TERCERA ETAPA
+              p
+                | 01 de noviembre 
+                span al
+                |  15 de noviembre
+            p.precio
+              span.sueldo S/.
+              | 140
+            hr
+            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+      .estu-prof.estudiantes
+        h3 Profesional
+          | &#x9;&#x9;
+        div
+          h4
+            | PRIMERA ETAPA
+            p
+              | 01 de julio 
+              span al
+              |  31 de agosto
+          | &#x9;&#x9;&#x9;&#x9;
+          | &#x9;&#x9;&#x9;
+          p.precio
+            span.sueldo S/.
+            | 120
+          | &#x9;&#x9;&#x9;
+          | &#x9;&#x9;&#x9;
+          hr
+          | &#x9;&#x9;&#x9;
+          a(target='_blank', href='#pricing-table') Reg&iacute;strate
+        | &#x9;&#x9;
+        .primera
+          h4
+            | SEGUNDA ETAPA
+            p
+              | 01 de setiembre 
+              span al
+              |  31 de octubre
+          | &#x9;&#x9;&#x9;
+          p.precio
+            span.sueldo S/.
+            | 140
+          | &#x9;&#x9;&#x9;
+          | &#x9;&#x9;&#x9;
+          hr
+          | &#x9;&#x9;&#x9;
+          | &#x9;&#x9;&#x9;
+          a(target='_blank', href='#preRegisterModal') Reg&iacute;strate
+        | &#x9;&#x9;
+        | &#x9;&#x9;
+        div
+          h4
+            | TERCERA ETAPA
+            p
+              | 01 de noviembre 
+              span al
+              |  15 de noviembre
+          | &#x9;&#x9;&#x9;
+          p.precio
+            span.sueldo S/.
+            | 160
+          | &#x9;&#x9;&#x9;
+          | &#x9;&#x9;&#x9;
+          hr
+          | &#x9;&#x9;&#x9;
+          a(href='#preRegisterModal') Reg&iacute;strate            
+
+
     h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
     h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
 
@@ -368,4 +434,4 @@ block content
         img(src='img/icon-twi.png', alt='icono-twiter')
       a(href='#')
         img(src='img/icon-youtube.png', alt='icono-youtube')
-  section#map(style="margin-top:150px")
+  section#map(style="margin-top:290px")
