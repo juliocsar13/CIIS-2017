@@ -907,7 +907,7 @@ opacity: 1;
 
 #pricing-table {
   padding: 100px 0;
-  height: 100vh;
+  height: 222vh;
   box-sizing: border-box;
 }
 #pricing-table .pricing {
@@ -1572,10 +1572,14 @@ td span{
 .ir-arriba img {
     width: 48px;
 }
+  #auspiciadores h2{
+      margin-top: 40px;
+  }
 @media all and (max-width : 768px) {
   #auspiciadores h2{
       font-size: 30px;
       padding-top: 0 !important;
+      margin-top: 40px;
   }
 
   #auspiciadores  img{
@@ -1679,7 +1683,7 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
     */color:#00aad4;
 }
 .title-org {
-    margin-top: 70px;
+    margin-top: 257px;
     margin-bottom: 60px;
 }
   #Organizadores {
@@ -1719,4 +1723,147 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
 .col-md-6 img:hover {
     opacity: 0.7;
     cursor: pointer;
+}
+/*preinscripcion*/
+ .estu-prof {
+    text-align: center;
+    margin: 50px 0px;
+    font-family: sans-serif;
+
+}
+
+ .estu-prof h3 {
+    font-weight: bold;
+    font-size: 24px;
+}
+.contenedor .estu-prof > div:nth-child(2) {
+    margin-left: 0px;
+}
+ .estu-prof .primera {
+    display: inline-block;
+    vertical-align: middle;
+}
+ .estu-prof div {
+    width: 350px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 15px 0px;
+    vertical-align: middle;
+    margin-left: 3.5%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    margin-top: 33px;
+}
+
+.estu-prof div .precio {
+    font-size: 40pt;
+    margin-bottom: 1px;
+    margin-top: 20px;
+    padding: 0px;
+    color: #474747;     
+    font-weight: 900;
+}
+ .estu-prof div p {
+    color: rgb(71, 71, 71);
+    font-weight: bold;
+    font-size: 13pt;
+}
+ .estu-prof div p {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 13pt;
+}
+.estu-prof div hr {
+    width: 67%;
+    display: inline-block;
+    background-color: #414141;
+    height: 2px;
+}
+ .estu-prof div a {
+    background-color: rgb(71, 71, 71);
+    /*text-transform: uppercase;*/
+    font-size: 20pt;
+    color: rgb(255, 255, 255);
+    margin-bottom: 30px;
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+ .estu-prof .primera h4 {
+    background-color: #00AAD4;
+    margin-bottom: 40px;
+    color: rgb(71, 71, 71);
+}
+ .estu-prof div h4 {
+    background-color: rgb(71, 71, 71);
+    font-size: 18pt;
+    font-weight: bold;
+    color: #00AAD4;
+    margin: 0px;
+    padding: 22px 5px;
+    border-radius: 7px 7px 0px 0px;
+}
+ .estu-prof .primera .precio {
+    padding: 0px;
+    margin: 0px 0px 30px;
+}
+.estu-prof div a:hover {
+    text-decoration: none;
+    box-shadow: 0 -5px 10px 0 rgba(0,0,0,.2) inset;
+}
+.estu-prof .primera a {
+    background-color: #00AAD4;
+}
+span.sueldo {
+    font-size: 21px;
+    position: absolute;
+    margin-top: 13px;
+    margin-left: -25px;
+    font-weight: 600;
+}
+.estu-prof>div:nth-child(2) {
+    margin-left: 0px;
+}
+@media screen and (max-width: 670px){
+.estu-prof div, .estu-prof>div:nth-child(2) {
+    width: 200px;
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+}
+@media all and (max-width : 1250px) {
+  #pricing-table {    
+    height: 490vh;    
+}}
+.col-md-6 {
+    margin-top: 24px;
+}
+@media all and (min-width : 670px) {
+#pricing-table {
+    height: 456vh;
+}
+}
+@media all and (min-width : 990px) {
+#pricing-table {
+    height: 350vh;
+}
+.tematicos {
+    height: 955px;
+}
+#auspiciadores {
+    height: 428px;
+}
+}
+@media all and (min-width : 1200px) {
+#pricing-table {
+    height: 235vh;
+}
+}
+
+@media all and (min-width : 768px) {
+#auspiciadores {    
+    height: 752px;
+}
 }
