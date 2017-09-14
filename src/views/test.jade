@@ -5,7 +5,7 @@ block content
   footer
   section#pricing-table.section-page
     .container
-      h2(style='font-size:40px;') PRE-INSCRITOS POSTMASTER
+      h2.title-list(style='font-size:40px;') PRE-INSCRITOS POSTMASTER
       .table-responsive
         table#listPM.table.table-prices
           thead
@@ -51,4 +51,4 @@ block content
                   td
                     h4  #{users.type}
                   ul
-      button(style='background:#A00',onclick="tableToExcel('listPM','POSTMASTER : LISTA DE PRE-INSCRITOS')") EXPORTAR
+      button.list-button(onclick="tableToExcel('listPM','POSTMASTER : LISTA DE PRE-INSCRITOS')") EXPORTAR

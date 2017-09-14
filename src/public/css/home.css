@@ -268,7 +268,7 @@ h2.subtitle-modal2    {
 
 .informacion-modal {
     width: 50%;
-    margin-top: 119px;
+    margin-top: 9%;
 }
 img.img-modal {
     margin-top: 36px;
@@ -296,10 +296,10 @@ img.img-modal {
     background-color: #ffffff;
   }
 
-@media all and (max-width : 670px) {
+@media all and (max-width : 860px) {
 .inicio-modal {
     background-color: white;
-    height: 85%;
+    height: 87%;
     width: 70%;
     display: block;
     margin-top: 250px;
@@ -312,19 +312,14 @@ img.img-modal {
     height: 44%;
 }
 img.img-modal {
-    margin-top: 20px;
+    margin-top: 22px;
     width: 141px;
 }
 .informacion-modal {
     width: 100%; 
-    margin-top: 29px;
+    margin-top: 65px;
 }
-h2.subtitle-modal2 {
-    font-weight: 900;
-    color: #01a8d2;
-    width: 80%;
-    margin: auto;
-}
+
 .contenido-modal {
     width: 90%;
     padding-top: 33px;
@@ -351,21 +346,48 @@ h2.subtitle-modal2 {
     background-color: #01a8d2;
     border-radius: 50%;
 }
+h2.subtitle-modal {
+    font-weight: 900;
+    margin-top: 7px;    
+}
 }
 
+@media (max-width: 775px){
+.informacion-modal {    
+    margin-top: 22px;
+}
+}
 
+@media (max-width: 425px){
+img.img-modal {
+    margin-top: 11px;
+    width: 141px;
+}
+h2.subtitle-modal {
+    font-weight: 900;
+    margin-top: 7px;
+    font-size: 23px;
+}
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.list-button{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;    
+}
+ .title-list {
+  margin-top: 155px;
+  font-size: 38px;
+  font-weight: 900;
+}
+.container .table-responsive {    
+    margin-bottom: 22px;    
+    margin-top: 30px;
+}
 
 
 

@@ -1869,10 +1869,4 @@ span.sueldo {
 }
 }
 
-@media all and (max-width : 625px) {
-section#linea-investigacion2 {
-    height: 883px;
-    /* background: url(../img/bj.jpg); */
-    background-color: #060505;
-}
-}
+
