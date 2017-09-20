@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  #finestra-modal3.finestra-modal3.js-mostrar3             
+  //-#finestra-modal3.finestra-modal3.js-mostrar3             
     .inicio-modal
         .imagen-modal
             img.img-modal(src='/img/logo-modal.png')
@@ -247,7 +247,7 @@ block content
           img(src='img/cuatro.png', alt='icono de uno')
         h4
           span.tematicos_semititle(style="color:white;font-weight: 900;")
-            | 15 Expositores
+            | 20 Expositores
             
         span.tematicos_contenido(style="color:white")
           | Expertos
@@ -338,7 +338,7 @@ block content
   
  
   section.tematicos#pricing-table.section-page
-    .container
+    //-.container
       h2
         span.tematicos_title_caliente(style="") INVERSIÓN
       .table-responsive
@@ -371,10 +371,10 @@ block content
                 | S/. 140.00
               td
                 | S/. 40.00
-    h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
-    h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
+    //-h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
+    //-h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
 
-    //-.container
+    .container
       h2
         span.tematicos_title_caliente(style="") INVERSIÓN
       .estu-prof.estudiantes
@@ -390,7 +390,7 @@ block content
               span.sueldo S/.
               | 100
             hr
-            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+            a#registrate1(href='#preRegisterModal') Preinscríbete
           .primera
             h4
               | SEGUNDA ETAPA
@@ -402,7 +402,7 @@ block content
               span.sueldo S/.
               | 120
             hr
-            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+            a#registrate2(href='#preRegisterModal') Preinscríbete
           div
             h4
               | TERCERA ETAPA
@@ -414,7 +414,7 @@ block content
               span.sueldo S/.
               | 140
             hr
-            a(target='_blank', href='#pricing-table') Reg&iacute;strate
+            a#registrate3(href='#preRegisterModal') Preinscríbete
       .estu-prof.estudiantes
         h3 Profesional
           | &#x9;&#x9;
@@ -434,7 +434,7 @@ block content
           | &#x9;&#x9;&#x9;
           hr
           | &#x9;&#x9;&#x9;
-          a(target='_blank', href='#pricing-table') Reg&iacute;strate
+          a#registrate4(href='#preRegisterModal') Preinscríbete
         | &#x9;&#x9;
         .primera
           h4
@@ -452,7 +452,7 @@ block content
           hr
           | &#x9;&#x9;&#x9;
           | &#x9;&#x9;&#x9;
-          a(target='_blank', href='#preRegisterModal') Reg&iacute;strate
+          a#registrate5(href='#preRegisterModal') Preinscríbete
         | &#x9;&#x9;
         | &#x9;&#x9;
         div
@@ -470,11 +470,11 @@ block content
           | &#x9;&#x9;&#x9;
           hr
           | &#x9;&#x9;&#x9;
-          a(href='#preRegisterModal') Reg&iacute;strate            
+          a#registrate6(href='#preRegisterModal') Preinscríbete           
 
 
-    //-h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
-    //-h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
+    h3 Nro Cta BCP: 540-38259813-0-99 (Yovana Velasquez)
+    h4  Los depósitos hechos fuera de Tacna, deben adicionar S/. 7.50 de comisión
 
   section.tematicos#auspiciadores
     h2

@@ -1778,6 +1778,9 @@ img.img-responsive2, img.img-responsive3, img.img-responsive4{
     background-color: #414141;
     height: 2px;
 }
+.estu-prof div :hover {    
+    border-top: solid 0px #00AAC9;
+}    
  .estu-prof div a {
     background-color: rgb(71, 71, 71);
     /*text-transform: uppercase;*/
@@ -1835,23 +1838,23 @@ span.sueldo {
 }
 @media all and (max-width : 1250px) {
   #pricing-table {    
-    /*height: 490vh;    */
-    height: 125vh;
+    height: 486vh;    
+    /*height: 125vh;*/
 }}
 .col-md-6 {
     margin-top: 24px;
 }
 @media all and (min-width : 670px) {
 #pricing-table {
-    /*height: 456vh;*/
-    height: 115vh;
+    height: 456vh;
+    /*height: 115vh;*/
 }
 
 }
 @media all and (min-width : 990px) {
 #pricing-table {
-    /*height: 350vh;*/
-    height: 125vh;
+    height: 350vh;
+    /*height: 125vh;*/
 }
 .tematicos {
     height: 955px;
@@ -1862,8 +1865,8 @@ span.sueldo {
 }
 @media all and (min-width : 1200px) {
 #pricing-table {
-    /*height: 235vh;*/
-    height: 105vh;
+    height: 235vh;
+    /*height: 105vh;*/
 }
 }
 

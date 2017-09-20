@@ -1,7 +1,7 @@
 
 $(function(){
 
-  var finestraModal3 = document.getElementById("finestra-modal3"),
+  /*var finestraModal3 = document.getElementById("finestra-modal3"),
     finestraModalObrir3 = document.getElementById("finestra-modal-obrir3"),
     finestraModalTancar3 = document.getElementById("finestra-modal-tancar3");
 
@@ -12,7 +12,7 @@ $(function(){
 
     function Aspa3(){
       finestraModal3.classList.remove("js-mostrar3");            
-    }
+    }*/
 
     $('.ir-arriba').click(function(){
     $('body, html').animate({
@@ -53,6 +53,36 @@ $(function(){
  });
 
  $("#preRegisterBtn").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate1").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate2").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate3").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate4").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate5").animatedModal({
+        modalTarget:'preRegisterModal',
+        animatedOut:'bounceOutUp',
+        color:'#9ec32b'
+      });
+  $("#registrate6").animatedModal({
         modalTarget:'preRegisterModal',
         animatedOut:'bounceOutUp',
         color:'#9ec32b'
