@@ -126,6 +126,23 @@ module.exports.getUsers = function (req,res) {
       return res.json(user);
     });
 }
+
+module.exports.emailCheck = function (req,res) {
+    var data = req.query;
+    User.find({email:data.email})
+    .exec(function (err,user) {
+      if(user) return res.json(user);
+    });
+}
+
+module.exports.dniCheck = function (req,res) {
+    var data = req.query;
+    User.find({dni:data.dni})
+    .exec(function (err,user) {
+      if(user) return res.json(user);
+    });
+}
+
 module.exports.deleteUsers = function (req,res) {
     User.remove({})
     .exec(function (err,user) {

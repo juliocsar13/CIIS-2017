@@ -15,6 +15,10 @@ router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
 
+router.route('/checkemail').get(userController.emailCheck);
+router.route('/checkdni').get(userController.dniCheck);
+
+
 router.route('/.well-known/acme-challenge/:zf2uIh7KIBEFFrKnxQY1jBGH5xEYlY2E6BAz0dMKx6s')
 		.get(userController.sslController1)
 

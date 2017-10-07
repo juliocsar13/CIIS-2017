@@ -11,7 +11,7 @@ $(function(){
     btnaspa3.click(Aspa3);
 
     function Aspa3(){
-      finestraModal3.classList.remove("js-mostrar3");            
+      finestraModal3.classList.remove("js-mostrar3");
     }*/
 
     $('.ir-arriba').click(function(){
@@ -105,7 +105,7 @@ $("#preRegisterConcurseBtn").animatedModal({
 
 })
 
-// 
+//
 // $(".preRegisterConcurseForm").submit(function (e) {
 //   e.preventDefault();
 //   e.stopPropagation();
@@ -255,9 +255,32 @@ $("#preRegisterConcurseBtn").animatedModal({
     }
   })
 
+  // $("form[name='preRegisterForm']").validate({
+  // errorLabelContainer: "#cs-error-note",
+  // wrapper: "li",
+  // rules: {
+  //     email: {
+  //         required: true,
+  //         email: true,
+  //             remote: {
+  //                 url: "checkemail",
+  //                 type: "post"
+  //              }
+  //     }
+  // },
+  // messages: {
+  //     email: {
+  //         required: "Please enter your email address.",
+  //         email: "Please enter a valid email address.",
+  //         remote: "Email already in use!"
+  //     }
+  // },
+  // submitHandler: function(form) {
+  //                     return true;
+  //                  }
+  // });
 
-
-    $('#submitPreRegister').click(function(e){
+    $("#submitPreRegister").click(function(e){
     var email = $('#preRegisterEmail').val();
     var firstName = $('#preRegisterFirstName').val();
     var lastName = $('#preRegisterLastName').val();
@@ -266,6 +289,9 @@ $("#preRegisterConcurseBtn").animatedModal({
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
     var eventType = "CIIS";
+
+    var emailValidated=false;
+    var dniValidated=false;
 
     //var image = $('#preRegisterVoucher')[0].files[0]
     //var image_val = $('#preRegisterVoucher').val();
@@ -308,11 +334,57 @@ $("#preRegisterConcurseBtn").animatedModal({
       //images:formData.get('image')
     };
 
-    //if(email && firstName && lastName && dni && type && city && image_val){
+    function emailValidation() {
+      emailValidated=true;
+    }
+    function dniValidation() {
+      dniValidated=true;
+    }
+    if (email) {
 
+      $.get({
+        url: '/checkemail',
+        async: false,
+        data:'email='+email,
+
+        success:(function(data){
+          if (data.length>0) {
+            console.log(data);
+            toastr.error("Email ya registrado, intente con otro");
+          }
+          else {
+            emailValidated=true;
+          }
+        }),
+        error:(function(){
+          toastr.error("Hubo un error");
+        })
+      });
+    }
+
+    if (dni) {
+
+      $.get({
+        url: '/checkdni',
+        data:'dni='+dni,
+        async: false,
+        success:(function(data){
+          if (data.length>0) {
+            console.log(data);
+            toastr.error("DNI ya registrado, intente con otro");
+          }else {
+            dniValidated=true;
+          }
+        }),
+        error:(function(){
+          toastr.error("Hubo un error");
+        })
+      });
+    }
+    //if(email && firstName && lastName && dni && type && city && image_val){
     //if(email && firstName && lastName && dni && type && city){
 
-    if(email && firstName && lastName && dni && type && city){
+    if(email && firstName && lastName && dni && type && city && emailValidated && dniValidated){
       var myImage = document.createElement("img");
       myImage.src = "http://chatv2.velaro.com//Inline/Images/loading.gif";
       myImage.className = 'spiningAjax';
@@ -361,7 +433,9 @@ $("#preRegisterConcurseBtn").animatedModal({
 
       }
       else{
-        toastr.error("Llene todos los campos");
+        if (!(email && firstName && lastName && dni && type && city)) {
+          toastr.error("Llene todos los campos");
+        }
       }
     })
   function subscribeMailChimp(e){
@@ -548,4 +622,3 @@ $("#preRegisterConcurseBtn").animatedModal({
     });
   };
 })
-
