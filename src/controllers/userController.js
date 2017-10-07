@@ -1,68 +1,105 @@
+"use strict";
+const formidable = require("formidable");
+const fs = require("fs-extra");
+const path = require("path");
+const randomstring = require("randomstring");
+
 var User = require('../collections/user');
 var jwt = require('jsonwebtoken');
 var uploaderController = require('./uploader');
 var mail = require('./mail');
 var multer = require ('multer');
-var  fs = require('fs');
 
 
 module.exports.register = function (req,res) {
     //console.log('registrando',req.files);
-    var data = req.body;
-    console.log(req.body);
+    const form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files) {
 
-    var user = new User();
-    user.dni = data.dni;
-    user.name = data.name;
-    user.lastname = data.lastname;
-    user.type = data.type;
-    user.city = data.city;
-    user.email = data.email;
-    user.cellphone = data.cellphone;
-    user.eventType = data.eventType;
+      var user = new User();
 
-    user.save(function (err,user) {
-        if(err){
-          console.log(err);
-          return res.sendStatus(503)
-        }
-        user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
-        user.date = "13 al 17 de Noviembre";
-        mail.sendEmail(user);
-        console.log(user);
-        return res.json(200);
+      let data = fields;
+      data.photo = path.join("uploads/", files.photo.name);
+      console.log(data);
+
+      user.dni = data.dni;
+      user.name = data.name;
+      user.lastname = data.lastname;
+      user.type = data.type;
+      user.city = data.city;
+      user.email = data.email;
+      user.cellphone = data.cellphone;
+      user.eventType = data.eventType;
+      user.photo = data.photo;
+
+      user.save(function (err,user) {
+          if(err){
+            console.log(err);
+            return res.sendStatus(503)
+          }
+          user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
+          user.date = "13 al 17 de Noviembre";
+          mail.sendEmail(user);
+          console.log(user);
+          return res.json(200);
+      });
+
+      // Photo.create(data)
+      //   .then((err,result) => {
+      //     if(err) return res.status(500).send(err);
+      //     data.type = "";
+      //     console.log(result);
+      //     return res.send();
+      //   });
+    });
+    form.on("error", function(err) {
+      return res.send(null, 500);
     });
 
-    //
-    // const uploaderOptions = {
-    //   service: 'dropbox', file: req.file
-    // };
+    form.on("fileBegin", function(name, file) {
+      let rdName = randomstring.generate();
+      rdName = rdName.replace("/", "");
+      let originalName = file.name;
+      file.name = rdName + path.extname(originalName);
+    });
 
-    // uploaderController (uploaderOptions)
-    //     .then(params => {
-    //           var user = new User();
-    //           user.voucher = params.file;
-    //           user.voucherThumb = params.thumbnail;
-    //           console.log(params);
-    //           user.dni = data.dni;
-    //           user.name = data.name;
-    //           user.lastname = data.lastname;
-    //           user.type = data.type;
-    //           user.city = data.city;
-    //           user.email = data.email;
-    //           user.cellphone = data.cellphone;
+    form.on("end", function(fields, files) {
+      const temp_path = this.openedFiles[0].path;
+      const file_name = this.openedFiles[0].name;
+      const new_location = path.join(__dirname, "../public/uploads/", file_name);
+
+      fs.copy(temp_path, new_location, function(err) {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log("success!")
+        }
+      });
+    });
+    // var data = req.body;
+    // console.log(req.body);
     //
-    //           user.save(function (err,user) {
-    //               if(err){
-    //                 console.log(err);
-    //                 return res.sendStatus(503)
-    //               }
-    //               mail.sendEmail(user);
-    //               console.log(user);
-    //               return res.json(200);
-    //           });
-    //           }
-    //         )
+    // var user = new User();
+    // user.dni = data.dni;
+    // user.name = data.name;
+    // user.lastname = data.lastname;
+    // user.type = data.type;
+    // user.city = data.city;
+    // user.email = data.email;
+    // user.cellphone = data.cellphone;
+    // user.eventType = data.eventType;
+    //
+    // user.save(function (err,user) {
+    //     if(err){
+    //       console.log(err);
+    //       return res.sendStatus(503)
+    //     }
+    //     user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
+    //     user.date = "13 al 17 de Noviembre";
+    //     mail.sendEmail(user);
+    //     console.log(user);
+    //     return res.json(200);
+    // });
 }
 /*
 module.exports.sslController1 = function(req,res){

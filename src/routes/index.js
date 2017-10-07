@@ -3,6 +3,7 @@ var router = express.Router();
 
 var userController = require('../controllers/userController');
 var postMasterController = require('../controllers/postMasterController');
+var imagenController = require('../controllers/imagenController');
 
 var mailController = require('../controllers/mail');
 
@@ -15,8 +16,13 @@ router.route('/preregistro')
         .get(userController.createView)
         .post(userController.register);
 
+
+
 router.route('/checkemail').get(userController.emailCheck);
 router.route('/checkdni').get(userController.dniCheck);
+
+router.route('/postmaster/photo').post(imagenController.create);
+router.route('/getPhotos').get(imagenController.getPhotos);
 
 
 router.route('/.well-known/acme-challenge/:zf2uIh7KIBEFFrKnxQY1jBGH5xEYlY2E6BAz0dMKx6s')

@@ -10,6 +10,7 @@ var userSchema = new Schema({
     dni: {type:String, unique:true},
     type: String,
     eventType: String,
+    photo:String,
     createdAt:{ type: Date, default: Date.now}
 });
 

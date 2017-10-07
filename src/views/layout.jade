@@ -120,6 +120,20 @@ html
              return jSpot;
           }
   script.
+    var createPhoto = function(){
+      debugger;
+            const formData = new FormData();
+            formData.append("photo", $('#photoUp')[0].files[0]);
+            console.log($('#photoUp')[0].files[0]);
+  
+            fetch("/postmaster/photo",{
+                method: "POST",
+                body: formData,
+                credentials: "same-origin"
+            }).then(response => {
+                alert('photo guardada');
+            });
+        }
    
   script(type='text/javascript').
     smoothScroll.init();

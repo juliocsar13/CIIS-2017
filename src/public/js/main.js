@@ -255,30 +255,6 @@ $("#preRegisterConcurseBtn").animatedModal({
     }
   })
 
-  // $("form[name='preRegisterForm']").validate({
-  // errorLabelContainer: "#cs-error-note",
-  // wrapper: "li",
-  // rules: {
-  //     email: {
-  //         required: true,
-  //         email: true,
-  //             remote: {
-  //                 url: "checkemail",
-  //                 type: "post"
-  //              }
-  //     }
-  // },
-  // messages: {
-  //     email: {
-  //         required: "Please enter your email address.",
-  //         email: "Please enter a valid email address.",
-  //         remote: "Email already in use!"
-  //     }
-  // },
-  // submitHandler: function(form) {
-  //                     return true;
-  //                  }
-  // });
 
     $("#submitPreRegister").click(function(e){
     var email = $('#preRegisterEmail').val();
@@ -288,6 +264,7 @@ $("#preRegisterConcurseBtn").animatedModal({
     var type = $('#preRegisterType').val();
     var city = $('#preRegisterCity').val();
     var cellphone = $('#preRegisterCellphone').val();
+    var photo = $('#preRegisterVoucher')[0].files[0];
     var eventType = "CIIS";
 
     var emailValidated=false;
@@ -305,12 +282,13 @@ $("#preRegisterConcurseBtn").animatedModal({
     //var form = $('preRegisterForm')[0];
 
     formData.append('email', email);
-    formData.append('firstName', firstName);
-    formData.append('lastName', lastName);
+    formData.append('name', firstName);
+    formData.append('lastname', lastName);
     formData.append('dni', dni);
     formData.append('type', type);
     formData.append('city', city);
     formData.append('cellphone', cellphone);
+    formData.append("photo", photo);
 
     //formData.append('image', new Blob([JSON.stringify(files)]),{type:'application/json'});
 
@@ -326,12 +304,6 @@ $("#preRegisterConcurseBtn").animatedModal({
       'cellphone': formData.get("cellphone"),
       'eventType':eventType
 
-      //image:{
-      //      'name':files.name,
-       //     'size':files.size,
-       //     'type':files.type
-      //},
-      //images:formData.get('image')
     };
 
     function emailValidation() {
@@ -381,8 +353,6 @@ $("#preRegisterConcurseBtn").animatedModal({
         })
       });
     }
-    //if(email && firstName && lastName && dni && type && city && image_val){
-    //if(email && firstName && lastName && dni && type && city){
 
     if(email && firstName && lastName && dni && type && city && emailValidated && dniValidated){
       var myImage = document.createElement("img");
@@ -392,44 +362,60 @@ $("#preRegisterConcurseBtn").animatedModal({
       self.appendChild(myImage);
       self.disabled= true;
 
-
-        $.ajax({
-          url: '/preregistro',
-          type: "POST",
-          data:JSON.stringify(data),
-          contentType:"application/json; charset=utf-8",
-
-        //}).success(function(){
-          //console.log("EMAIL DE ENVIO",email)
-            //return subscribeMailChimpEmail(email)
-
-          success:(function(){
-            //-console.log('success')
-            $('.closebt').click();
-            $('#preRegisterEmail').val('');
-            $('#preRegisterFirstName').val('');
-            $('#preRegisterLastName').val('');
-            $('#preRegisterDNI').val('');
-            $('#preRegisterCity').val('');
-            $('#preRegisterCellphone').val('');
-            toastr.success("Gracias por preinscribirte =)");
-          }),
-          error:(function(){
-
-            toastr.error("Hubo un error");
-          }),
-          always:(function(){
-            $('#preRegisterEmail').val('');
-            $('#preRegisterFirstName').val('');
-            $('#preRegisterLastName').val('');
-            $('#preRegisterDNI').val('');
-            $('#preRegisterType').val('');
-            $('#preRegisterCity').val('');
-            $('#preRegisterCellphone').val('');
-            self.removeChild(myImage);
-            self.disabled= false;
-          })
-        });
+      fetch("/preregistro",{
+          method: "POST",
+          body: formData,
+          credentials: "same-origin"
+      }).then(response => {
+        $('.closebt').click();
+        $('#preRegisterEmail').val('');
+        $('#preRegisterFirstName').val('');
+        $('#preRegisterLastName').val('');
+        $('#preRegisterDNI').val('');
+        $('#preRegisterCity').val('');
+        $('#preRegisterCellphone').val('');
+        self.removeChild(myImage);
+        self.disabled= false;
+        toastr.success("Gracias por preinscribirte =)");
+      }).catch(function(){
+        toastr.error("Hubo un error");
+      });
+        //
+        // $.ajax({
+        //   url: '/preregistro',
+        //   type: "POST",
+        //   data:JSON.stringify(data),
+        //   contentType:"application/json; charset=utf-8",
+        //
+        // //}).success(function(){
+        //   //console.log("EMAIL DE ENVIO",email)
+        //     //return subscribeMailChimpEmail(email)
+        //
+        //   success:(function(){
+        //     //-console.log('success')
+        //     $('.closebt').click();
+        //     $('#preRegisterEmail').val('');
+        //     $('#preRegisterFirstName').val('');
+        //     $('#preRegisterLastName').val('');
+        //     $('#preRegisterDNI').val('');
+        //     $('#preRegisterCity').val('');
+        //     $('#preRegisterCellphone').val('');
+        //   }),
+        //   error:(function(){
+        //
+        //   }),
+        //   always:(function(){
+        //     $('#preRegisterEmail').val('');
+        //     $('#preRegisterFirstName').val('');
+        //     $('#preRegisterLastName').val('');
+        //     $('#preRegisterDNI').val('');
+        //     $('#preRegisterType').val('');
+        //     $('#preRegisterCity').val('');
+        //     $('#preRegisterCellphone').val('');
+        //     self.removeChild(myImage);
+        //     self.disabled= false;
+        //   })
+        // });
 
       }
       else{
@@ -438,6 +424,21 @@ $("#preRegisterConcurseBtn").animatedModal({
         }
       }
     })
+
+    function createPhoto(){
+      debugger;
+            const formData = new FormData();
+            formData.append("photo", $('#photoUp')[0].files[0]);
+            console.log($('#photoUp')[0].files[0]);
+
+            fetch("/postmaster/photo",{
+                method: "POST",
+                body: formData,
+                credentials: "same-origin"
+            }).then(response => {
+
+            });
+        }
   function subscribeMailChimp(e){
     var email = $('#email');
     if($(this).val().length-1 >= 0 && $(this).val().indexOf('@')!= -1) $('#subscribe').prop('disabled', false);
