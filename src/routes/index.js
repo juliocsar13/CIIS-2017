@@ -4,6 +4,7 @@ var router = express.Router();
 var userController = require('../controllers/userController');
 var postMasterController = require('../controllers/postMasterController');
 var imagenController = require('../controllers/imagenController');
+var assistController = require('../controllers/assistController');
 
 var mailController = require('../controllers/mail');
 
@@ -20,6 +21,16 @@ router.route('/preregistro')
 
 router.route('/checkemail').get(userController.emailCheck);
 router.route('/checkdni').get(userController.dniCheck);
+router.route('/lista')
+          .get(userController.listUser);
+router.route('/asistencia')
+          .get(assistController.create);
+router.route('/lista_asistencia')
+        .get(assistController.getAssist);
+router.route('/dias')
+        .get(assistController.getDay);
+router.route('/Dasist')
+        .get(assistController.deleteAssist);
 
 router.route('/postmaster/photo').post(imagenController.create);
 router.route('/getPhotos').get(imagenController.getPhotos);

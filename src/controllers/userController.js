@@ -180,6 +180,16 @@ module.exports.dniCheck = function (req,res) {
     });
 }
 
+module.exports.listUser = function (req,res) {
+
+  User.find({})
+  .exec(function (err,user) {
+    if(err) return res.sendStatus(503);
+    res.render('test',{'user':user});
+  });
+}
+
+
 module.exports.deleteUsers = function (req,res) {
     User.remove({})
     .exec(function (err,user) {
