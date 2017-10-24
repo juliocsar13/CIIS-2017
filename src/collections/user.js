@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
+require('mongoose-double')(mongoose);
 
 var Schema = mongoose.Schema;
+var SchemaTypes = mongoose.Schema.Types;
+
 var userSchema = new Schema({
     email: {type:String, unique:true},
     name: String,
@@ -8,7 +11,9 @@ var userSchema = new Schema({
     city: String,
     cellphone: String,
     dni: {type:String, unique:true},
-    type: String,
+    type: {type: Schema.ObjectId, ref: 'Type'},
+    debt:{type:SchemaTypes.Double},
+    discount:{type:SchemaTypes.Double},
     eventType: String,
     photo:String,
     createdAt:{ type: Date, default: Date.now}

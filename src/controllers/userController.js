@@ -3,8 +3,10 @@ const formidable = require("formidable");
 const fs = require("fs-extra");
 const path = require("path");
 const randomstring = require("randomstring");
+var mongoose = require('mongoose');
 
 var User = require('../collections/user');
+var Type = require('../collections/type');
 var jwt = require('jsonwebtoken');
 var uploaderController = require('./uploader');
 var mail = require('./mail');
@@ -15,34 +17,42 @@ module.exports.register = function (req,res) {
     //console.log('registrando',req.files);
     const form = new formidable.IncomingForm();
     form.parse(req, function(err, fields, files) {
-
-      var user = new User();
-
       let data = fields;
-      data.photo = path.join("uploads/", files.photo.name);
-      console.log(data);
 
-      user.dni = data.dni;
-      user.name = data.name;
-      user.lastname = data.lastname;
-      user.type = data.type;
-      user.city = data.city;
-      user.email = data.email;
-      user.cellphone = data.cellphone;
-      user.eventType = data.eventType;
-      user.photo = data.photo;
+      Type.findOne({_id:data.type})
+      .exec(function (err,type) {
+        if(type){
+          var user = new User();
 
-      user.save(function (err,user) {
-          if(err){
-            console.log(err);
-            return res.sendStatus(503)
-          }
-          user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
-          user.date = "13 al 17 de Noviembre";
-          mail.sendEmail(user);
-          console.log(user);
-          return res.json(200);
+          data.photo = path.join("uploads/", files.photo.name);
+          console.log(data);
+
+          user.dni = data.dni;
+          user.name = data.name;
+          user.lastname = data.lastname;
+          user.type = mongoose.Types.ObjectId(data.type);
+          user.discount = data.discount? data.discount : 0;
+          user.debt = type.amount - user.discount;
+          user.city = data.city;
+          user.email = data.email;
+          user.cellphone = data.cellphone;
+          user.eventType = data.eventType;
+          user.photo = data.photo;
+
+          user.save(function (err,user) {
+              if(err){
+                console.log(err);
+                return res.sendStatus(503)
+              }
+              user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
+              user.date = "13 al 17 de Noviembre";
+              //mail.sendEmail(user);
+              console.log(user);
+              return res.json(200);
+          });
+        }
       });
+
 
       // Photo.create(data)
       //   .then((err,result) => {
@@ -76,57 +86,8 @@ module.exports.register = function (req,res) {
         }
       });
     });
-    // var data = req.body;
-    // console.log(req.body);
-    //
-    // var user = new User();
-    // user.dni = data.dni;
-    // user.name = data.name;
-    // user.lastname = data.lastname;
-    // user.type = data.type;
-    // user.city = data.city;
-    // user.email = data.email;
-    // user.cellphone = data.cellphone;
-    // user.eventType = data.eventType;
-    //
-    // user.save(function (err,user) {
-    //     if(err){
-    //       console.log(err);
-    //       return res.sendStatus(503)
-    //     }
-    //     user.title = "XVIII Congreso Internacional de Informatica y Sistemas-TACNA";
-    //     user.date = "13 al 17 de Noviembre";
-    //     mail.sendEmail(user);
-    //     console.log(user);
-    //     return res.json(200);
-    // });
-}
-/*
-module.exports.sslController1 = function(req,res){
-    res.sendFile('.well-known/acme-challenge/ElKZ3PuQ67S8s_8yZeowzibyI2dLI5oaaFGym949XGo', { root: path.join(__dirname, '../public') });
-
-    fs.readFile('/archivos/${archivo}', function(err, content) {
-    if(err) {  }
-    cb(content);
-    })
-
-
-
-
-    fs.readFile('archivo.txt', 'utf-8', (err, data) => {
-      if(err) {
-        console.log('error: ', err);
-      } else {
-        console.log(data);
-      }
-    });
 }
 
-module.exports.sslController2 = function(req,res){
-    res.sendFile('.well-known/acme-challenge/jtm3MenpuEpXRrrNWZiMfTOZqN-sJOn6qJ95lulThbA', { root: path.join(__dirname, '../public') });
-}
-
-*/
 module.exports.sslController1 = function(req,res){
 console.log("hola")
 console.log("archivo",req.params)
@@ -154,7 +115,11 @@ console.log("archivo",req.params)
     });
 }
 module.exports.createView = function (req,res) {
-    res.render('index');
+  Type.find({})
+  .exec(function (err,type) {
+    if(err) return res.sendStatus(503);
+    res.render('index', { types: type });
+  });
 }
 module.exports.getUsers = function (req,res) {
     User.find({})

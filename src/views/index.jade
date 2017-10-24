@@ -95,9 +95,8 @@ block content
           input#preRegisterDNI(style='color:black;', name='dni', type='text', required='')
         label Tipo de inscripción
         select#preRegisterType.form-control(name='type')
-          option(value='PROFESIONAL') Profesional y público en general
-          //- option(value='PROFESIONAL COLEGIADO') Ing. Sistemas colegiado
-          option(value='ESTUDIANTE') Estudiante
+          each type in types
+            option(value=type._id) #{type.name}
         label
           | Tu ciudad
           input#preRegisterCity.capitalize(type='text',name='city', style='color:black;', required='')

@@ -5,12 +5,20 @@ var userController = require('../controllers/userController');
 var postMasterController = require('../controllers/postMasterController');
 var imagenController = require('../controllers/imagenController');
 var assistController = require('../controllers/assistController');
+var typeController = require('../controllers/typeController');
+var paymentController = require('../controllers/paymentController');
+
+var Type = require('../collections/type');
 
 var mailController = require('../controllers/mail');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  Type.find({})
+  .exec(function (err,type) {
+    if(err) return res.sendStatus(503);
+    res.render('index', { types: type });
+  });
 });
 
 router.route('/preregistro')
@@ -31,6 +39,18 @@ router.route('/dias')
         .get(assistController.getDay);
 router.route('/Dasist')
         .get(assistController.deleteAssist);
+
+router.route('/pagos')
+          .post(paymentController.create);
+router.route('/Lpagos')
+          .get(paymentController.getPayment);
+router.route('/Dpagos')
+        .get(paymentController.deletePayment);
+
+router.route('/type')
+          .post(typeController.create);
+router.route('/Dtype')
+          .get(typeController.deleteType);
 
 router.route('/postmaster/photo').post(imagenController.create);
 router.route('/getPhotos').get(imagenController.getPhotos);
